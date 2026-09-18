@@ -1,6 +1,6 @@
 ---
 title: ""
-pagetitle: "" efter kurset
+pagetitle: Øv dig videre efter kurset
 title-block-banner: false
 toc: false
 page-layout: full
