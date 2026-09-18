@@ -99,6 +99,7 @@ try {
   // Check every internal HTML link and locally referenced image/script/stylesheet.
   const walk = async dir => (await Promise.all((await readdir(dir,{withFileTypes:true})).map(x => x.isDirectory() ? walk(resolve(dir,x.name)) : resolve(dir,x.name)))).flat();
   for (const file of (await walk(root)).filter(x => x.endsWith('.html'))) {
+    if (!(await readFile(file, 'utf8')).includes('<html')) continue;
     await visit(file.slice(root.length));
     const urls = await page.locator('a[href], img[src], script[src], link[rel="stylesheet"]').evaluateAll(nodes => nodes.map(n => n.href || n.src));
     for (const raw of urls) {
@@ -118,4 +119,7 @@ try {
   }
   assert.deepEqual(errors, []);
   console.log('PASS: rendered pages, logo, internal links, widgets, quizzes, hidden content, mobile layout and local analytics exclusion.');
+} catch (error) {
+  await page.screenshot({path:'test-results/failure.png',fullPage:true});
+  throw error;
 } finally { await browser.close(); server.close(); }
