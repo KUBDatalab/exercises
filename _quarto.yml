@@ -6,9 +6,9 @@ project:
     - '*.qmd'
     - 'r/**/*.qmd'
     - 'vejledning/*.qmd'
+    - '!templates/'
   resources:
     - assets/
-    - templates/
     - data/
 website:
   title: 'KUB Datalab · Øvelser'

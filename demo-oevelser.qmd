@@ -172,7 +172,7 @@ Summen er 18, og der er tre tal. Derfor er gennemsnittet 6.
 `r unhide()`
 
 ::: {.callout-note collapse="true" title="Se koden: hide() og unhide()"}
-Sæt et inline-kald til `hide("Vis hint")` før hjælpeteksten og et inline-kald til `unhide()` efter. De præcise inline-markører kan kopieres fra [skabelonen](templates/oevelse.qmd).
+Sæt et inline-kald til `hide("Vis hint")` før hjælpeteksten og et inline-kald til `unhide()` efter. De præcise inline-markører kan kopieres fra [skabelonen](https://github.com/KUBDatalab/exercises/blob/main/templates/oevelse.qmd).
 
 Mellem de to kald kan du placere tekst, kode, tabeller og figurer.
 :::
