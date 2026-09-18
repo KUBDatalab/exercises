@@ -1,0 +1,77 @@
+project:
+  type: website
+  output-dir: _site
+  execute-dir: project
+  render:
+    - '*.qmd'
+    - 'r/**/*.qmd'
+    - 'vejledning/*.qmd'
+  resources:
+    - assets/
+    - templates/
+    - data/
+website:
+  title: 'KUB Datalab · Øvelser'
+  site-url: https://kubdatalab.github.io/exercises/
+  description: 'Øv dig videre efter KUB Datalabs kurser. Små opgaver, hints og feedback i dit eget tempo.'
+  favicon: assets/kub-datalab.svg
+  bread-crumbs: true
+  navbar:
+    logo: assets/kub-datalab.svg
+    logo-alt: KUB Datalab
+    title: 'KUB Datalab'
+    background: light
+    left:
+      - text: Øvelser i R
+        href: r/index.qmd
+      - text: Demo-øvelser
+        href: demo-oevelser.qmd
+      - text: Til undervisere
+        href: vejledning/ny-oevelsesside.qmd
+    right:
+      - text: Om sitet
+        href: om.qmd
+      - icon: github
+        href: https://github.com/KUBDatalab/exercises
+        aria-label: Kildekode på GitHub
+  sidebar:
+    - id: r
+      title: Øvelser i R
+      style: docked
+      contents:
+        - r/index.qmd
+        - section: Introduktion til R
+          contents:
+            - r/intro/index.qmd
+            - r/intro/vektorer.qmd
+    - id: underviser
+      title: Til undervisere
+      contents:
+        - vejledning/ny-oevelsesside.qmd
+        - demo-oevelser.qmd
+        - vejledning/statistik.qmd
+  page-footer:
+    left: 'KUB Datalab · Københavns Universitetsbibliotek'
+    right:
+      - text: Om sitet og statistik
+        href: om.qmd
+      - text: Lav en øvelsesside
+        href: vejledning/ny-oevelsesside.qmd
+  search:
+    location: navbar
+    type: overlay
+format:
+  html:
+    theme: [cosmo, assets/theme.scss]
+    css: [assets/vendor/webex.css, assets/site.css]
+    include-after-body: [assets/vendor/webex.js, assets/site-includes.html]
+    toc: true
+    toc-title: På denne side
+    code-copy: true
+    code-overflow: wrap
+    lang: da
+    anchor-sections: true
+execute:
+  warning: false
+  message: false
+  freeze: false

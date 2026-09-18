@@ -1,0 +1,33 @@
+:root { --highlight: #51406b; --correct: #267451; --correct_alpha: #e4f3e9; --incorrect: #a23452; --incorrect_alpha: #fcebef; }
+.hero { padding: 3.4rem 0 2.8rem; border-bottom: 1px solid #dedbe2; margin-bottom: 2.8rem; }
+.hero-layout { display: grid; grid-template-columns: 1fr 210px; align-items: center; gap: 2rem; }
+.hero h1 { font-size: clamp(2.7rem, 6vw, 4.6rem); line-height: 1.05; max-width: 850px; margin: .8rem 0 1.4rem; }
+.hero p { max-width: 650px; font-size: 1.15rem; color: #595563; }
+.hero .eyebrow, .eyebrow { font-size: .77rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #51406b; }
+.hero-logo { width: 180px; height: 180px; image-rendering: auto; }
+.btn-primary, .btn-outline-primary { border-radius: 5px; padding: .65rem 1.15rem; font-weight: 600; }
+.card-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.2rem; margin: 1.5rem 0 2rem; }
+.course-card { background: white; border: 1px solid #dedbe2; border-radius: 10px; padding: 1.8rem; border-top: 4px solid #51406b; }
+.course-card h2, .course-card h3 { margin-top: .5rem; border: none; padding: 0; }
+.course-card p { color: #595563; }
+.course-card .card-label { font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: #51406b; }
+.course-card.future { border-top-color: #b5b4b9; background: #f5f4f1; }
+.meta-line { color: #646170; font-size: .9rem; margin-bottom: 1.5rem; }
+.step-list { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.6rem; margin: 2rem 0; }
+.step-list strong { display: block; margin-bottom: .5rem; }
+.exercise, .webex-box { border: 1px solid #d8d1e0; border-radius: 8px; padding: 1.3rem 1.5rem; margin: 1.5rem 0; background: #fff; }
+.exercise h3 { margin-top: 0; }
+.webex-solveme, .webex-select { max-width: 100%; padding: .25rem .5rem; min-height: 2.4rem; }
+.webex-check-button, .webex-solution button { border: 0; border-radius: 5px; font-weight: 600; height: auto; min-height: 2.4rem; padding: .35rem .85rem; }
+.webex-solution { height: auto; padding: .3rem 0; }
+.webex-solution:not(.open) > :not(button) { display: none; }
+.webex-solution.open { padding: 1rem; border: 1px solid #d8d1e0; }
+.webex-radiogroup label { padding: .6rem 1rem; margin: .4rem 0 .4rem 1rem; text-indent: 0; }
+.webex-radiogroup label input { left: 0; margin-right: .5rem; }
+.webex-feedback { font-size: .85rem; font-weight: 600; margin-left: .5rem; }
+.webex-total_correct { font-size: .9rem; display: inline-block; }
+.unchecked .webex-feedback { visibility: hidden; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #bf772b; outline-offset: 3px; }
+.method-note { font-size: .9rem; color: #646170; }
+details { margin: 1rem 0; }
+@media (max-width: 700px) { .hero-layout { grid-template-columns: 1fr; } .hero-logo { display: none; } .hero { padding: 1.5rem 0; } .card-grid, .step-list { grid-template-columns: 1fr; } .exercise, .webex-box { padding: 1rem; } .webex-total_correct { margin: .5rem 0; display: block; } }

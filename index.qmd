@@ -1,0 +1,74 @@
+---
+title: ""
+pagetitle: "" efter kurset
+title-block-banner: false
+toc: false
+page-layout: full
+---
+
+::: {.hero}
+::: {.hero-layout}
+::: {}
+[KUB Datalab · Øvelser efter kurset]{.eyebrow}
+
+# Fra kursus til kunnen {.unlisted}
+
+Små opgaver. Plads til at prøve. Find tilbage til det, du lærte på kurset, og brug det på egen hånd.
+
+[Find øvelser i R](r/index.qmd){.btn .btn-primary} [Prøv demoen](demo-oevelser.qmd){.btn .btn-outline-primary}
+:::
+
+![](assets/kub-datalab.svg){.hero-logo fig-alt="KUB Datalabs logo"}
+:::
+:::
+
+## Hvad vil du øve? {.unlisted}
+
+::: {.card-grid}
+::: {.course-card}
+[R · Kom i gang]{.card-label}
+
+### Introduktion til R
+
+Få styr på objekter, vektorer og indeksering. Begynd med et kort øvelsessæt, og få feedback undervejs.
+
+[Se øvelser →](r/intro/index.qmd)
+:::
+::: {.course-card}
+[Udforsk · 25–35 minutter]{.card-label}
+
+### Demo-øvelser
+
+Prøv alle spørgsmålstyperne: skriv et svar, vælg en mulighed, åbn et hint og tjek en hel mini-quiz.
+
+[Åbn demoen →](demo-oevelser.qmd)
+:::
+:::
+
+::: {.step-list}
+::: {}
+**01 · Vælg et emne**
+
+Start, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækkefølge.
+:::
+::: {}
+**02 · Prøv selv**
+
+Svar på siden, eller brug dit eget R-miljø til kodeopgaverne. Du kan forsøge igen.
+:::
+::: {}
+**03 · Få hjælp undervejs**
+
+Åbn et hint, og sammenlign din løsning med et forklaret løsningsforslag.
+:::
+:::
+
+::: {.course-card .future}
+[På vej]{.card-label}
+
+### Flere kurser. Samme sted.
+
+Samlingen begynder med R. Senere kan du finde øvelser til flere R-kurser og til Python her.
+:::
+
+Underviser du? [Se, hvordan du tilføjer en ny øvelsesside](vejledning/ny-oevelsesside.qmd).

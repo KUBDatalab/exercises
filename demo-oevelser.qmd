@@ -1,0 +1,336 @@
+---
+title: Demo-øvelser
+description: Prøv webexercises — fra et enkelt svarfelt til en samlet quiz.
+---
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Alle spørgsmålstyper · 25–35 minutter · webexercises 1.2.0]{.meta-line}
+
+Prøv felterne, og lav gerne et forkert svar først. **Rigtigt** og **Prøv igen** vises ved svarene. I de indrammede mini-quizzer skal du først vælge **Tjek svar**. Svarene gemmes ikke efter genindlæsning.
+
+Under **Se koden** kan undervisere finde R-koden til hver type. Koden genererer felterne, når Quarto bygger siden; den studerendes kode bliver ikke kørt i browseren.
+
+## 1. Skriv et tal eller et ord
+
+::: {.exercise #demo-basic}
+
+Hvor meget er 6 gange 7? `r fitb(42, width = 6)`
+
+Hvilken funktion samler værdier i en vektor? Skriv kun navnet. `r fitb("c", width = 8)`
+
+Hvad er halvdelen af 1? Skriv `0.5` eller `.5` med punktum. `r fitb(0.5, num = TRUE, width = 6)`
+
+:::
+
+::: {.callout-note collapse="true" title="Se koden: fitb()"}
+```r
+fitb(42, width = 6)
+fitb("c", width = 8)
+fitb(0.5, num = TRUE, width = 6)
+```
+`num = TRUE` tillader udeladt nul før decimaltegnet. Uden `tol` sammenlignes tilladte tekstformer: `0.50` accepteres derfor ikke automatisk som `0.5`.
+:::
+
+## 2. Flere svar og store/små bogstaver
+
+::: {.exercise #demo-alternatives}
+
+Hvad kaldes en tabel i R? Skriv `dataframe` eller `data frame`, med valgfri brug af store bogstaver. `r fitb(c("dataframe", "data frame"), ignore_case = TRUE, ignore_ws = FALSE, width = 18)`
+
+Skriv kommandoen, der indlæser pakken `webexercises`. Mellemrum er valgfrie. `r fitb(c("library(webexercises)", 'library("webexercises")', "library('webexercises')"), ignore_ws = TRUE, width = 30)`
+
+Skriv præcis `R er sjovt`, inklusive mellemrum og stort R. `r fitb("R er sjovt", ignore_ws = FALSE, ignore_case = FALSE, width = 18)`
+
+:::
+
+::: {.callout-note collapse="true" title="Se koden: flere tilladte svar"}
+```r
+fitb(c("dataframe", "data frame"), ignore_case = TRUE,
+     ignore_ws = FALSE, width = 18)
+fitb(c("library(webexercises)", 'library("webexercises")',
+       "library('webexercises')"), ignore_ws = TRUE, width = 30)
+fitb("R er sjovt", ignore_ws = FALSE, ignore_case = FALSE, width = 18)
+```
+Dette er genkendelse af bestemte svar, ikke en generel kontrol af, om R-kode er korrekt.
+:::
+
+## 3. Numerisk tolerance
+
+::: {.exercise #demo-tolerance}
+
+Angiv π med mindst tre decimaler. Brug punktum: `r fitb(pi, tol = 0.001, width = 12)`
+
+:::
+
+`3.142` accepteres; `3.14` gør ikke. Afstanden til det rigtige svar skal være **mindre end** tolerancen.
+
+::: {.callout-note collapse="true" title="Se koden: tol"}
+```r
+fitb(pi, tol = 0.001, width = 12)
+```
+:::
+
+## 4. Et mønster i svaret
+
+::: {.exercise #demo-regex}
+
+Skriv et objektnavn bestående af præcis tre små bogstaver fra a til z, eksempelvis `abc`: `r fitb("^[a-z]{3}$", regex = TRUE, ignore_ws = FALSE, width = 10)`
+
+Skriv funktionskaldet `mean(x)` med valgfri brug af mellemrum: `r fitb(paste0("^", escape_regex("mean(x)"), "$"), regex = TRUE, width = 15)`
+
+:::
+
+::: {.callout-note collapse="true" title="Se koden: regex og escape_regex()"}
+```r
+fitb("^[a-z]{3}$", regex = TRUE, ignore_ws = FALSE, width = 10)
+fitb(paste0("^", escape_regex("mean(x)"), "$"),
+     regex = TRUE, width = 15)
+```
+`^` og `$` afgrænser hele svaret. `escape_regex()` beskytter parenteser og andre tegn med særlig betydning i regulære udtryk. Mønstret matches af JavaScript i browseren.
+:::
+
+## 5. Vælg fra en menu
+
+::: {.exercise #demo-mcq}
+
+Hvilken funktion beregner et gennemsnit? `r mcq(c("sum", answer = "mean", "length"))`
+
+Vælg en funktion, der kan opsummere en numerisk vektor: `r mcq(c(answer = "mean", answer = "sum", "library"))`
+
+:::
+
+Det andet spørgsmål har to gyldige valg. Du vælger stadig kun én mulighed ad gangen.
+
+::: {.callout-note collapse="true" title="Se koden: mcq()"}
+```r
+mcq(c("sum", answer = "mean", "length"))
+mcq(c(answer = "mean", answer = "sum", "library"))
+```
+De korrekte muligheder navngives `answer`.
+:::
+
+## 6. Sandt eller falsk
+
+::: {.exercise #demo-torf}
+
+`length(c(2, 4, 6))` giver 3. `r torf(TRUE)`
+
+`mean(c(2, 4, 6))` giver 12. `r torf(FALSE)`
+
+:::
+
+::: {.callout-note collapse="true" title="Se koden: torf()"}
+```r
+torf(TRUE)
+torf(FALSE)
+```
+Menuens `TRUE` betyder sandt, og `FALSE` betyder falsk.
+:::
+
+## 7. Længere svarmuligheder
+
+::: {.exercise #demo-longmcq}
+
+Hvad gør `x[x > 5]`?
+
+`r longmcq(c("Den udvælger altid de første fem elementer i x.", answer = "Den udvælger de elementer i x, hvis værdi er større end 5.", "Den erstatter alle værdier i x med 5."))`
+
+:::
+
+::: {.callout-note collapse="true" title="Se koden: longmcq()"}
+```r
+longmcq(c(
+  "Den udvælger altid de første fem elementer i x.",
+  answer = "Den udvælger de elementer i x, hvis værdi er større end 5.",
+  "Den erstatter alle værdier i x med 5."
+))
+```
+:::
+
+## 8. Hints og løsningsforslag
+
+Beregn gennemsnittet af 3, 6 og 9 i dit eget R-miljø. Åbn først et hint, hvis du har brug for hjælp.
+
+`r hide("Vis hint")`
+
+Saml tallene med `c()`, og brug derefter `mean()`.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+```{r}
+mean(c(3, 6, 9))
+```
+
+Summen er 18, og der er tre tal. Derfor er gennemsnittet 6.
+
+`r unhide()`
+
+::: {.callout-note collapse="true" title="Se koden: hide() og unhide()"}
+Sæt et inline-kald til `hide("Vis hint")` før hjælpeteksten og et inline-kald til `unhide()` efter. De præcise inline-markører kan kopieres fra [skabelonen](templates/oevelse.qmd).
+
+Mellem de to kald kan du placere tekst, kode, tabeller og figurer.
+:::
+
+### Skjul en hel kodeblok
+
+Pakken understøtter også chunk-indstillingen `webex.hide`. Her skjules både kode og resultat:
+
+```{r}
+#| webex.hide: "Vis kode og figur"
+#| fig-width: 6
+#| fig-height: 3
+#| fig-alt: "Tre søjler med højderne 3, 6 og 9."
+barplot(c(3, 6, 9), names.arg = c("A", "B", "C"),
+        col = "#817092", border = NA, ylab = "Værdi")
+```
+
+::: {.callout-note collapse="true" title="Se koden: chunk-indstillingen"}
+Sæt `#| webex.hide: "Vis kode og figur"` øverst i en R-chunk. Pakken registrerer den nødvendige knitr-hook, når den indlæses.
+:::
+
+## 9. Tjek en hel sektion
+
+::: {.webex-check .webex-box #demo-check}
+
+Besvar begge spørgsmål, og vælg derefter **Tjek svar**.
+
+Hvad giver `length(1:5)`? `r fitb(5, width = 5)`
+
+`sum(c(1, 2, 3))` giver 6. `r torf(TRUE)`
+
+:::
+
+Feedbacken og antallet af rigtige svar vises samlet. Knappen **Skjul feedback** skjuler markeringerne igen; den sletter ikke dine indtastninger.
+
+::: {.callout-note collapse="true" title="Se koden: webex-check og webex-box"}
+Omslut spørgsmålene af en Quarto-div med klasserne `.webex-check .webex-box`. `webex-check` giver kontrolknappen og optællingen; `webex-box` tegner rammen. Undgå at placere en kontrolleret sektion inde i en anden.
+:::
+
+## 10. En quiz fra R
+
+`quiz()` samler flere typer spørgsmål i ét kald. Denne funktion findes i den version af pakken, som sitet bruger.
+
+```{r}
+#| echo: false
+quiz(
+  "R tæller fra 1." = TRUE,
+  "Vælg funktionen, der finder en sum." = c("mean", answer = "sum", "length"),
+  "Skriv R-pakkens navn: webexercises." = "webexercises",
+  "Hvad er 2 + 2?" = 4L,
+  "Hvad er halvdelen af 1? Brug punktum." = 0.5,
+  "Angiv pi med tre decimaler." = c(pi, 0.001),
+  title = "En blandet quiz"
+)
+```
+
+::: {.callout-note collapse="true" title="Se koden: quiz()"}
+```r
+quiz(
+  "R tæller fra 1." = TRUE,
+  "Vælg funktionen, der finder en sum." = c("mean", answer = "sum", "length"),
+  "Skriv R-pakkens navn: webexercises." = "webexercises",
+  "Hvad er 2 + 2?" = 4L,
+  "Hvad er halvdelen af 1? Brug punktum." = 0.5,
+  "Angiv pi med tre decimaler." = c(pi, 0.001),
+  title = "En blandet quiz"
+)
+```
+Angiv `answer =` ved multiple choice. En tekst uden denne navngivning bliver et tekstfelt. Rækkefølgen af menuens muligheder blandes under bygningen. Den er ikke forskellig for hver besøgende.
+
+I version 1.2.0 bliver argumenterne `show_box` og `show_check` ikke anvendt korrekt i HTML-outputtet. Brug derfor almindelige Quarto-divs, hvis du vil styre ramme og kontrolknap separat.
+:::
+
+### En quiz fra en tekstfil
+
+```{r}
+#| echo: false
+quiz("data/demo-quiz.txt", title = "Spørgsmål fra en fil")
+```
+
+::: {.callout-note collapse="true" title="Se koden: filbaserede spørgsmål"}
+```r
+quiz("data/demo-quiz.txt", title = "Spørgsmål fra en fil")
+```
+[Se tekstfilen](data/demo-quiz.txt). Hver linje har formen `Spørgsmål = R-udtryk`.
+
+Filen evalueres som R-kode under bygningen og skal derfor være skrevet af en betroet underviser. Brug ikke studerendes uploadede filer her.
+:::
+
+## 11. Beregn facit, når siden bygges
+
+```{r}
+#| include: false
+vaerdier <- c(4, 8, 12)
+```
+
+::: {.exercise #demo-dynamic}
+
+Vi har værdierne `r paste(vaerdier, collapse = ", ")`. Hvad er gennemsnittet? `r fitb(mean(vaerdier), width = 6)`
+
+:::
+
+::: {.callout-note collapse="true" title="Se koden: beregnet facit"}
+```r
+vaerdier <- c(4, 8, 12)
+fitb(mean(vaerdier), width = 6)
+```
+Facit beregnes af R under rendering. Det bliver derefter en del af HTML-siden. Der er ingen R-server, og facit er ikke hemmeligt.
+:::
+
+## 12. Afrunding og hjælpefunktioner
+
+::: {.exercise #demo-rounding}
+
+Hvad giver `round2(2.5)` med standardindstillingerne? `r fitb(round2(2.5), width = 6)`
+
+:::
+
+```{r}
+#| echo: true
+round2(2.5)
+round2(1.235, digits = 2)
+strip_lzero("0.05")
+escape_regex("mean(x)")
+```
+
+`round2()` afrunder halve værdier væk fra nul; R's `round()` bruger afrunding til lige ved præcise halve værdier. `strip_lzero()` fjerner nullet før decimalpunktummet. `escape_regex()` er vist i brug i afsnittet om mønstre.
+
+## 13. Farver og udseende
+
+Dette kald til `style_widgets()` udføres på demosiden og bruger navngivne R-farver:
+
+```{r}
+#| results: asis
+#| echo: true
+style_widgets(incorrect = "firebrick", correct = "darkgreen", highlight = "slateblue")
+```
+
+Farverne gælder hele siden. Sitets fælles CSS styrer afstande, typografi og layout. Feedback gives også med tekst, så farverne ikke står alene.
+
+## 14. Opsætning og øvrige funktioner
+
+Alle aktive spørgsmålstyper og svarregler i **webexercises 1.2.0** er demonstreret ovenfor. Følgende funktioner opretter eller ændrer projekter; de er forfatterværktøjer og skal ikke køres, hver gang en studerende åbner siden.
+
+| Funktion | Formål |
+|---|---|
+| `add_to_quarto()` | Føjer CSS, JavaScript, demo og opsætning til et Quarto-projekt. Dette site er allerede sat op. |
+| `create_quarto_doc()` | Opretter en selvstændig Quarto-demo med hjælpefiler. |
+| `add_to_quarto_file()` | Tilføjer understøttelse til en eksisterende Quarto-fil. |
+| `add_to_rmarkdown_file()` | Tilføjer understøttelse til en R Markdown-fil. |
+| `rmd_webex_support()` | Hjælper med understøttelse af HTML/LaTeX i dokumenter. |
+| `webexercises_default()` | R Markdown-outputformat med webexercises. |
+| `add_to_bookdown()` | Opsætter hjælpefiler til et bookdown-projekt. |
+| `add_to_pkgdown()` | Opsætter webexercises i dokumentationen til en R-pakke. |
+| `use_webex_vignette()` | Opretter en vignette eller artikel i en R-pakke. |
+| `webex_vignette()` | Outputformat til vignetter. |
+| `total_correct()` | Udfaset. Brug `.webex-check`, som automatisk viser en optælling. |
+
+Dette site bruger HTML. Pakken har også funktioner til LaTeX/PDF, men disse giver ikke browserens interaktive svarfelter.
+
+[Se kildekoden for den anvendte version](https://github.com/cran/webexercises/tree/a7af9e8ec7b825c91cea233d1ef8d958c0d6846b) · [Lav din egen øvelsesside](vejledning/ny-oevelsesside.qmd)

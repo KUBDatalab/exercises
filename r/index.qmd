@@ -1,0 +1,30 @@
+---
+title: Øvelser i R
+description: Find øvelser til det kursus, du har deltaget i.
+toc: false
+---
+
+Vælg et kursus, og fortsæt i dit eget tempo. Opgaverne kan gentages, og du behøver ikke logge ind.
+
+::: {.card-grid}
+::: {.course-card}
+[R · Grundlæggende]{.card-label}
+
+## Introduktion til R
+
+Øv objekter, vektorer og indeksering efter introduktionskurset.
+
+[Start her →](intro/index.qmd)
+:::
+::: {.course-card}
+[R · Demo]{.card-label}
+
+## Prøv spørgsmålstyperne
+
+Lær sidernes interaktive øvelser at kende. Demoen viser også underviserne, hvordan de er bygget.
+
+[Demo-øvelser →](../demo-oevelser.qmd)
+:::
+:::
+
+Flere øvelsessæt tilføjes efterhånden, som de er klar.

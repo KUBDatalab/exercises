@@ -1,0 +1,8 @@
+/.quarto/
+/_site/
+/_freeze/
+/node_modules/
+/test-results/
+.Rhistory
+.RData
+.Rproj.user/

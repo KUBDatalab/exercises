@@ -1,0 +1,21 @@
+---
+title: Introduktion til R
+description: Gentag grundbegreberne fra introduktionskurset.
+toc: false
+---
+
+Du har arbejdet med R på kurset. Her kan du prøve grundbegreberne igen i mindre opgaver.
+
+::: {.course-card}
+[Øvelsessæt 01 · 10–15 minutter]{.card-label}
+
+## Objekter, vektorer og indeksering
+
+Opret et objekt, forudsig et resultat og vælg elementer fra en vektor.
+
+[Start øvelsessættet →](vektorer.qmd)
+:::
+
+**Forudsætninger:** Du har gennemgået den grundlæggende introduktion til R. Til den afsluttende opgave skal du kunne køre R, eksempelvis i Positron eller RStudio.
+
+[Åbn kursusmaterialet: Introduction to R](https://kubdatalab.github.io/R-intro/).

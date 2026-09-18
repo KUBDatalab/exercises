@@ -1,0 +1,141 @@
+---
+title: Lav en ny øvelsesside
+description: Fra en kopi af skabelonen til et nyt øvelsessæt på sitet.
+---
+
+Siderne skrives i **Quarto** (`.qmd`). R genererer spørgsmålene med **webexercises 1.2.0**, og den færdige side fungerer i browseren. Du skal kun tilføje indhold og navigation; logo, layout og statistik følger med automatisk.
+
+## 1. Klargør projektet
+
+Klon eller hent [KUBDatalab/exercises](https://github.com/KUBDatalab/exercises). Åbn projektmappen i Positron eller RStudio. Du skal have R og [Quarto CLI](https://quarto.org/docs/get-started/) installeret.
+
+Installér pakkerne én gang i R:
+
+```r
+install.packages(c("remotes", "knitr", "rmarkdown"))
+remotes::install_version("webexercises", version = "1.2.0", upgrade = "never")
+```
+
+Sitet fastholder denne version, så R-funktioner og de medfølgende JavaScript-filer passer sammen. Når versionen opdateres, skal både `scripts/setup.R`, workflowet og `assets/vendor/` opdateres og demoen kontrolleres.
+
+## 2. Kopiér skabelonen
+
+Kopiér `templates/oevelse.qmd` til eksempelvis **`r/intro/min-nye-oevelse.qmd`**. Du kan gøre det i filoversigten eller i R fra projektets rod:
+
+```r
+file.copy("templates/oevelse.qmd", "r/intro/min-nye-oevelse.qmd")
+```
+
+[Se skabelonens kildekode på GitHub](https://github.com/KUBDatalab/exercises/blob/main/templates/oevelse.qmd).
+
+Behold setup-chunken, som indlæser `scripts/setup.R`. Projektet bruger `execute-dir: project`, så filstier i R-kode altid regnes fra projektets rod, også på sider i undermapper.
+
+Ret `title`, `description`, tidsforbrug og læringsmål. Filnavne bør være korte og uden mellemrum, eksempelvis `filtrering.qmd`.
+
+## 3. Skriv spørgsmål
+
+Brug inline R til et felt midt i en sætning. Skabelonen viser præcis, hvordan backticks og `r` placeres. Disse er de centrale funktioner:
+
+| Opgave | Kald |
+|---|---|
+| Et bestemt tal | `fitb(42, width = 6)` |
+| Et ord | `fitb("mean", width = 12)` |
+| Flere acceptable stavemåder | `fitb(c("dataframe", "data frame"), ignore_case = TRUE)` |
+| Et tal med tolerance | `fitb(pi, tol = 0.001)` |
+| En menu | `mcq(c("sum", answer = "mean", "length"))` |
+| Sandt/falsk | `torf(TRUE)` |
+| Lange svarmuligheder | `longmcq(c("Forkert", answer = "Rigtigt"))` |
+
+**Navngiv den korrekte valgmulighed `answer`.** Ved numeriske svar bruges decimalpunktum. Tolerancen er en strengt mindre-end-grænse.
+
+Lad [demoen](../demo-oevelser.qmd) være dit opslagsværk: den viser også regulære udtryk, store/små bogstaver, mellemrum, beregnede facit og `quiz()`.
+
+### Feedback med det samme eller på knap
+
+Et enkelt felt giver feedback med det samme. En div med klasserne `.webex-check .webex-box` samler flere spørgsmål bag **Tjek svar**. Kopiér denne struktur fra skabelonen, og læg ikke sådanne sektioner inden i hinanden.
+
+### En hel quiz i en R-chunk
+
+En almindelig R-chunk kan returnere `quiz()` direkte:
+
+```r
+quiz(
+  "R tæller fra 1." = TRUE,
+  "Hvilken funktion giver et gennemsnit?" =
+    c("sum", answer = "mean", "length"),
+  "Hvad er 2 + 2?" = 4L,
+  title = "Tjek dig selv"
+)
+```
+
+Brug `#| echo: false` øverst i chunken, hvis de studerende kun skal se quizzen. Andre HTML-genererende funktioner kan vises fra en chunk med `#| results: asis` og eksempelvis `cat(fitb(5))`.
+
+## 4. Tilføj hint og løsning
+
+Placér et inline-kald til `hide("Vis hint")` før hjælpeteksten og et til `unhide()` bagefter. Lav en separat blok til `hide("Vis løsningsforslag")`.
+
+Et hint bør hjælpe den studerende med næste skridt. Løsningsforslaget bør forklare hvorfor koden virker og gerne vise resultatet. Skriv ikke, at kun én bestemt kode er korrekt, hvis opgaven kan løses på flere måder.
+
+En hel R-chunk kan også skjules med `#| webex.hide: "Vis kode og resultat"`.
+
+## 5. Knyt siden til et kursus
+
+Tilføj et link på `r/intro/index.qmd`. Tilføj også filen under det rette kursus i `_quarto.yml`, eksempelvis:
+
+```yaml
+contents:
+  - r/intro/index.qmd
+  - r/intro/vektorer.qmd
+  - r/intro/min-nye-oevelse.qmd
+```
+
+Til et nyt kursus oprettes en ny mappe, eksempelvis `r/visualisering/`, med sin egen `index.qmd`. Tilføj et kursuskort på `r/index.qmd` og en sektion i sidemenuen. Link også til det eksisterende kursusmateriale.
+
+## 6. Se siden lokalt
+
+Kør dette i **terminalen**, fra projektmappen:
+
+```bash
+quarto preview
+```
+
+Lav en fuld rendering før commit:
+
+```bash
+quarto render
+```
+
+Afprøv mindst ét rigtigt, ét forkert og ét tomt svar for hver spørgsmålstype, du bruger. Tjek også hints, løsninger, menulinks og siden på en smal skærm.
+
+Browserkontrollerne kan køres med:
+
+```bash
+npm install --no-save playwright@1.55.0
+npx playwright install chromium
+node tests/site.test.mjs
+```
+
+## 7. Udgiv ændringen
+
+Commit og push til **KUBDatalab/exercises**. Workflowet **Build and publish Quarto site** installerer R og Quarto, bygger sitet, tester interaktionerne og lægger resultatet på `gh-pages` i samme repo.
+
+Første gang skal GitHub Pages være sat til **Deploy from a branch → gh-pages → / (root)** under repoets **Settings → Pages**. Herefter er adressen:
+
+[https://kubdatalab.github.io/exercises/](https://kubdatalab.github.io/exercises/)
+
+Et mislykket build vises under [Actions](https://github.com/KUBDatalab/exercises/actions). Det tidligere publicerede site bevares. Workflowet gemmer også det byggede site og skærmbilleder som artifacts.
+
+## Python senere
+
+Opret eksempelvis `python/intro/` med samme struktur, og føj `python/**/*.qmd` til projektets `render`-liste. Opret en Python-indgang i menuen og på forsiden.
+
+Spørgsmål om Python kan stadig genereres med R/webexercises. Python-kode vises i almindelige kodeblokke med sproget `python`, og den studerende kører den i sit eget miljø. Hvis Python-kode også skal **eksekveres under bygningen**, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.
+
+## Hvad siden gør og ikke gør
+
+- Facit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.
+- Sitet kører ikke vilkårlig R- eller Python-kode fra den studerende.
+- Besøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.
+- Der er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.
+
+[Se opsætningen af besøgsstatistik](statistik.qmd).

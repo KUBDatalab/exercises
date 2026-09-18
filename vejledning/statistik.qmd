@@ -1,0 +1,40 @@
+---
+title: Besøgsstatistik
+description: Se, hvilke øvelsessider der bliver besøgt, og følg brugen over tid.
+---
+
+Sitet er koblet til **GoatCounter** med den tælleradresse, KUB Datalab har oplyst. Statistikken begynder, når de færdige sider er udgivet og besøgt; den viser ikke besøg fra før tilkoblingen.
+
+[Åbn GoatCounter →](https://kubdatalab.goatcounter.com/){.btn .btn-primary}
+
+Log ind med den konto, der administrerer tælleren, hvis oversigten kræver login.
+
+## Hvad kan vi se?
+
+GoatCounter viser besøg for de enkelte sidestier, eksempelvis `/exercises/demo-oevelser.html` og `/exercises/r/intro/vektorer.html`. Vælg et datointerval i oversigten for at sammenligne brugen over tid.
+
+Det viser, **hvor meget siderne bliver besøgt**. Det dokumenterer ikke, at en besøgende har løst opgaverne eller lært stoffet. Genbesøg og blokering af statistik påvirker også tallene.
+
+## Hvad registrerer dette site?
+
+Det fælles script `assets/analytics.js` indlæser GoatCounters tæller på det publicerede domæne `kubdatalab.github.io`. Det registrerer en sidevisning ved indlæsning og sender sidens sti og titel. URL-parametre, ankre og henvisningsadresse udelades af vores opsætning.
+
+**Opgavesvar, quizresultater og indtastet kode sendes ikke.** Vi har ikke tilføjet hændelsessporing på knapper eller svarfelter. GoatCounters tæller kan desuden behandle tekniske browseroplysninger som beskrevet i tjenestens dokumentation.
+
+Lokale forhåndsvisninger og automatiske tests på localhost tælles ikke. Browserudvidelser kan blokere statistikken.
+
+## Kontrollér, at tælleren virker
+
+1. Åbn en publiceret øvelsesside uden en browserudvidelse, der blokerer GoatCounter.
+2. Se efter sidens sti i [GoatCounter](https://kubdatalab.goatcounter.com/).
+3. Hvis besøget mangler, kontrollér browserens netværksfane for `count.js` og kaldet til tælleradressen.
+
+Integrationen er sat op i kildekoden; modtagelse af besøg skal bekræftes i jeres konto efter publicering.
+
+## Ændr eller slå statistik fra
+
+Tælleradressen findes kun ét sted: `GOATCOUNTER_ENDPOINT` øverst i `assets/analytics.js`. Sæt den til en tom streng (`""`) for at deaktivere statistik, og byg sitet igen. Hvis domænet ændres, skal domænekontrollen i samme fil også opdateres.
+
+Ved udskiftning af udbyder skal teksten på [Om sitet](../om.qmd) tilpasses.
+
+Kilder: [GoatCounter: Getting started](https://www.goatcounter.com/help/start), [JavaScript API](https://www.goatcounter.com/help/js), [GoatCounters privatlivspolitik](https://www.goatcounter.com/privacy).

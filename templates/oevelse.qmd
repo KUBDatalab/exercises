@@ -1,0 +1,41 @@
+---
+title: Min nye øvelse
+description: En kort beskrivelse af, hvad den studerende skal øve.
+---
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Introduktion til R · 10 minutter]{.meta-line}
+
+Efter øvelsen kan du …
+
+## Opgave 1
+
+::: {.exercise .webex-check}
+
+Hvad giver `sum(c(2, 3))`? `r fitb(5, width = 6)`
+
+:::
+
+`r hide("Vis hint")`
+
+Læg de to tal sammen.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+```{r}
+sum(c(2, 3))
+```
+
+`r unhide()`
+
+## Arbejd selv
+
+Skriv en opgave, som den studerende skal løse i sit eget R-miljø.
+
+[Tilbage til kursets øvelser](index.qmd)

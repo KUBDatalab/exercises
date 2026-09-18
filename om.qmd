@@ -1,0 +1,24 @@
+---
+title: Om øvelserne
+description: Selvstudium efter et kursus hos KUB Datalab.
+---
+
+KUB Datalab er en del af Københavns Universitetsbibliotek. Her finder du øvelser, som hjælper dig med at bruge det, du har lært på vores kurser.
+
+## Sådan bruger du siderne
+
+Vælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.
+
+De korte spørgsmål besvares på siden. Større programmeringsopgaver løser du i dit eget R-miljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning.
+
+## Besøgsstatistik
+
+Vi bruger GoatCounter til at se, hvor meget de enkelte sider bliver besøgt. Vi sender ikke dine øvelsessvar, quizresultater eller indtastede kode til statistiksystemet. Sidernes URL-parametre og ankre udelades fra vores statistikopsætning.
+
+[Læs om GoatCounters behandling af data](https://www.goatcounter.com/privacy). Undervisere kan læse mere på siden om [besøgsstatistik](vejledning/statistik.qmd).
+
+## Materialer og kontakt
+
+[KUB Datalabs hjemmeside](https://kub.kb.dk/datalab) · [Kildekode og fejlrapporter](https://github.com/KUBDatalab/exercises)
+
+Sitet er bygget med [Quarto](https://quarto.org/) og [webexercises](https://psyteachr.github.io/webexercises/). Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets `assets/ATTRIBUTION.md`.

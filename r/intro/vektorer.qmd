@@ -1,0 +1,80 @@
+---
+title: Objekter, vektorer og indeksering
+description: Øv dig i at gemme værdier, regne med vektorer og udvælge elementer.
+---
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Introduktion til R · 10–15 minutter]{.meta-line}
+
+Efter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.
+
+## 1. Læs en vektor
+
+::: {.exercise .webex-check}
+
+Se på koden, og forudsig resultatet uden at køre den først.
+
+```r
+maal <- c(4, 7, 9, 12)
+```
+
+Hvor mange elementer indeholder `maal`? `r fitb(4, width = 5)`
+
+Hvad er værdien af `maal[2]`? `r fitb(7, width = 5)`
+
+Hvad er værdien af `sum(maal)`? `r fitb(32, width = 5)`
+
+:::
+
+`r hide("Vis hint")`
+
+R tæller positioner fra 1. `sum()` lægger alle elementerne sammen.
+
+`r unhide()`
+
+## 2. Vælg den rigtige kode
+
+::: {.exercise .webex-check}
+
+Hvilken kode udvælger det første og tredje element?
+
+`r longmcq(c("maal[1:3]", answer = "maal[c(1, 3)]", "maal[1, 3]"))`
+
+:::
+
+`r hide("Vis forklaring")`
+
+`c(1, 3)` indeholder netop de to positioner. `1:3` omfatter også position 2. Et komma mellem indeks bruges til flere dimensioner, eksempelvis rækker og kolonner i en dataframe.
+
+`r unhide()`
+
+## 3. Arbejd selv i R
+
+Opret en vektor `timer` med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.
+
+::: {.exercise .webex-check}
+
+Hvad er gennemsnittet? `r fitb(4, width = 5)`
+
+Hvor mange værdier er større end 3? `r fitb(2, width = 5)`
+
+:::
+
+`r hide("Vis løsningsforslag")`
+
+```{r}
+timer <- c(2, 3, 5, 6)
+sum(timer)
+mean(timer)
+timer[timer > 3]
+```
+
+Den logiske test `timer > 3` udvælger værdierne 5 og 6.
+
+`r unhide()`
+
+[← Tilbage til kursets øvelser](index.qmd) · [Se kursusmaterialet](https://kubdatalab.github.io/R-intro/)
