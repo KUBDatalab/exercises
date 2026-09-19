@@ -3,6 +3,8 @@ title: Objekter, vektorer og indeksering
 description: Øv dig i at gemme værdier, regne med vektorer og udvælge elementer.
 ---
 
+{{< include ../../_extensions/r-wasm/live/_knitr.qmd >}}
+
 ```{r}
 #| include: false
 source("scripts/setup.R")
@@ -11,6 +13,8 @@ source("scripts/setup.R")
 [Introduktion til R · 10–15 minutter]{.meta-line}
 
 Efter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.
+
+Kodefelterne kører R direkte i din browser. Vent på indlæsningen, redigér koden, og vælg **Run Code** (eller Ctrl/Cmd + Enter). Første indlæsning kan tage lidt tid og kræver internet. **Start Over** gendanner feltets kode; genindlæs siden for at nulstille hele R-sessionen. Du kan også bruge dit eget R-miljø.
 
 ## 1. Læs en vektor
 
@@ -52,9 +56,33 @@ Hvilken kode udvælger det første og tredje element?
 
 `r unhide()`
 
+### Afprøv dine forudsigelser
+
+Når du har svaret på opgave 1 og 2, kan du undersøge vektoren her. Tilføj selv kald til eksempelvis `length()`, `sum()` og indeksering.
+
+::: {#r-vector-lab}
+```{webr}
+#| caption: Undersøg en vektor
+maal <- c(4, 7, 9, 12)
+maal
+# Skriv dine undersøgelser her
+```
+:::
+
 ## 3. Arbejd selv i R
 
 Opret en vektor `timer` med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.
+
+::: {#r-independent-lab}
+```{webr}
+#| caption: Din løsning
+# Opret timer med c()
+# Beregn sum og gennemsnit
+# Udvælg værdier større end 3
+```
+:::
+
+Kør din kode, og skriv derefter resultaterne i svarfelterne. **Tjek svar** kontrollerer felterne, ikke den kode, du har skrevet.
 
 ::: {.exercise .webex-check}
 

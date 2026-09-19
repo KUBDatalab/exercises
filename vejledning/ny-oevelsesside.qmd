@@ -18,6 +18,14 @@ remotes::install_version("webexercises", version = "1.2.0", upgrade = "never")
 
 Sitet fastholder denne version, så R-funktioner og de medfølgende JavaScript-filer passer sammen. Når versionen opdateres, skal både `scripts/setup.R`, workflowet og `assets/vendor/` opdateres og demoen kontrolleres.
 
+Installér også Quarto Live fra terminalen i projektets rod:
+
+```bash
+quarto add r-wasm/quarto-live@v0.2.0 --no-prompt
+```
+
+Udvidelsen installeres automatisk i GitHub Actions. `_extensions/` er genereret og skal ikke committes. Projektet bruger `live-html`, `engine: knitr` og webR v0.6.0.
+
 ## 2. Kopiér skabelonen
 
 Kopiér `templates/oevelse.qmd` til eksempelvis **`r/intro/min-nye-oevelse.qmd`**. Du kan gøre det i filoversigten eller i R fra projektets rod:
@@ -78,6 +86,47 @@ Et hint bør hjælpe den studerende med næste skridt. Løsningsforslaget bør f
 
 En hel R-chunk kan også skjules med `#| webex.hide: "Vis kode og resultat"`.
 
+## R i browseren {#r-i-browseren}
+
+Brug et redigerbart R-felt, når den studerende skal undersøge data, skrive kode eller tegne en figur. Et tekstspørgsmål behøver ikke sit eget R-felt. Se [demoen](../demo-oevelser.qmd#r-i-browseren) og [vektorøvelserne](../r/intro/vektorer.qmd).
+
+Skabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien `../../_extensions/r-wasm/live/_knitr.qmd` passer til sider i `r/intro/`. På en side i projektets rod bruges `_extensions/r-wasm/live/_knitr.qmd`. Stien regnes fra `.qmd`-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.
+
+Kopiér denne blok til din øvelsesside:
+
+````markdown
+```{webr}
+#| caption: Undersøg tallene
+x <- c(2, 4, 6)
+mean(x)
+```
+````
+
+`{webr}` betyder, at koden køres af den studerende i browseren. En almindelig `{r}`-chunk køres derimod under bygningen. Inline R og webexercises-funktioner skal fortsat bruge build-R. Objekter og pakker fra build-R findes ikke automatisk i browseren.
+
+Brug startkode og kommentarer til opgaver, og læg det færdige løsningsforslag bag et hint eller en løsningsknap. Tilføj et webexercises-svarfelt efter kodefeltet, hvis den studerende skal aflevere et beregnet resultat. Der er ingen automatisk bedømmelse af koden.
+
+### Betjening og fælles objekter
+
+- **Run Code** eller Ctrl/Cmd + Enter kører feltet; output og figurer vises nedenunder. Felterne kører ikke automatisk.
+- Felter på samme side deler R-objekter. Sørg for, at hvert eksempel kan køres selvstændigt, eller skriv tydeligt, hvilket felt der skal køres først.
+- **Start Over** nulstiller feltets kode og output, men fjerner ikke objekter fra sessionen. Genindlæsning starter en ny session og nulstiller også øvelsessvarene.
+- Kode og resultater gemmes ikke mellem besøg. Første indlæsning kræver internet. Hvis indlæsningen fejler, kan den studerende stadig kopiere koden til lokal R.
+- En kørsel har en tidsgrænse på 30 sekunder. Hold øvelserne små og undgå tunge datasæt.
+
+### Pakker og data
+
+De nuværende eksempler bruger base R. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:
+
+```yaml
+webr:
+  packages: [ggplot2]
+```
+
+Brug derefter `library(ggplot2)` i en `{webr}`-blok. Test pakken i browseren; en pakke installeret i GitHub Actions er ikke dermed tilgængelig i webR. Projektet indlæser som udgangspunkt ingen datafiler i R-sessionen (`resources: []`). Tilføj nødvendige filer via sidens `webr.resources` efter [Quarto Lives vejledning](https://r-wasm.github.io/quarto-live/), og test deres stier fra den udgivne side.
+
+Se også [Quarto Lives dokumentation](https://r-wasm.github.io/quarto-live/) for pakker, kodefelter og Python.
+
 ## 5. Knyt siden til et kursus
 
 Tilføj et link på `r/intro/index.qmd`. Tilføj også filen under det rette kursus i `_quarto.yml`, eksempelvis:
@@ -105,6 +154,8 @@ Lav en fuld rendering før commit:
 quarto render
 ```
 
+Afprøv R-felterne med ændret kode, et forventet resultat og eventuelle figurer. Kontrollér, at en kodefejl kan rettes og køres igen.
+
 Afprøv mindst ét rigtigt, ét forkert og ét tomt svar for hver spørgsmålstype, du bruger. Tjek også hints, løsninger, menulinks og siden på en smal skærm.
 
 Browserkontrollerne kan køres med:
@@ -129,12 +180,12 @@ Et mislykket build vises under [Actions](https://github.com/KUBDatalab/exercises
 
 Opret eksempelvis `python/intro/` med samme struktur, og føj `python/**/*.qmd` til projektets `render`-liste. Opret en Python-indgang i menuen og på forsiden.
 
-Spørgsmål om Python kan stadig genereres med R/webexercises. Python-kode vises i almindelige kodeblokke med sproget `python`, og den studerende kører den i sit eget miljø. Hvis Python-kode også skal **eksekveres under bygningen**, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.
+Spørgsmål om Python kan stadig genereres med R/webexercises. Quarto Live understøtter også redigerbare `{pyodide}`-blokke til Python i browseren. Behold knitr-opsætningen til webexercises, og afprøv Python-runtime og pakker særskilt, når det første Python-kursus tilføjes. Almindelige `python`-kodeblokke viser kun koden. Hvis Python-kode også skal **eksekveres under bygningen**, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.
 
 ## Hvad siden gør og ikke gør
 
 - Facit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.
-- Sitet kører ikke vilkårlig R- eller Python-kode fra den studerende.
+- R-felterne kører den studerendes kode lokalt i browseren via WebAssembly. Der er ingen fælles R-server.
 - Besøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.
 - Der er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.
 

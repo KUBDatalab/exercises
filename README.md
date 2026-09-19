@@ -18,6 +18,7 @@ remotes::install_version("webexercises", version = "1.2.0", upgrade = "never")
 ```
 
 ```bash
+quarto add r-wasm/quarto-live@v0.2.0 --no-prompt
 quarto preview
 quarto render
 ```
@@ -40,7 +41,7 @@ node tests/site.test.mjs
 
 Browserkontrollen tester rigtige/forkerte/tomme svar, tolerance, regex, menuer,
 radiofelter, quizzer, skjulte løsninger, danske kontrolknapper, lokal linkintegritet,
-logo og mobilbredde. Screenshots gemmes i `test-results/`.
+logo, mobilbredde og faktisk R-eksekvering med redigering, figurer og fejlretning. Screenshots gemmes i `test-results/`.
 
 ## Statistik
 
@@ -56,3 +57,11 @@ Versionen er fastholdt til 1.2.0. `assets/vendor/` indeholder uændrede upstream
 og normaliserer to upstream-kanttilfælde ved tolerance/regex. `quiz()`-argumenterne
 `show_box`/`show_check` virker ikke som forventet i upstream 1.2.0 HTML; brug divs.
 Se `assets/ATTRIBUTION.md` for kilder og tredjepartslicens.
+
+## R i browseren
+
+Quarto Live v0.2.0 og webR v0.6.0 giver redigerbare `{webr}`-blokke på demoen
+og R-øvelsessiden. CI installerer udvidelsen før rendering; `_extensions/` er
+genereret og ignoreret. Bygningen bruger fortsat knitr og webexercises.
+Browserens R-session bruger base R, gemmer ikke kode og er separat fra build-R.
+Se forfattervejledningen for opsætning, pakker og sessionens levetid.

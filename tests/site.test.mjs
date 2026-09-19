@@ -95,7 +95,34 @@ try {
   assert.equal(await quizzes.count(), 1);
   assert.equal(await quizzes.locator('input, select').count(), 6);
   assert.equal(await page.locator('.webex-check').filter({hasText:'Spørgsmål fra en fil'}).count(), 1);
+  // Exercise the real downloaded WebAssembly runtime, not a mocked editor.
+  const runR = async (id, code, expected) => {
+    const block = page.locator(id);
+    const run = block.locator('.exercise-editor-btn-run-code:not(.disabled)');
+    await run.waitFor({state:'visible', timeout:120000});
+    if (code !== null) await block.locator('.cm-content[contenteditable="true"]').fill(code);
+    await run.click();
+    if (expected) await block.locator('.cell-output-container-webr').getByText(expected, {exact:false}).last().waitFor({timeout:30000});
+    return block;
+  };
+  await runR('#demo-r-calculate', null, '[1] 6');
+  await runR('#demo-r-calculate', 'demo_tal <- c(4, 8, 12)\nmean(demo_tal)', '[1] 8');
+  await runR('#demo-r-session', null, '[1] 24');
+  await runR('#demo-r-session', 'stop("demo_error")', 'demo_error');
+  await runR('#demo-r-session', 'sum(demo_tal) + 1', '[1] 25');
+  await runR('#demo-r-plot', null, null);
+  await page.locator('#demo-r-plot canvas').first().waitFor({timeout:30000});
+  await page.locator('#demo-r-calculate').getByRole('button', {name:'Start Over',exact:true}).click();
+  assert.match(await page.locator('#demo-r-calculate .cm-content').innerText(), /c\(3, 6, 9\)/);
+  await runR('#demo-r-calculate', null, '[1] 6');
   await page.screenshot({path:'test-results/demo-desktop.png',fullPage:true});
+  await visit('/r/intro/vektorer.html');
+  await runR('#r-independent-lab', 'timer <- c(2, 3, 5, 6)\nmean(timer)', '[1] 4');
+  const answer = page.locator('.webex-check').last();
+  await answer.locator('input').nth(0).fill('4');
+  await answer.locator('input').nth(1).fill('2');
+  await answer.getByRole('button', {name:'Tjek svar',exact:true}).click();
+  assert.equal(await answer.locator('.webex-total_correct').textContent(), '2 af 2 rigtige');
   // Check every internal HTML link and locally referenced image/script/stylesheet.
   const walk = async dir => (await Promise.all((await readdir(dir,{withFileTypes:true})).map(x => x.isDirectory() ? walk(resolve(dir,x.name)) : resolve(dir,x.name)))).flat();
   for (const file of (await walk(root)).filter(x => x.endsWith('.html'))) {

@@ -16,6 +16,6 @@ Opret et objekt, forudsig et resultat og vælg elementer fra en vektor.
 [Start øvelsessættet →](vektorer.qmd)
 :::
 
-**Forudsætninger:** Du har gennemgået den grundlæggende introduktion til R. Til den afsluttende opgave skal du kunne køre R, eksempelvis i Positron eller RStudio.
+**Forudsætninger:** Du har gennemgået den grundlæggende introduktion til R. Du kan køre koden direkte i øvelsessidens R-felter. Ingen lokal installation er nødvendig.
 
 [Åbn kursusmaterialet: Introduction to R](https://kubdatalab.github.io/R-intro/).

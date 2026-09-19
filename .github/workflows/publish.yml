@@ -30,6 +30,8 @@ jobs:
           install.packages(c("remotes", "knitr", "rmarkdown"))
           remotes::install_version("webexercises", version = "1.2.0", upgrade = "never")
           stopifnot(as.character(packageVersion("webexercises")) == "1.2.0")
+      - name: Install Quarto Live
+        run: quarto add r-wasm/quarto-live@v0.2.0 --no-prompt
       - name: Render website
         run: quarto render
       - uses: actions/setup-node@v4

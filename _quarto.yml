@@ -60,8 +60,16 @@ website:
   search:
     location: navbar
     type: overlay
+engine: knitr
 format:
-  html:
+  live-html:
+    webr:
+      engine-url: https://webr.r-wasm.org/v0.6.0/
+      resources: []
+      cell-options:
+        autorun: false
+        persist: false
+        timelimit: 30
     theme: [cosmo, assets/theme.scss]
     css: [assets/vendor/webex.css, assets/site.css]
     include-after-body: [assets/vendor/webex.js, assets/site-includes.html]

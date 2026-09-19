@@ -3,6 +3,8 @@ title: Min nye øvelse
 description: En kort beskrivelse af, hvad den studerende skal øve.
 ---
 
+{{< include ../../_extensions/r-wasm/live/_knitr.qmd >}}
+
 ```{r}
 #| include: false
 source("scripts/setup.R")
@@ -36,6 +38,13 @@ sum(c(2, 3))
 
 ## Arbejd selv
 
-Skriv en opgave, som den studerende skal løse i sit eget R-miljø.
+Skriv en opgave, som den studerende skal løse i feltet. Vent på R, redigér koden, og vælg **Run Code**. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sessionen. Svar og kode gemmes ikke.
+
+```{webr}
+#| caption: Prøv selv
+# Skriv startkode eller hjælpende kommentarer her
+```
+
+Tilføj gerne et svarfelt efter koden. Webexercises kontrollerer svaret, ikke koden.
 
 [Tilbage til kursets øvelser](index.qmd)

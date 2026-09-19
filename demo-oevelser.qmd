@@ -3,6 +3,8 @@ title: Demo-øvelser
 description: Prøv webexercises — fra et enkelt svarfelt til en samlet quiz.
 ---
 
+{{< include _extensions/r-wasm/live/_knitr.qmd >}}
+
 ```{r}
 #| include: false
 source("scripts/setup.R")
@@ -12,7 +14,7 @@ source("scripts/setup.R")
 
 Prøv felterne, og lav gerne et forkert svar først. **Rigtigt** og **Prøv igen** vises ved svarene. I de indrammede mini-quizzer skal du først vælge **Tjek svar**. Svarene gemmes ikke efter genindlæsning.
 
-Under **Se koden** kan undervisere finde R-koden til hver type. Koden genererer felterne, når Quarto bygger siden; den studerendes kode bliver ikke kørt i browseren.
+Under **Se koden** kan undervisere finde R-koden til hver type. Koden genererer felterne, når Quarto bygger siden; de redigerbare R-felter kører derimod din kode direkte i browseren med Quarto Live og webR.
 
 ## 1. Skriv et tal eller et ord
 
@@ -153,7 +155,13 @@ longmcq(c(
 
 ## 8. Hints og løsningsforslag
 
-Beregn gennemsnittet af 3, 6 og 9 i dit eget R-miljø. Åbn først et hint, hvis du har brug for hjælp.
+Beregn gennemsnittet af 3, 6 og 9 i feltet herunder. Vent på indlæsningen af R, og vælg **Run Code**, når du har skrevet din løsning. Åbn et hint, hvis du har brug for hjælp.
+
+```{webr}
+#| caption: Prøv selv — gennemsnit
+# Saml tallene 3, 6 og 9 i en vektor
+# Beregn derefter gennemsnittet
+```
 
 `r hide("Vis hint")`
 
@@ -334,3 +342,50 @@ Alle aktive spørgsmålstyper og svarregler i **webexercises 1.2.0** er demonstr
 Dette site bruger HTML. Pakken har også funktioner til LaTeX/PDF, men disse giver ikke browserens interaktive svarfelter.
 
 [Se kildekoden for den anvendte version](https://github.com/cran/webexercises/tree/a7af9e8ec7b825c91cea233d1ef8d958c0d6846b) · [Lav din egen øvelsesside](vejledning/ny-oevelsesside.qmd)
+
+
+## 15. Kør R direkte på siden {#r-i-browseren}
+
+Her kan du redigere og køre rigtig R-kode uden at installere R. Første indlæsning kræver internet og kan tage lidt tid. Når **Run Code** er aktiv, er R klar. Du kan også køre med Ctrl/Cmd + Enter.
+
+### Beregninger og resultater
+
+Kør eksemplet. Skift derefter et tal, og kør igen. Resultatet vises under feltet.
+
+::: {#demo-r-calculate}
+```{webr}
+#| caption: Beregn et gennemsnit
+demo_tal <- c(3, 6, 9)
+mean(demo_tal)
+```
+:::
+
+### Tegn en figur
+
+Kør koden, og prøv at ændre værdierne eller farven.
+
+::: {#demo-r-plot}
+```{webr}
+#| caption: Lav dit eget søjlediagram
+barplot(c(3, 6, 9), names.arg = c("A", "B", "C"),
+        col = "steelblue", ylab = "Værdi")
+```
+:::
+
+### Fælles session, fejl og nulstilling
+
+R-felterne på denne side deler objekter. Kør først feltet **Beregn et gennemsnit**, og brug derefter `sum(demo_tal)` nedenfor. Hvis du får en fejl, kan du rette koden og køre igen. Prøv eksempelvis `mean(`, og ret det til `mean(demo_tal)`.
+
+::: {#demo-r-session}
+```{webr}
+#| caption: Eksperimentér videre
+# Kør først feltet Beregn et gennemsnit
+sum(demo_tal)
+```
+:::
+
+**Start Over** gendanner det enkelte felts startkode og fjerner dets output. Det sletter ikke objekter fra R-sessionen. Genindlæs siden for at begynde med en helt ny session; kode, resultater og øvelsessvar gemmes ikke. Sessionen deles ikke med andre sider eller studerende.
+
+Webexercises kontrollerer stadig de separate svarfelter. At køre kode udfylder eller retter ikke dine svar automatisk. Funktioner som `fitb()` og `round2()` fra webexercises bruges under bygningen og er ikke indlæst i browserens R-session.
+
+[Se, hvordan du tilføjer et R-felt](vejledning/ny-oevelsesside.qmd#r-i-browseren).

@@ -54,7 +54,7 @@ Start, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækk
 ::: {}
 **02 · Prøv selv**
 
-Svar på siden, eller brug dit eget R-miljø til kodeopgaverne. Du kan forsøge igen.
+Svar og kør R-kode direkte på siden. Du kan forsøge igen.
 :::
 ::: {}
 **03 · Få hjælp undervejs**
