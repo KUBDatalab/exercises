@@ -59,7 +59,7 @@
     "href": "r/intro/vektorer.html",
     "title": "Objekter, vektorer og indeksering",
     "section": "",
-    "text": "Introduktion til R · 10–15 minutter\nEfter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.",
+    "text": "Introduktion til R · 10–15 minutter\nEfter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.\nKodefelterne kører R direkte i din browser. Vent på indlæsningen, redigér koden, og vælg Run Code (eller Ctrl/Cmd + Enter). Første indlæsning kan tage lidt tid og kræver internet. Start Over gendanner feltets kode; genindlæs siden for at nulstille hele R-sessionen. Du kan også bruge dit eget R-miljø.",
     "crumbs": [
       "Øvelser i R",
       "Introduktion til R",
@@ -83,7 +83,7 @@
     "href": "r/intro/vektorer.html#vælg-den-rigtige-kode",
     "title": "Objekter, vektorer og indeksering",
     "section": "2. Vælg den rigtige kode",
-    "text": "2. Vælg den rigtige kode\n\nHvilken kode udvælger det første og tredje element?\n\n maal[1:3] maal[c(1, 3)] maal[1, 3]\n\n\n\n\nVis forklaring\n\nc(1, 3) indeholder netop de to positioner. 1:3 omfatter også position 2. Et komma mellem indeks bruges til flere dimensioner, eksempelvis rækker og kolonner i en dataframe.",
+    "text": "2. Vælg den rigtige kode\n\nHvilken kode udvælger det første og tredje element?\n\n maal[1:3] maal[c(1, 3)] maal[1, 3]\n\n\n\n\nVis forklaring\n\nc(1, 3) indeholder netop de to positioner. 1:3 omfatter også position 2. Et komma mellem indeks bruges til flere dimensioner, eksempelvis rækker og kolonner i en dataframe.\n\n\nAfprøv dine forudsigelser\nNår du har svaret på opgave 1 og 2, kan du undersøge vektoren her. Tilføj selv kald til eksempelvis length(), sum() og indeksering.",
     "crumbs": [
       "Øvelser i R",
       "Introduktion til R",
@@ -95,7 +95,7 @@
     "href": "r/intro/vektorer.html#arbejd-selv-i-r",
     "title": "Objekter, vektorer og indeksering",
     "section": "3. Arbejd selv i R",
-    "text": "3. Arbejd selv i R\nOpret en vektor timer med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.\n\nHvad er gennemsnittet? \nHvor mange værdier er større end 3? \n\n\n\nVis løsningsforslag\n\n\ntimer &lt;- c(2, 3, 5, 6)\nsum(timer)\n\n[1] 16\n\nmean(timer)\n\n[1] 4\n\ntimer[timer &gt; 3]\n\n[1] 5 6\n\n\nDen logiske test timer &gt; 3 udvælger værdierne 5 og 6.\n\n← Tilbage til kursets øvelser · Se kursusmaterialet",
+    "text": "3. Arbejd selv i R\nOpret en vektor timer med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.\n\n\n\n\n\n\n\n\n\n\nKør din kode, og skriv derefter resultaterne i svarfelterne. Tjek svar kontrollerer felterne, ikke den kode, du har skrevet.\n\nHvad er gennemsnittet? \nHvor mange værdier er større end 3? \n\n\n\nVis løsningsforslag\n\n\ntimer &lt;- c(2, 3, 5, 6)\nsum(timer)\n\n[1] 16\n\nmean(timer)\n\n[1] 4\n\ntimer[timer &gt; 3]\n\n[1] 5 6\n\n\nDen logiske test timer &gt; 3 udvælger værdierne 5 og 6.\n\n← Tilbage til kursets øvelser · Se kursusmaterialet",
     "crumbs": [
       "Øvelser i R",
       "Introduktion til R",
@@ -144,14 +144,14 @@
     "href": "index.html#hvad-vil-du-øve",
     "title": "Fra kursus til kunnen",
     "section": "Hvad vil du øve?",
-    "text": "Hvad vil du øve?\n\n\nR · Kom i gang\n\nIntroduktion til R\nFå styr på objekter, vektorer og indeksering. Begynd med et kort øvelsessæt, og få feedback undervejs.\nSe øvelser →\n\n\n\nUdforsk · 25–35 minutter\n\nDemo-øvelser\nPrøv alle spørgsmålstyperne: skriv et svar, vælg en mulighed, åbn et hint og tjek en hel mini-quiz.\nÅbn demoen →\n\n\n\n\n\n01 · Vælg et emne\nStart, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækkefølge.\n\n\n02 · Prøv selv\nSvar på siden, eller brug dit eget R-miljø til kodeopgaverne. Du kan forsøge igen.\n\n\n03 · Få hjælp undervejs\nÅbn et hint, og sammenlign din løsning med et forklaret løsningsforslag.\n\n\n\nPå vej\n\nFlere kurser. Samme sted.\nSamlingen begynder med R. Senere kan du finde øvelser til flere R-kurser og til Python her.\n\n\nUnderviser du? Se, hvordan du tilføjer en ny øvelsesside."
+    "text": "Hvad vil du øve?\n\n\nR · Kom i gang\n\nIntroduktion til R\nFå styr på objekter, vektorer og indeksering. Begynd med et kort øvelsessæt, og få feedback undervejs.\nSe øvelser →\n\n\n\nUdforsk · 25–35 minutter\n\nDemo-øvelser\nPrøv alle spørgsmålstyperne: skriv et svar, vælg en mulighed, åbn et hint og tjek en hel mini-quiz.\nÅbn demoen →\n\n\n\n\n\n01 · Vælg et emne\nStart, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækkefølge.\n\n\n02 · Prøv selv\nSvar og kør R-kode direkte på siden. Du kan forsøge igen.\n\n\n03 · Få hjælp undervejs\nÅbn et hint, og sammenlign din løsning med et forklaret løsningsforslag.\n\n\n\nPå vej\n\nFlere kurser. Samme sted.\nSamlingen begynder med R. Senere kan du finde øvelser til flere R-kurser og til Python her.\n\n\nUnderviser du? Se, hvordan du tilføjer en ny øvelsesside."
   },
   {
     "objectID": "demo-oevelser.html",
     "href": "demo-oevelser.html",
     "title": "Demo-øvelser",
     "section": "",
-    "text": "Alle spørgsmålstyper · 25–35 minutter · webexercises 1.2.0\nPrøv felterne, og lav gerne et forkert svar først. Rigtigt og Prøv igen vises ved svarene. I de indrammede mini-quizzer skal du først vælge Tjek svar. Svarene gemmes ikke efter genindlæsning.\nUnder Se koden kan undervisere finde R-koden til hver type. Koden genererer felterne, når Quarto bygger siden; den studerendes kode bliver ikke kørt i browseren.",
+    "text": "Alle spørgsmålstyper · 25–35 minutter · webexercises 1.2.0\nPrøv felterne, og lav gerne et forkert svar først. Rigtigt og Prøv igen vises ved svarene. I de indrammede mini-quizzer skal du først vælge Tjek svar. Svarene gemmes ikke efter genindlæsning.\nUnder Se koden kan undervisere finde R-koden til hver type. Koden genererer felterne, når Quarto bygger siden; de redigerbare R-felter kører derimod din kode direkte i browseren med Quarto Live og webR.",
     "crumbs": [
       "Demo-øvelser"
     ]
@@ -231,7 +231,7 @@
     "href": "demo-oevelser.html#hints-og-løsningsforslag",
     "title": "Demo-øvelser",
     "section": "8. Hints og løsningsforslag",
-    "text": "8. Hints og løsningsforslag\nBeregn gennemsnittet af 3, 6 og 9 i dit eget R-miljø. Åbn først et hint, hvis du har brug for hjælp.\n\n\nVis hint\n\nSaml tallene med c(), og brug derefter mean().\n\n\n\nVis løsningsforslag\n\n\nmean(c(3, 6, 9))\n\n[1] 6\n\n\nSummen er 18, og der er tre tal. Derfor er gennemsnittet 6.\n\n\n\n\n\n\n\nSe koden: hide() og unhide()\n\n\n\n\n\nSæt et inline-kald til hide(\"Vis hint\") før hjælpeteksten og et inline-kald til unhide() efter. De præcise inline-markører kan kopieres fra skabelonen.\nMellem de to kald kan du placere tekst, kode, tabeller og figurer.\n\n\n\n\nSkjul en hel kodeblok\nPakken understøtter også chunk-indstillingen webex.hide. Her skjules både kode og resultat:\n\n\n\nVis kode og figur\n\nbarplot(c(3, 6, 9), names.arg = c(\"A\", \"B\", \"C\"),\n        col = \"#817092\", border = NA, ylab = \"Værdi\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSe koden: chunk-indstillingen\n\n\n\n\n\nSæt #| webex.hide: \"Vis kode og figur\" øverst i en R-chunk. Pakken registrerer den nødvendige knitr-hook, når den indlæses.",
+    "text": "8. Hints og løsningsforslag\nBeregn gennemsnittet af 3, 6 og 9 i feltet herunder. Vent på indlæsningen af R, og vælg Run Code, når du har skrevet din løsning. Åbn et hint, hvis du har brug for hjælp.\n\n\n\n\n\n\n\n\n\n\nVis hint\n\nSaml tallene med c(), og brug derefter mean().\n\n\n\nVis løsningsforslag\n\n\nmean(c(3, 6, 9))\n\n[1] 6\n\n\nSummen er 18, og der er tre tal. Derfor er gennemsnittet 6.\n\n\n\n\n\n\n\nSe koden: hide() og unhide()\n\n\n\n\n\nSæt et inline-kald til hide(\"Vis hint\") før hjælpeteksten og et inline-kald til unhide() efter. De præcise inline-markører kan kopieres fra skabelonen.\nMellem de to kald kan du placere tekst, kode, tabeller og figurer.\n\n\n\n\nSkjul en hel kodeblok\nPakken understøtter også chunk-indstillingen webex.hide. Her skjules både kode og resultat:\n\n\n\nVis kode og figur\n\nbarplot(c(3, 6, 9), names.arg = c(\"A\", \"B\", \"C\"),\n        col = \"#817092\", border = NA, ylab = \"Værdi\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSe koden: chunk-indstillingen\n\n\n\n\n\nSæt #| webex.hide: \"Vis kode og figur\" øverst i en R-chunk. Pakken registrerer den nødvendige knitr-hook, når den indlæses.",
     "crumbs": [
       "Demo-øvelser"
     ]
@@ -297,6 +297,16 @@
     ]
   },
   {
+    "objectID": "demo-oevelser.html#r-i-browseren",
+    "href": "demo-oevelser.html#r-i-browseren",
+    "title": "Demo-øvelser",
+    "section": "15. Kør R direkte på siden",
+    "text": "15. Kør R direkte på siden\nHer kan du redigere og køre rigtig R-kode uden at installere R. Første indlæsning kræver internet og kan tage lidt tid. Når Run Code er aktiv, er R klar. Du kan også køre med Ctrl/Cmd + Enter.\n\nBeregninger og resultater\nKør eksemplet. Skift derefter et tal, og kør igen. Resultatet vises under feltet.\n\n\n\n\n\n\n\n\n\n\n\n\nTegn en figur\nKør koden, og prøv at ændre værdierne eller farven.\n\n\n\n\n\n\n\n\n\n\n\n\nFælles session, fejl og nulstilling\nR-felterne på denne side deler objekter. Kør først feltet Beregn et gennemsnit, og brug derefter sum(demo_tal) nedenfor. Hvis du får en fejl, kan du rette koden og køre igen. Prøv eksempelvis mean(, og ret det til mean(demo_tal).\n\n\n\n\n\n\n\n\n\n\nStart Over gendanner det enkelte felts startkode og fjerner dets output. Det sletter ikke objekter fra R-sessionen. Genindlæs siden for at begynde med en helt ny session; kode, resultater og øvelsessvar gemmes ikke. Sessionen deles ikke med andre sider eller studerende.\nWebexercises kontrollerer stadig de separate svarfelter. At køre kode udfylder eller retter ikke dine svar automatisk. Funktioner som fitb() og round2() fra webexercises bruges under bygningen og er ikke indlæst i browserens R-session.\nSe, hvordan du tilføjer et R-felt.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
     "objectID": "om.html",
     "href": "om.html",
     "title": "Om øvelserne",
@@ -308,7 +318,7 @@
     "href": "om.html#sådan-bruger-du-siderne",
     "title": "Om øvelserne",
     "section": "Sådan bruger du siderne",
-    "text": "Sådan bruger du siderne\nVælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.\nDe korte spørgsmål besvares på siden. Større programmeringsopgaver løser du i dit eget R-miljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning."
+    "text": "Sådan bruger du siderne\nVælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.\nDe korte spørgsmål besvares på siden. Kodeopgaverne har redigerbare R-felter, som kører direkte i browseren med WebAssembly. Du kan også bruge dit eget R-miljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning."
   },
   {
     "objectID": "om.html#besøgsstatistik",
@@ -322,14 +332,14 @@
     "href": "om.html#materialer-og-kontakt",
     "title": "Om øvelserne",
     "section": "Materialer og kontakt",
-    "text": "Materialer og kontakt\nKUB Datalabs hjemmeside · Kildekode og fejlrapporter\nSitet er bygget med Quarto og webexercises. Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets assets/ATTRIBUTION.md."
+    "text": "Materialer og kontakt\nKUB Datalabs hjemmeside · Kildekode og fejlrapporter\nR-motoren hentes fra webR ved indlæsning af sider med R-felter. Beregningerne foregår i din browser; kode og resultater gemmes ikke af sitet.\nSitet er bygget med Quarto og webexercises. Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets assets/ATTRIBUTION.md."
   },
   {
     "objectID": "r/intro/index.html",
     "href": "r/intro/index.html",
     "title": "Introduktion til R",
     "section": "",
-    "text": "Du har arbejdet med R på kurset. Her kan du prøve grundbegreberne igen i mindre opgaver.\nForudsætninger: Du har gennemgået den grundlæggende introduktion til R. Til den afsluttende opgave skal du kunne køre R, eksempelvis i Positron eller RStudio.\nÅbn kursusmaterialet: Introduction to R.",
+    "text": "Du har arbejdet med R på kurset. Her kan du prøve grundbegreberne igen i mindre opgaver.\nForudsætninger: Du har gennemgået den grundlæggende introduktion til R. Du kan køre koden direkte i øvelsessidens R-felter. Ingen lokal installation er nødvendig.\nÅbn kursusmaterialet: Introduction to R.",
     "crumbs": [
       "Øvelser i R",
       "Introduktion til R",
@@ -364,7 +374,7 @@
     "href": "vejledning/ny-oevelsesside.html#klargør-projektet",
     "title": "Lav en ny øvelsesside",
     "section": "1. Klargør projektet",
-    "text": "1. Klargør projektet\nKlon eller hent KUBDatalab/exercises. Åbn projektmappen i Positron eller RStudio. Du skal have R og Quarto CLI installeret.\nInstallér pakkerne én gang i R:\ninstall.packages(c(\"remotes\", \"knitr\", \"rmarkdown\"))\nremotes::install_version(\"webexercises\", version = \"1.2.0\", upgrade = \"never\")\nSitet fastholder denne version, så R-funktioner og de medfølgende JavaScript-filer passer sammen. Når versionen opdateres, skal både scripts/setup.R, workflowet og assets/vendor/ opdateres og demoen kontrolleres.",
+    "text": "1. Klargør projektet\nKlon eller hent KUBDatalab/exercises. Åbn projektmappen i Positron eller RStudio. Du skal have R og Quarto CLI installeret.\nInstallér pakkerne én gang i R:\ninstall.packages(c(\"remotes\", \"knitr\", \"rmarkdown\"))\nremotes::install_version(\"webexercises\", version = \"1.2.0\", upgrade = \"never\")\nSitet fastholder denne version, så R-funktioner og de medfølgende JavaScript-filer passer sammen. Når versionen opdateres, skal både scripts/setup.R, workflowet og assets/vendor/ opdateres og demoen kontrolleres.\nInstallér også Quarto Live fra terminalen i projektets rod:\nquarto add r-wasm/quarto-live@v0.2.0 --no-prompt\nUdvidelsen installeres automatisk i GitHub Actions. _extensions/ er genereret og skal ikke committes. Projektet bruger live-html, engine: knitr og webR v0.6.0.",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"
@@ -404,6 +414,17 @@
     ]
   },
   {
+    "objectID": "vejledning/ny-oevelsesside.html#r-i-browseren",
+    "href": "vejledning/ny-oevelsesside.html#r-i-browseren",
+    "title": "Lav en ny øvelsesside",
+    "section": "R i browseren",
+    "text": "R i browseren\nBrug et redigerbart R-felt, når den studerende skal undersøge data, skrive kode eller tegne en figur. Et tekstspørgsmål behøver ikke sit eget R-felt. Se demoen og vektorøvelserne.\nSkabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien ../../scripts/live-knitr.qmd passer til sider i r/intro/. På en side i projektets rod bruges scripts/live-knitr.qmd. Stien regnes fra .qmd-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.\nKopiér denne blok til din øvelsesside:\n```{webr}\n#| caption: Undersøg tallene\nx &lt;- c(2, 4, 6)\nmean(x)\n```\n{webr} betyder, at koden køres af den studerende i browseren. En almindelig {r}-chunk køres derimod under bygningen. Inline R og webexercises-funktioner skal fortsat bruge build-R. Objekter og pakker fra build-R findes ikke automatisk i browseren.\nBrug startkode og kommentarer til opgaver, og læg det færdige løsningsforslag bag et hint eller en løsningsknap. Tilføj et webexercises-svarfelt efter kodefeltet, hvis den studerende skal aflevere et beregnet resultat. Der er ingen automatisk bedømmelse af koden.\n\nBetjening og fælles objekter\n\nRun Code eller Ctrl/Cmd + Enter kører feltet; output og figurer vises nedenunder. Felterne kører ikke automatisk.\nFelter på samme side deler R-objekter. Sørg for, at hvert eksempel kan køres selvstændigt, eller skriv tydeligt, hvilket felt der skal køres først.\nStart Over nulstiller feltets kode og output, men fjerner ikke objekter fra sessionen. Genindlæsning starter en ny session og nulstiller også øvelsessvarene.\nKode og resultater gemmes ikke mellem besøg. Første indlæsning kræver internet. Hvis indlæsningen fejler, kan den studerende stadig kopiere koden til lokal R.\nEn kørsel har en tidsgrænse på 30 sekunder. Hold øvelserne små og undgå tunge datasæt.\n\n\n\nPakker og data\nDe nuværende eksempler bruger base R. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:\nwebr:\n  packages: [ggplot2]\nBrug derefter library(ggplot2) i en {webr}-blok. Test pakken i browseren; en pakke installeret i GitHub Actions er ikke dermed tilgængelig i webR. Projektet indlæser som udgangspunkt ingen datafiler i R-sessionen (resources: []). Tilføj nødvendige filer via sidens webr.resources efter Quarto Lives vejledning, og test deres stier fra den udgivne side.\nSe også Quarto Lives dokumentation for pakker, kodefelter og Python.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
     "objectID": "vejledning/ny-oevelsesside.html#knyt-siden-til-et-kursus",
     "href": "vejledning/ny-oevelsesside.html#knyt-siden-til-et-kursus",
     "title": "Lav en ny øvelsesside",
@@ -419,7 +440,7 @@
     "href": "vejledning/ny-oevelsesside.html#se-siden-lokalt",
     "title": "Lav en ny øvelsesside",
     "section": "6. Se siden lokalt",
-    "text": "6. Se siden lokalt\nKør dette i terminalen, fra projektmappen:\nquarto preview\nLav en fuld rendering før commit:\nquarto render\nAfprøv mindst ét rigtigt, ét forkert og ét tomt svar for hver spørgsmålstype, du bruger. Tjek også hints, løsninger, menulinks og siden på en smal skærm.\nBrowserkontrollerne kan køres med:\nnpm install --no-save playwright@1.55.0\nnpx playwright install chromium\nnode tests/site.test.mjs",
+    "text": "6. Se siden lokalt\nKør dette i terminalen, fra projektmappen:\nquarto preview\nLav en fuld rendering før commit:\nquarto render\nAfprøv R-felterne med ændret kode, et forventet resultat og eventuelle figurer. Kontrollér, at en kodefejl kan rettes og køres igen.\nAfprøv mindst ét rigtigt, ét forkert og ét tomt svar for hver spørgsmålstype, du bruger. Tjek også hints, løsninger, menulinks og siden på en smal skærm.\nBrowserkontrollerne kan køres med:\nnpm install --no-save playwright@1.55.0\nnpx playwright install chromium\nnode tests/site.test.mjs",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"
@@ -441,7 +462,7 @@
     "href": "vejledning/ny-oevelsesside.html#python-senere",
     "title": "Lav en ny øvelsesside",
     "section": "Python senere",
-    "text": "Python senere\nOpret eksempelvis python/intro/ med samme struktur, og føj python/**/*.qmd til projektets render-liste. Opret en Python-indgang i menuen og på forsiden.\nSpørgsmål om Python kan stadig genereres med R/webexercises. Python-kode vises i almindelige kodeblokke med sproget python, og den studerende kører den i sit eget miljø. Hvis Python-kode også skal eksekveres under bygningen, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.",
+    "text": "Python senere\nOpret eksempelvis python/intro/ med samme struktur, og føj python/**/*.qmd til projektets render-liste. Opret en Python-indgang i menuen og på forsiden.\nSpørgsmål om Python kan stadig genereres med R/webexercises. Quarto Live understøtter også redigerbare {pyodide}-blokke til Python i browseren. Behold knitr-opsætningen til webexercises, og afprøv Python-runtime og pakker særskilt, når det første Python-kursus tilføjes. Almindelige python-kodeblokke viser kun koden. Hvis Python-kode også skal eksekveres under bygningen, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"
@@ -452,7 +473,7 @@
     "href": "vejledning/ny-oevelsesside.html#hvad-siden-gør-og-ikke-gør",
     "title": "Lav en ny øvelsesside",
     "section": "Hvad siden gør og ikke gør",
-    "text": "Hvad siden gør og ikke gør\n\nFacit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.\nSitet kører ikke vilkårlig R- eller Python-kode fra den studerende.\nBesøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.\nDer er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.\n\nSe opsætningen af besøgsstatistik.",
+    "text": "Hvad siden gør og ikke gør\n\nFacit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.\nR-felterne kører den studerendes kode lokalt i browseren via WebAssembly. Der er ingen fælles R-server.\nBesøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.\nDer er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.\n\nSe opsætningen af besøgsstatistik.",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"

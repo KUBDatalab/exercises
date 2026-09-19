@@ -77,6 +77,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-82c066dbc46400f1ddc3d20af5ee93b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,6 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Søg"
   }
 }</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../assets/vendor/webex.css">
@@ -211,6 +215,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#en-hel-quiz-i-en-r-chunk" id="toc-en-hel-quiz-i-en-r-chunk" class="nav-link" data-scroll-target="#en-hel-quiz-i-en-r-chunk">En hel quiz i en R-chunk</a></li>
   </ul></li>
   <li><a href="#tilføj-hint-og-løsning" id="toc-tilføj-hint-og-løsning" class="nav-link" data-scroll-target="#tilføj-hint-og-løsning">4. Tilføj hint og løsning</a></li>
+  <li><a href="#r-i-browseren" id="toc-r-i-browseren" class="nav-link" data-scroll-target="#r-i-browseren">R i browseren</a>
+  <ul class="collapse">
+  <li><a href="#betjening-og-fælles-objekter" id="toc-betjening-og-fælles-objekter" class="nav-link" data-scroll-target="#betjening-og-fælles-objekter">Betjening og fælles objekter</a></li>
+  <li><a href="#pakker-og-data" id="toc-pakker-og-data" class="nav-link" data-scroll-target="#pakker-og-data">Pakker og data</a></li>
+  </ul></li>
   <li><a href="#knyt-siden-til-et-kursus" id="toc-knyt-siden-til-et-kursus" class="nav-link" data-scroll-target="#knyt-siden-til-et-kursus">5. Knyt siden til et kursus</a></li>
   <li><a href="#se-siden-lokalt" id="toc-se-siden-lokalt" class="nav-link" data-scroll-target="#se-siden-lokalt">6. Se siden lokalt</a></li>
   <li><a href="#udgiv-ændringen" id="toc-udgiv-ændringen" class="nav-link" data-scroll-target="#udgiv-ændringen">7. Udgiv ændringen</a></li>
@@ -254,11 +263,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"remotes"</span>, <span class="st">"knitr"</span>, <span class="st">"rmarkdown"</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_version</span>(<span class="st">"webexercises"</span>, <span class="at">version =</span> <span class="st">"1.2.0"</span>, <span class="at">upgrade =</span> <span class="st">"never"</span>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Sitet fastholder denne version, så R-funktioner og de medfølgende JavaScript-filer passer sammen. Når versionen opdateres, skal både <code>scripts/setup.R</code>, workflowet og <code>assets/vendor/</code> opdateres og demoen kontrolleres.</p>
+<p>Installér også Quarto Live fra terminalen i projektets rod:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add r-wasm/quarto-live@v0.2.0 <span class="at">--no-prompt</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Udvidelsen installeres automatisk i GitHub Actions. <code>_extensions/</code> er genereret og skal ikke committes. Projektet bruger <code>live-html</code>, <code>engine: knitr</code> og webR v0.6.0.</p>
 </section>
 <section id="kopiér-skabelonen" class="level2">
 <h2 class="anchored" data-anchor-id="kopiér-skabelonen">2. Kopiér skabelonen</h2>
 <p>Kopiér <code>templates/oevelse.qmd</code> til eksempelvis <strong><code>r/intro/min-nye-oevelse.qmd</code></strong>. Du kan gøre det i filoversigten eller i R fra projektets rod:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">"templates/oevelse.qmd"</span>, <span class="st">"r/intro/min-nye-oevelse.qmd"</span>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="st">"templates/oevelse.qmd"</span>, <span class="st">"r/intro/min-nye-oevelse.qmd"</span>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><a href="https://github.com/KUBDatalab/exercises/blob/main/templates/oevelse.qmd">Se skabelonens kildekode på GitHub</a>.</p>
 <p>Behold setup-chunken, som indlæser <code>scripts/setup.R</code>. Projektet bruger <code>execute-dir: project</code>, så filstier i R-kode altid regnes fra projektets rod, også på sider i undermapper.</p>
 <p>Ret <code>title</code>, <code>description</code>, tidsforbrug og læringsmål. Filnavne bør være korte og uden mellemrum, eksempelvis <code>filtrering.qmd</code>.</p>
@@ -317,13 +329,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="en-hel-quiz-i-en-r-chunk" class="level3">
 <h3 class="anchored" data-anchor-id="en-hel-quiz-i-en-r-chunk">En hel quiz i en R-chunk</h3>
 <p>En almindelig R-chunk kan returnere <code>quiz()</code> direkte:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quiz</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"R tæller fra 1."</span> <span class="ot">=</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hvilken funktion giver et gennemsnit?"</span> <span class="ot">=</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"sum"</span>, <span class="at">answer =</span> <span class="st">"mean"</span>, <span class="st">"length"</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hvad er 2 + 2?"</span> <span class="ot">=</span> <span class="dv">4</span>L,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Tjek dig selv"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quiz</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"R tæller fra 1."</span> <span class="ot">=</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hvilken funktion giver et gennemsnit?"</span> <span class="ot">=</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"sum"</span>, <span class="at">answer =</span> <span class="st">"mean"</span>, <span class="st">"length"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hvad er 2 + 2?"</span> <span class="ot">=</span> <span class="dv">4</span>L,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Tjek dig selv"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Brug <code>#| echo: false</code> øverst i chunken, hvis de studerende kun skal se quizzen. Andre HTML-genererende funktioner kan vises fra en chunk med <code>#| results: asis</code> og eksempelvis <code>cat(fitb(5))</code>.</p>
 </section>
 </section>
@@ -333,26 +345,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Et hint bør hjælpe den studerende med næste skridt. Løsningsforslaget bør forklare hvorfor koden virker og gerne vise resultatet. Skriv ikke, at kun én bestemt kode er korrekt, hvis opgaven kan løses på flere måder.</p>
 <p>En hel R-chunk kan også skjules med <code>#| webex.hide: "Vis kode og resultat"</code>.</p>
 </section>
+<section id="r-i-browseren" class="level2">
+<h2 class="anchored" data-anchor-id="r-i-browseren">R i browseren</h2>
+<p>Brug et redigerbart R-felt, når den studerende skal undersøge data, skrive kode eller tegne en figur. Et tekstspørgsmål behøver ikke sit eget R-felt. Se <a href="../demo-oevelser.html#r-i-browseren">demoen</a> og <a href="../r/intro/vektorer.html">vektorøvelserne</a>.</p>
+<p>Skabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien <code>../../scripts/live-knitr.qmd</code> passer til sider i <code>r/intro/</code>. På en side i projektets rod bruges <code>scripts/live-knitr.qmd</code>. Stien regnes fra <code>.qmd</code>-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.</p>
+<p>Kopiér denne blok til din øvelsesside:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| caption: Undersøg tallene</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- c(2, 4, 6)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">mean(x)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>{webr}</code> betyder, at koden køres af den studerende i browseren. En almindelig <code>{r}</code>-chunk køres derimod under bygningen. Inline R og webexercises-funktioner skal fortsat bruge build-R. Objekter og pakker fra build-R findes ikke automatisk i browseren.</p>
+<p>Brug startkode og kommentarer til opgaver, og læg det færdige løsningsforslag bag et hint eller en løsningsknap. Tilføj et webexercises-svarfelt efter kodefeltet, hvis den studerende skal aflevere et beregnet resultat. Der er ingen automatisk bedømmelse af koden.</p>
+<section id="betjening-og-fælles-objekter" class="level3">
+<h3 class="anchored" data-anchor-id="betjening-og-fælles-objekter">Betjening og fælles objekter</h3>
+<ul>
+<li><strong>Run Code</strong> eller Ctrl/Cmd + Enter kører feltet; output og figurer vises nedenunder. Felterne kører ikke automatisk.</li>
+<li>Felter på samme side deler R-objekter. Sørg for, at hvert eksempel kan køres selvstændigt, eller skriv tydeligt, hvilket felt der skal køres først.</li>
+<li><strong>Start Over</strong> nulstiller feltets kode og output, men fjerner ikke objekter fra sessionen. Genindlæsning starter en ny session og nulstiller også øvelsessvarene.</li>
+<li>Kode og resultater gemmes ikke mellem besøg. Første indlæsning kræver internet. Hvis indlæsningen fejler, kan den studerende stadig kopiere koden til lokal R.</li>
+<li>En kørsel har en tidsgrænse på 30 sekunder. Hold øvelserne små og undgå tunge datasæt.</li>
+</ul>
+</section>
+<section id="pakker-og-data" class="level3">
+<h3 class="anchored" data-anchor-id="pakker-og-data">Pakker og data</h3>
+<p>De nuværende eksempler bruger base R. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">webr</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">packages</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">ggplot2</span><span class="kw">]</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Brug derefter <code>library(ggplot2)</code> i en <code>{webr}</code>-blok. Test pakken i browseren; en pakke installeret i GitHub Actions er ikke dermed tilgængelig i webR. Projektet indlæser som udgangspunkt ingen datafiler i R-sessionen (<code>resources: []</code>). Tilføj nødvendige filer via sidens <code>webr.resources</code> efter <a href="https://r-wasm.github.io/quarto-live/">Quarto Lives vejledning</a>, og test deres stier fra den udgivne side.</p>
+<p>Se også <a href="https://r-wasm.github.io/quarto-live/">Quarto Lives dokumentation</a> for pakker, kodefelter og Python.</p>
+</section>
+</section>
 <section id="knyt-siden-til-et-kursus" class="level2">
 <h2 class="anchored" data-anchor-id="knyt-siden-til-et-kursus">5. Knyt siden til et kursus</h2>
 <p>Tilføj et link på <code>r/intro/index.qmd</code>. Tilføj også filen under det rette kursus i <code>_quarto.yml</code>, eksempelvis:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r/intro/index.qmd</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r/intro/vektorer.qmd</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r/intro/min-nye-oevelse.qmd</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r/intro/index.qmd</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r/intro/vektorer.qmd</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> r/intro/min-nye-oevelse.qmd</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Til et nyt kursus oprettes en ny mappe, eksempelvis <code>r/visualisering/</code>, med sin egen <code>index.qmd</code>. Tilføj et kursuskort på <code>r/index.qmd</code> og en sektion i sidemenuen. Link også til det eksisterende kursusmateriale.</p>
 </section>
 <section id="se-siden-lokalt" class="level2">
 <h2 class="anchored" data-anchor-id="se-siden-lokalt">6. Se siden lokalt</h2>
 <p>Kør dette i <strong>terminalen</strong>, fra projektmappen:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Lav en fuld rendering før commit:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Afprøv R-felterne med ændret kode, et forventet resultat og eventuelle figurer. Kontrollér, at en kodefejl kan rettes og køres igen.</p>
 <p>Afprøv mindst ét rigtigt, ét forkert og ét tomt svar for hver spørgsmålstype, du bruger. Tjek også hints, løsninger, menulinks og siden på en smal skærm.</p>
 <p>Browserkontrollerne kan køres med:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">--no-save</span> playwright@1.55.0</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> playwright install chromium</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> tests/site.test.mjs</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">--no-save</span> playwright@1.55.0</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> playwright install chromium</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> tests/site.test.mjs</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="udgiv-ændringen" class="level2">
 <h2 class="anchored" data-anchor-id="udgiv-ændringen">7. Udgiv ændringen</h2>
@@ -364,19 +408,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="python-senere" class="level2">
 <h2 class="anchored" data-anchor-id="python-senere">Python senere</h2>
 <p>Opret eksempelvis <code>python/intro/</code> med samme struktur, og føj <code>python/**/*.qmd</code> til projektets <code>render</code>-liste. Opret en Python-indgang i menuen og på forsiden.</p>
-<p>Spørgsmål om Python kan stadig genereres med R/webexercises. Python-kode vises i almindelige kodeblokke med sproget <code>python</code>, og den studerende kører den i sit eget miljø. Hvis Python-kode også skal <strong>eksekveres under bygningen</strong>, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.</p>
+<p>Spørgsmål om Python kan stadig genereres med R/webexercises. Quarto Live understøtter også redigerbare <code>{pyodide}</code>-blokke til Python i browseren. Behold knitr-opsætningen til webexercises, og afprøv Python-runtime og pakker særskilt, når det første Python-kursus tilføjes. Almindelige <code>python</code>-kodeblokke viser kun koden. Hvis Python-kode også skal <strong>eksekveres under bygningen</strong>, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.</p>
 </section>
 <section id="hvad-siden-gør-og-ikke-gør" class="level2">
 <h2 class="anchored" data-anchor-id="hvad-siden-gør-og-ikke-gør">Hvad siden gør og ikke gør</h2>
 <ul>
 <li>Facit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.</li>
-<li>Sitet kører ikke vilkårlig R- eller Python-kode fra den studerende.</li>
+<li>R-felterne kører den studerendes kode lokalt i browseren via WebAssembly. Der er ingen fælles R-server.</li>
 <li>Besøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.</li>
 <li>Der er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.</li>
 </ul>
 <p><a href="../vejledning/statistik.html">Se opsætningen af besøgsstatistik</a>.</p>
 
 
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
 </section>
 
 </main> <!-- /main -->
@@ -589,6 +647,17 @@ window.onload = function() {
 
 <script src="../assets/site.js"></script>
 <script src="../assets/analytics.js"></script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../vejledning";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
