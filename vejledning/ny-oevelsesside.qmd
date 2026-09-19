@@ -95,7 +95,7 @@ Skabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien `../
 Kopiér denne blok til din øvelsesside:
 
 ````markdown
-```{webr}
+```{{webr}}
 #| caption: Undersøg tallene
 x <- c(2, 4, 6)
 mean(x)
