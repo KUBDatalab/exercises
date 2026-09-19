@@ -31,3 +31,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .method-note { font-size: .9rem; color: #646170; }
 details { margin: 1rem 0; }
 @media (max-width: 700px) { .hero-layout { grid-template-columns: 1fr; } .hero-logo { display: none; } .hero { padding: 1.5rem 0; } .card-grid, .step-list { grid-template-columns: 1fr; } .exercise, .webex-box { padding: 1rem; } .webex-total_correct { margin: .5rem 0; display: block; } }
+
+/* Keep wide reference tables scrollable within narrow viewports. */
+@media (max-width: 700px) {
+  main.content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
