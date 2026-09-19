@@ -3,7 +3,7 @@ title: Demo-øvelser
 description: Prøv webexercises — fra et enkelt svarfelt til en samlet quiz.
 ---
 
-{{< include _extensions/r-wasm/live/_knitr.qmd >}}
+{{< include scripts/live-knitr.qmd >}}
 
 ```{r}
 #| include: false

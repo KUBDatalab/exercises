@@ -3,7 +3,7 @@ title: Objekter, vektorer og indeksering
 description: Øv dig i at gemme værdier, regne med vektorer og udvælge elementer.
 ---
 
-{{< include ../../_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ../../scripts/live-knitr.qmd >}}
 
 ```{r}
 #| include: false

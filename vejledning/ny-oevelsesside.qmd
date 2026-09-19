@@ -90,7 +90,7 @@ En hel R-chunk kan også skjules med `#| webex.hide: "Vis kode og resultat"`.
 
 Brug et redigerbart R-felt, når den studerende skal undersøge data, skrive kode eller tegne en figur. Et tekstspørgsmål behøver ikke sit eget R-felt. Se [demoen](../demo-oevelser.qmd#r-i-browseren) og [vektorøvelserne](../r/intro/vektorer.qmd).
 
-Skabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien `../../_extensions/r-wasm/live/_knitr.qmd` passer til sider i `r/intro/`. På en side i projektets rod bruges `_extensions/r-wasm/live/_knitr.qmd`. Stien regnes fra `.qmd`-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.
+Skabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien `../../scripts/live-knitr.qmd` passer til sider i `r/intro/`. På en side i projektets rod bruges `scripts/live-knitr.qmd`. Stien regnes fra `.qmd`-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.
 
 Kopiér denne blok til din øvelsesside:
 

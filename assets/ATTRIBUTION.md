@@ -9,3 +9,8 @@
   https://creativecommons.org/licenses/by-sa/4.0/
   Filerne er uændrede bortset fra normalisering af linjeskift.
 - Lokale tilpasninger ligger separat i `site.css` og `site.js`.
+
+- `scripts/live-knitr.qmd`: uændret knitr-hjælpefil fra Quarto Live v0.2.0,
+  https://github.com/r-wasm/quarto-live/blob/v0.2.0/_extensions/live/_knitr.qmd
+  George Stagg, MIT. Licenstekst: `scripts/quarto-live-LICENSE.md`.
+  Filen medfølger, så Quarto kan læse projektet før udvidelsen installeres.
