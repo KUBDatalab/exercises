@@ -1,0 +1,461 @@
+[
+  {
+    "objectID": "vejledning/statistik.html",
+    "href": "vejledning/statistik.html",
+    "title": "Besøgsstatistik",
+    "section": "",
+    "text": "Sitet er koblet til GoatCounter med den tælleradresse, KUB Datalab har oplyst. Statistikken begynder, når de færdige sider er udgivet og besøgt; den viser ikke besøg fra før tilkoblingen.\nÅbn GoatCounter →\nLog ind med den konto, der administrerer tælleren, hvis oversigten kræver login.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Besøgsstatistik"
+    ]
+  },
+  {
+    "objectID": "vejledning/statistik.html#hvad-kan-vi-se",
+    "href": "vejledning/statistik.html#hvad-kan-vi-se",
+    "title": "Besøgsstatistik",
+    "section": "Hvad kan vi se?",
+    "text": "Hvad kan vi se?\nGoatCounter viser besøg for de enkelte sidestier, eksempelvis /exercises/demo-oevelser.html og /exercises/r/intro/vektorer.html. Vælg et datointerval i oversigten for at sammenligne brugen over tid.\nDet viser, hvor meget siderne bliver besøgt. Det dokumenterer ikke, at en besøgende har løst opgaverne eller lært stoffet. Genbesøg og blokering af statistik påvirker også tallene.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Besøgsstatistik"
+    ]
+  },
+  {
+    "objectID": "vejledning/statistik.html#hvad-registrerer-dette-site",
+    "href": "vejledning/statistik.html#hvad-registrerer-dette-site",
+    "title": "Besøgsstatistik",
+    "section": "Hvad registrerer dette site?",
+    "text": "Hvad registrerer dette site?\nDet fælles script assets/analytics.js indlæser GoatCounters tæller på det publicerede domæne kubdatalab.github.io. Det registrerer en sidevisning ved indlæsning og sender sidens sti og titel. URL-parametre, ankre og henvisningsadresse udelades af vores opsætning.\nOpgavesvar, quizresultater og indtastet kode sendes ikke. Vi har ikke tilføjet hændelsessporing på knapper eller svarfelter. GoatCounters tæller kan desuden behandle tekniske browseroplysninger som beskrevet i tjenestens dokumentation.\nLokale forhåndsvisninger og automatiske tests på localhost tælles ikke. Browserudvidelser kan blokere statistikken.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Besøgsstatistik"
+    ]
+  },
+  {
+    "objectID": "vejledning/statistik.html#kontrollér-at-tælleren-virker",
+    "href": "vejledning/statistik.html#kontrollér-at-tælleren-virker",
+    "title": "Besøgsstatistik",
+    "section": "Kontrollér, at tælleren virker",
+    "text": "Kontrollér, at tælleren virker\n\nÅbn en publiceret øvelsesside uden en browserudvidelse, der blokerer GoatCounter.\nSe efter sidens sti i GoatCounter.\nHvis besøget mangler, kontrollér browserens netværksfane for count.js og kaldet til tælleradressen.\n\nIntegrationen er sat op i kildekoden; modtagelse af besøg skal bekræftes i jeres konto efter publicering.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Besøgsstatistik"
+    ]
+  },
+  {
+    "objectID": "vejledning/statistik.html#ændr-eller-slå-statistik-fra",
+    "href": "vejledning/statistik.html#ændr-eller-slå-statistik-fra",
+    "title": "Besøgsstatistik",
+    "section": "Ændr eller slå statistik fra",
+    "text": "Ændr eller slå statistik fra\nTælleradressen findes kun ét sted: GOATCOUNTER_ENDPOINT øverst i assets/analytics.js. Sæt den til en tom streng (\"\") for at deaktivere statistik, og byg sitet igen. Hvis domænet ændres, skal domænekontrollen i samme fil også opdateres.\nVed udskiftning af udbyder skal teksten på Om sitet tilpasses.\nKilder: GoatCounter: Getting started, JavaScript API, GoatCounters privatlivspolitik.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Besøgsstatistik"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html",
+    "href": "r/intro/vektorer.html",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "",
+    "text": "Introduktion til R · 10–15 minutter\nEfter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html#læs-en-vektor",
+    "href": "r/intro/vektorer.html#læs-en-vektor",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "1. Læs en vektor",
+    "text": "1. Læs en vektor\n\nSe på koden, og forudsig resultatet uden at køre den først.\nmaal &lt;- c(4, 7, 9, 12)\nHvor mange elementer indeholder maal? \nHvad er værdien af maal[2]? \nHvad er værdien af sum(maal)? \n\n\n\nVis hint\n\nR tæller positioner fra 1. sum() lægger alle elementerne sammen.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html#vælg-den-rigtige-kode",
+    "href": "r/intro/vektorer.html#vælg-den-rigtige-kode",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "2. Vælg den rigtige kode",
+    "text": "2. Vælg den rigtige kode\n\nHvilken kode udvælger det første og tredje element?\n\n maal[1:3] maal[c(1, 3)] maal[1, 3]\n\n\n\n\nVis forklaring\n\nc(1, 3) indeholder netop de to positioner. 1:3 omfatter også position 2. Et komma mellem indeks bruges til flere dimensioner, eksempelvis rækker og kolonner i en dataframe.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html#arbejd-selv-i-r",
+    "href": "r/intro/vektorer.html#arbejd-selv-i-r",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "3. Arbejd selv i R",
+    "text": "3. Arbejd selv i R\nOpret en vektor timer med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.\n\nHvad er gennemsnittet? \nHvor mange værdier er større end 3? \n\n\n\nVis løsningsforslag\n\n\ntimer &lt;- c(2, 3, 5, 6)\nsum(timer)\n\n[1] 16\n\nmean(timer)\n\n[1] 4\n\ntimer[timer &gt; 3]\n\n[1] 5 6\n\n\nDen logiske test timer &gt; 3 udvælger værdierne 5 og 6.\n\n← Tilbage til kursets øvelser · Se kursusmaterialet",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/index.html",
+    "href": "r/index.html",
+    "title": "Øvelser i R",
+    "section": "",
+    "text": "Vælg et kursus, og fortsæt i dit eget tempo. Opgaverne kan gentages, og du behøver ikke logge ind.\nFlere øvelsessæt tilføjes efterhånden, som de er klar.",
+    "crumbs": [
+      "Øvelser i R"
+    ]
+  },
+  {
+    "objectID": "r/index.html#introduktion-til-r",
+    "href": "r/index.html#introduktion-til-r",
+    "title": "Øvelser i R",
+    "section": "Introduktion til R",
+    "text": "Introduktion til R\nØv objekter, vektorer og indeksering efter introduktionskurset.\nStart her →",
+    "crumbs": [
+      "Øvelser i R"
+    ]
+  },
+  {
+    "objectID": "r/index.html#prøv-spørgsmålstyperne",
+    "href": "r/index.html#prøv-spørgsmålstyperne",
+    "title": "Øvelser i R",
+    "section": "Prøv spørgsmålstyperne",
+    "text": "Prøv spørgsmålstyperne\nLær sidernes interaktive øvelser at kende. Demoen viser også underviserne, hvordan de er bygget.\nDemo-øvelser →",
+    "crumbs": [
+      "Øvelser i R"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fra kursus til kunnen",
+    "section": "",
+    "text": "KUB Datalab · Øvelser efter kurset\n\n\nSmå opgaver. Plads til at prøve. Find tilbage til det, du lærte på kurset, og brug det på egen hånd.\nFind øvelser i R Prøv demoen"
+  },
+  {
+    "objectID": "index.html#hvad-vil-du-øve",
+    "href": "index.html#hvad-vil-du-øve",
+    "title": "Fra kursus til kunnen",
+    "section": "Hvad vil du øve?",
+    "text": "Hvad vil du øve?\n\n\nR · Kom i gang\n\nIntroduktion til R\nFå styr på objekter, vektorer og indeksering. Begynd med et kort øvelsessæt, og få feedback undervejs.\nSe øvelser →\n\n\n\nUdforsk · 25–35 minutter\n\nDemo-øvelser\nPrøv alle spørgsmålstyperne: skriv et svar, vælg en mulighed, åbn et hint og tjek en hel mini-quiz.\nÅbn demoen →\n\n\n\n\n\n01 · Vælg et emne\nStart, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækkefølge.\n\n\n02 · Prøv selv\nSvar på siden, eller brug dit eget R-miljø til kodeopgaverne. Du kan forsøge igen.\n\n\n03 · Få hjælp undervejs\nÅbn et hint, og sammenlign din løsning med et forklaret løsningsforslag.\n\n\n\nPå vej\n\nFlere kurser. Samme sted.\nSamlingen begynder med R. Senere kan du finde øvelser til flere R-kurser og til Python her.\n\n\nUnderviser du? Se, hvordan du tilføjer en ny øvelsesside."
+  },
+  {
+    "objectID": "demo-oevelser.html",
+    "href": "demo-oevelser.html",
+    "title": "Demo-øvelser",
+    "section": "",
+    "text": "Alle spørgsmålstyper · 25–35 minutter · webexercises 1.2.0\nPrøv felterne, og lav gerne et forkert svar først. Rigtigt og Prøv igen vises ved svarene. I de indrammede mini-quizzer skal du først vælge Tjek svar. Svarene gemmes ikke efter genindlæsning.\nUnder Se koden kan undervisere finde R-koden til hver type. Koden genererer felterne, når Quarto bygger siden; den studerendes kode bliver ikke kørt i browseren.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#skriv-et-tal-eller-et-ord",
+    "href": "demo-oevelser.html#skriv-et-tal-eller-et-ord",
+    "title": "Demo-øvelser",
+    "section": "1. Skriv et tal eller et ord",
+    "text": "1. Skriv et tal eller et ord\n\nHvor meget er 6 gange 7? \nHvilken funktion samler værdier i en vektor? Skriv kun navnet. \nHvad er halvdelen af 1? Skriv 0.5 eller .5 med punktum. \n\n\n\n\n\n\n\nSe koden: fitb()\n\n\n\n\n\nfitb(42, width = 6)\nfitb(\"c\", width = 8)\nfitb(0.5, num = TRUE, width = 6)\nnum = TRUE tillader udeladt nul før decimaltegnet. Uden tol sammenlignes tilladte tekstformer: 0.50 accepteres derfor ikke automatisk som 0.5.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#flere-svar-og-storesmå-bogstaver",
+    "href": "demo-oevelser.html#flere-svar-og-storesmå-bogstaver",
+    "title": "Demo-øvelser",
+    "section": "2. Flere svar og store/små bogstaver",
+    "text": "2. Flere svar og store/små bogstaver\n\nHvad kaldes en tabel i R? Skriv dataframe eller data frame, med valgfri brug af store bogstaver. \nSkriv kommandoen, der indlæser pakken webexercises. Mellemrum er valgfrie. \nSkriv præcis R er sjovt, inklusive mellemrum og stort R. \n\n\n\n\n\n\n\nSe koden: flere tilladte svar\n\n\n\n\n\nfitb(c(\"dataframe\", \"data frame\"), ignore_case = TRUE,\n     ignore_ws = FALSE, width = 18)\nfitb(c(\"library(webexercises)\", 'library(\"webexercises\")',\n       \"library('webexercises')\"), ignore_ws = TRUE, width = 30)\nfitb(\"R er sjovt\", ignore_ws = FALSE, ignore_case = FALSE, width = 18)\nDette er genkendelse af bestemte svar, ikke en generel kontrol af, om R-kode er korrekt.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#numerisk-tolerance",
+    "href": "demo-oevelser.html#numerisk-tolerance",
+    "title": "Demo-øvelser",
+    "section": "3. Numerisk tolerance",
+    "text": "3. Numerisk tolerance\n\nAngiv π med mindst tre decimaler. Brug punktum: \n\n3.142 accepteres; 3.14 gør ikke. Afstanden til det rigtige svar skal være mindre end tolerancen.\n\n\n\n\n\n\nSe koden: tol\n\n\n\n\n\nfitb(pi, tol = 0.001, width = 12)",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#et-mønster-i-svaret",
+    "href": "demo-oevelser.html#et-mønster-i-svaret",
+    "title": "Demo-øvelser",
+    "section": "4. Et mønster i svaret",
+    "text": "4. Et mønster i svaret\n\nSkriv et objektnavn bestående af præcis tre små bogstaver fra a til z, eksempelvis abc: \nSkriv funktionskaldet mean(x) med valgfri brug af mellemrum: \n\n\n\n\n\n\n\nSe koden: regex og escape_regex()\n\n\n\n\n\nfitb(\"^[a-z]{3}$\", regex = TRUE, ignore_ws = FALSE, width = 10)\nfitb(paste0(\"^\", escape_regex(\"mean(x)\"), \"$\"),\n     regex = TRUE, width = 15)\n^ og $ afgrænser hele svaret. escape_regex() beskytter parenteser og andre tegn med særlig betydning i regulære udtryk. Mønstret matches af JavaScript i browseren.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#vælg-fra-en-menu",
+    "href": "demo-oevelser.html#vælg-fra-en-menu",
+    "title": "Demo-øvelser",
+    "section": "5. Vælg fra en menu",
+    "text": "5. Vælg fra en menu\n\nHvilken funktion beregner et gennemsnit? summeanlength\nVælg en funktion, der kan opsummere en numerisk vektor: meansumlibrary\n\nDet andet spørgsmål har to gyldige valg. Du vælger stadig kun én mulighed ad gangen.\n\n\n\n\n\n\nSe koden: mcq()\n\n\n\n\n\nmcq(c(\"sum\", answer = \"mean\", \"length\"))\nmcq(c(answer = \"mean\", answer = \"sum\", \"library\"))\nDe korrekte muligheder navngives answer.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#sandt-eller-falsk",
+    "href": "demo-oevelser.html#sandt-eller-falsk",
+    "title": "Demo-øvelser",
+    "section": "6. Sandt eller falsk",
+    "text": "6. Sandt eller falsk\n\nlength(c(2, 4, 6)) giver 3. TRUEFALSE\nmean(c(2, 4, 6)) giver 12. TRUEFALSE\n\n\n\n\n\n\n\nSe koden: torf()\n\n\n\n\n\ntorf(TRUE)\ntorf(FALSE)\nMenuens TRUE betyder sandt, og FALSE betyder falsk.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#længere-svarmuligheder",
+    "href": "demo-oevelser.html#længere-svarmuligheder",
+    "title": "Demo-øvelser",
+    "section": "7. Længere svarmuligheder",
+    "text": "7. Længere svarmuligheder\n\nHvad gør x[x &gt; 5]?\n\n Den udvælger altid de første fem elementer i x. Den udvælger de elementer i x, hvis værdi er større end 5. Den erstatter alle værdier i x med 5.\n\n\n\n\n\n\n\n\nSe koden: longmcq()\n\n\n\n\n\nlongmcq(c(\n  \"Den udvælger altid de første fem elementer i x.\",\n  answer = \"Den udvælger de elementer i x, hvis værdi er større end 5.\",\n  \"Den erstatter alle værdier i x med 5.\"\n))",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#hints-og-løsningsforslag",
+    "href": "demo-oevelser.html#hints-og-løsningsforslag",
+    "title": "Demo-øvelser",
+    "section": "8. Hints og løsningsforslag",
+    "text": "8. Hints og løsningsforslag\nBeregn gennemsnittet af 3, 6 og 9 i dit eget R-miljø. Åbn først et hint, hvis du har brug for hjælp.\n\n\nVis hint\n\nSaml tallene med c(), og brug derefter mean().\n\n\n\nVis løsningsforslag\n\n\nmean(c(3, 6, 9))\n\n[1] 6\n\n\nSummen er 18, og der er tre tal. Derfor er gennemsnittet 6.\n\n\n\n\n\n\n\nSe koden: hide() og unhide()\n\n\n\n\n\nSæt et inline-kald til hide(\"Vis hint\") før hjælpeteksten og et inline-kald til unhide() efter. De præcise inline-markører kan kopieres fra skabelonen.\nMellem de to kald kan du placere tekst, kode, tabeller og figurer.\n\n\n\n\nSkjul en hel kodeblok\nPakken understøtter også chunk-indstillingen webex.hide. Her skjules både kode og resultat:\n\n\n\nVis kode og figur\n\nbarplot(c(3, 6, 9), names.arg = c(\"A\", \"B\", \"C\"),\n        col = \"#817092\", border = NA, ylab = \"Værdi\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSe koden: chunk-indstillingen\n\n\n\n\n\nSæt #| webex.hide: \"Vis kode og figur\" øverst i en R-chunk. Pakken registrerer den nødvendige knitr-hook, når den indlæses.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#tjek-en-hel-sektion",
+    "href": "demo-oevelser.html#tjek-en-hel-sektion",
+    "title": "Demo-øvelser",
+    "section": "9. Tjek en hel sektion",
+    "text": "9. Tjek en hel sektion\n\nBesvar begge spørgsmål, og vælg derefter Tjek svar.\nHvad giver length(1:5)? \nsum(c(1, 2, 3)) giver 6. TRUEFALSE\n\nFeedbacken og antallet af rigtige svar vises samlet. Knappen Skjul feedback skjuler markeringerne igen; den sletter ikke dine indtastninger.\n\n\n\n\n\n\nSe koden: webex-check og webex-box\n\n\n\n\n\nOmslut spørgsmålene af en Quarto-div med klasserne .webex-check .webex-box. webex-check giver kontrolknappen og optællingen; webex-box tegner rammen. Undgå at placere en kontrolleret sektion inde i en anden.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#en-quiz-fra-r",
+    "href": "demo-oevelser.html#en-quiz-fra-r",
+    "title": "Demo-øvelser",
+    "section": "10. En quiz fra R",
+    "text": "10. En quiz fra R\nquiz() samler flere typer spørgsmål i ét kald. Denne funktion findes i den version af pakken, som sitet bruger.\n\n\n\n\n\nEn blandet quiz\n\nR tæller fra 1. TRUEFALSEVælg funktionen, der finder en sum. meansumlengthSkriv R-pakkens navn: webexercises. Hvad er 2 + 2? Hvad er halvdelen af 1? Brug punktum. Angiv pi med tre decimaler. \n\n\n\n\n\n\n\n\n\n\n\nSe koden: quiz()\n\n\n\n\n\nquiz(\n  \"R tæller fra 1.\" = TRUE,\n  \"Vælg funktionen, der finder en sum.\" = c(\"mean\", answer = \"sum\", \"length\"),\n  \"Skriv R-pakkens navn: webexercises.\" = \"webexercises\",\n  \"Hvad er 2 + 2?\" = 4L,\n  \"Hvad er halvdelen af 1? Brug punktum.\" = 0.5,\n  \"Angiv pi med tre decimaler.\" = c(pi, 0.001),\n  title = \"En blandet quiz\"\n)\nAngiv answer = ved multiple choice. En tekst uden denne navngivning bliver et tekstfelt. Rækkefølgen af menuens muligheder blandes under bygningen. Den er ikke forskellig for hver besøgende.\nI version 1.2.0 bliver argumenterne show_box og show_check ikke anvendt korrekt i HTML-outputtet. Brug derfor almindelige Quarto-divs, hvis du vil styre ramme og kontrolknap separat.\n\n\n\n\nEn quiz fra en tekstfil\n\n\n\n\n\nSpørgsmål fra en fil\n\nR tæller vektorpositioner fra 1. TRUEFALSEHvilken funktion giver et gennemsnit? lengthsummeanHvad er summen af 2 og 3? \n\n\n\n\n\n\n\n\n\n\n\nSe koden: filbaserede spørgsmål\n\n\n\n\n\nquiz(\"data/demo-quiz.txt\", title = \"Spørgsmål fra en fil\")\nSe tekstfilen. Hver linje har formen Spørgsmål = R-udtryk.\nFilen evalueres som R-kode under bygningen og skal derfor være skrevet af en betroet underviser. Brug ikke studerendes uploadede filer her.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#beregn-facit-når-siden-bygges",
+    "href": "demo-oevelser.html#beregn-facit-når-siden-bygges",
+    "title": "Demo-øvelser",
+    "section": "11. Beregn facit, når siden bygges",
+    "text": "11. Beregn facit, når siden bygges\n\nVi har værdierne 4, 8, 12. Hvad er gennemsnittet? \n\n\n\n\n\n\n\nSe koden: beregnet facit\n\n\n\n\n\nvaerdier &lt;- c(4, 8, 12)\nfitb(mean(vaerdier), width = 6)\nFacit beregnes af R under rendering. Det bliver derefter en del af HTML-siden. Der er ingen R-server, og facit er ikke hemmeligt.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#afrunding-og-hjælpefunktioner",
+    "href": "demo-oevelser.html#afrunding-og-hjælpefunktioner",
+    "title": "Demo-øvelser",
+    "section": "12. Afrunding og hjælpefunktioner",
+    "text": "12. Afrunding og hjælpefunktioner\n\nHvad giver round2(2.5) med standardindstillingerne? \n\n\nround2(2.5)\n\n[1] 3\n\nround2(1.235, digits = 2)\n\n[1] 1.24\n\nstrip_lzero(\"0.05\")\n\n[1] \".05\"\n\nescape_regex(\"mean(x)\")\n\n[1] \"mean\\\\(x\\\\)\"\n\n\nround2() afrunder halve værdier væk fra nul; R’s round() bruger afrunding til lige ved præcise halve værdier. strip_lzero() fjerner nullet før decimalpunktummet. escape_regex() er vist i brug i afsnittet om mønstre.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#farver-og-udseende",
+    "href": "demo-oevelser.html#farver-og-udseende",
+    "title": "Demo-øvelser",
+    "section": "13. Farver og udseende",
+    "text": "13. Farver og udseende\nDette kald til style_widgets() udføres på demosiden og bruger navngivne R-farver:\nstyle_widgets(incorrect = \"firebrick\", correct = \"darkgreen\", highlight = \"slateblue\")\n\nFarverne gælder hele siden. Sitets fælles CSS styrer afstande, typografi og layout. Feedback gives også med tekst, så farverne ikke står alene.",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "demo-oevelser.html#opsætning-og-øvrige-funktioner",
+    "href": "demo-oevelser.html#opsætning-og-øvrige-funktioner",
+    "title": "Demo-øvelser",
+    "section": "14. Opsætning og øvrige funktioner",
+    "text": "14. Opsætning og øvrige funktioner\nAlle aktive spørgsmålstyper og svarregler i webexercises 1.2.0 er demonstreret ovenfor. Følgende funktioner opretter eller ændrer projekter; de er forfatterværktøjer og skal ikke køres, hver gang en studerende åbner siden.\n\n\n\n\n\n\n\nFunktion\nFormål\n\n\n\n\nadd_to_quarto()\nFøjer CSS, JavaScript, demo og opsætning til et Quarto-projekt. Dette site er allerede sat op.\n\n\ncreate_quarto_doc()\nOpretter en selvstændig Quarto-demo med hjælpefiler.\n\n\nadd_to_quarto_file()\nTilføjer understøttelse til en eksisterende Quarto-fil.\n\n\nadd_to_rmarkdown_file()\nTilføjer understøttelse til en R Markdown-fil.\n\n\nrmd_webex_support()\nHjælper med understøttelse af HTML/LaTeX i dokumenter.\n\n\nwebexercises_default()\nR Markdown-outputformat med webexercises.\n\n\nadd_to_bookdown()\nOpsætter hjælpefiler til et bookdown-projekt.\n\n\nadd_to_pkgdown()\nOpsætter webexercises i dokumentationen til en R-pakke.\n\n\nuse_webex_vignette()\nOpretter en vignette eller artikel i en R-pakke.\n\n\nwebex_vignette()\nOutputformat til vignetter.\n\n\ntotal_correct()\nUdfaset. Brug .webex-check, som automatisk viser en optælling.\n\n\n\nDette site bruger HTML. Pakken har også funktioner til LaTeX/PDF, men disse giver ikke browserens interaktive svarfelter.\nSe kildekoden for den anvendte version · Lav din egen øvelsesside",
+    "crumbs": [
+      "Demo-øvelser"
+    ]
+  },
+  {
+    "objectID": "om.html",
+    "href": "om.html",
+    "title": "Om øvelserne",
+    "section": "",
+    "text": "KUB Datalab er en del af Københavns Universitetsbibliotek. Her finder du øvelser, som hjælper dig med at bruge det, du har lært på vores kurser."
+  },
+  {
+    "objectID": "om.html#sådan-bruger-du-siderne",
+    "href": "om.html#sådan-bruger-du-siderne",
+    "title": "Om øvelserne",
+    "section": "Sådan bruger du siderne",
+    "text": "Sådan bruger du siderne\nVælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.\nDe korte spørgsmål besvares på siden. Større programmeringsopgaver løser du i dit eget R-miljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning."
+  },
+  {
+    "objectID": "om.html#besøgsstatistik",
+    "href": "om.html#besøgsstatistik",
+    "title": "Om øvelserne",
+    "section": "Besøgsstatistik",
+    "text": "Besøgsstatistik\nVi bruger GoatCounter til at se, hvor meget de enkelte sider bliver besøgt. Vi sender ikke dine øvelsessvar, quizresultater eller indtastede kode til statistiksystemet. Sidernes URL-parametre og ankre udelades fra vores statistikopsætning.\nLæs om GoatCounters behandling af data. Undervisere kan læse mere på siden om besøgsstatistik."
+  },
+  {
+    "objectID": "om.html#materialer-og-kontakt",
+    "href": "om.html#materialer-og-kontakt",
+    "title": "Om øvelserne",
+    "section": "Materialer og kontakt",
+    "text": "Materialer og kontakt\nKUB Datalabs hjemmeside · Kildekode og fejlrapporter\nSitet er bygget med Quarto og webexercises. Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets assets/ATTRIBUTION.md."
+  },
+  {
+    "objectID": "r/intro/index.html",
+    "href": "r/intro/index.html",
+    "title": "Introduktion til R",
+    "section": "",
+    "text": "Du har arbejdet med R på kurset. Her kan du prøve grundbegreberne igen i mindre opgaver.\nForudsætninger: Du har gennemgået den grundlæggende introduktion til R. Til den afsluttende opgave skal du kunne køre R, eksempelvis i Positron eller RStudio.\nÅbn kursusmaterialet: Introduction to R.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Introduktion til R"
+    ]
+  },
+  {
+    "objectID": "r/intro/index.html#objekter-vektorer-og-indeksering",
+    "href": "r/intro/index.html#objekter-vektorer-og-indeksering",
+    "title": "Introduktion til R",
+    "section": "Objekter, vektorer og indeksering",
+    "text": "Objekter, vektorer og indeksering\nOpret et objekt, forudsig et resultat og vælg elementer fra en vektor.\nStart øvelsessættet →",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Introduktion til R"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html",
+    "href": "vejledning/ny-oevelsesside.html",
+    "title": "Lav en ny øvelsesside",
+    "section": "",
+    "text": "Siderne skrives i Quarto (.qmd). R genererer spørgsmålene med webexercises 1.2.0, og den færdige side fungerer i browseren. Du skal kun tilføje indhold og navigation; logo, layout og statistik følger med automatisk.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#klargør-projektet",
+    "href": "vejledning/ny-oevelsesside.html#klargør-projektet",
+    "title": "Lav en ny øvelsesside",
+    "section": "1. Klargør projektet",
+    "text": "1. Klargør projektet\nKlon eller hent KUBDatalab/exercises. Åbn projektmappen i Positron eller RStudio. Du skal have R og Quarto CLI installeret.\nInstallér pakkerne én gang i R:\ninstall.packages(c(\"remotes\", \"knitr\", \"rmarkdown\"))\nremotes::install_version(\"webexercises\", version = \"1.2.0\", upgrade = \"never\")\nSitet fastholder denne version, så R-funktioner og de medfølgende JavaScript-filer passer sammen. Når versionen opdateres, skal både scripts/setup.R, workflowet og assets/vendor/ opdateres og demoen kontrolleres.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#kopiér-skabelonen",
+    "href": "vejledning/ny-oevelsesside.html#kopiér-skabelonen",
+    "title": "Lav en ny øvelsesside",
+    "section": "2. Kopiér skabelonen",
+    "text": "2. Kopiér skabelonen\nKopiér templates/oevelse.qmd til eksempelvis r/intro/min-nye-oevelse.qmd. Du kan gøre det i filoversigten eller i R fra projektets rod:\nfile.copy(\"templates/oevelse.qmd\", \"r/intro/min-nye-oevelse.qmd\")\nSe skabelonens kildekode på GitHub.\nBehold setup-chunken, som indlæser scripts/setup.R. Projektet bruger execute-dir: project, så filstier i R-kode altid regnes fra projektets rod, også på sider i undermapper.\nRet title, description, tidsforbrug og læringsmål. Filnavne bør være korte og uden mellemrum, eksempelvis filtrering.qmd.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#skriv-spørgsmål",
+    "href": "vejledning/ny-oevelsesside.html#skriv-spørgsmål",
+    "title": "Lav en ny øvelsesside",
+    "section": "3. Skriv spørgsmål",
+    "text": "3. Skriv spørgsmål\nBrug inline R til et felt midt i en sætning. Skabelonen viser præcis, hvordan backticks og r placeres. Disse er de centrale funktioner:\n\n\n\n\n\n\n\nOpgave\nKald\n\n\n\n\nEt bestemt tal\nfitb(42, width = 6)\n\n\nEt ord\nfitb(\"mean\", width = 12)\n\n\nFlere acceptable stavemåder\nfitb(c(\"dataframe\", \"data frame\"), ignore_case = TRUE)\n\n\nEt tal med tolerance\nfitb(pi, tol = 0.001)\n\n\nEn menu\nmcq(c(\"sum\", answer = \"mean\", \"length\"))\n\n\nSandt/falsk\ntorf(TRUE)\n\n\nLange svarmuligheder\nlongmcq(c(\"Forkert\", answer = \"Rigtigt\"))\n\n\n\nNavngiv den korrekte valgmulighed answer. Ved numeriske svar bruges decimalpunktum. Tolerancen er en strengt mindre-end-grænse.\nLad demoen være dit opslagsværk: den viser også regulære udtryk, store/små bogstaver, mellemrum, beregnede facit og quiz().\n\nFeedback med det samme eller på knap\nEt enkelt felt giver feedback med det samme. En div med klasserne .webex-check .webex-box samler flere spørgsmål bag Tjek svar. Kopiér denne struktur fra skabelonen, og læg ikke sådanne sektioner inden i hinanden.\n\n\nEn hel quiz i en R-chunk\nEn almindelig R-chunk kan returnere quiz() direkte:\nquiz(\n  \"R tæller fra 1.\" = TRUE,\n  \"Hvilken funktion giver et gennemsnit?\" =\n    c(\"sum\", answer = \"mean\", \"length\"),\n  \"Hvad er 2 + 2?\" = 4L,\n  title = \"Tjek dig selv\"\n)\nBrug #| echo: false øverst i chunken, hvis de studerende kun skal se quizzen. Andre HTML-genererende funktioner kan vises fra en chunk med #| results: asis og eksempelvis cat(fitb(5)).",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#tilføj-hint-og-løsning",
+    "href": "vejledning/ny-oevelsesside.html#tilføj-hint-og-løsning",
+    "title": "Lav en ny øvelsesside",
+    "section": "4. Tilføj hint og løsning",
+    "text": "4. Tilføj hint og løsning\nPlacér et inline-kald til hide(\"Vis hint\") før hjælpeteksten og et til unhide() bagefter. Lav en separat blok til hide(\"Vis løsningsforslag\").\nEt hint bør hjælpe den studerende med næste skridt. Løsningsforslaget bør forklare hvorfor koden virker og gerne vise resultatet. Skriv ikke, at kun én bestemt kode er korrekt, hvis opgaven kan løses på flere måder.\nEn hel R-chunk kan også skjules med #| webex.hide: \"Vis kode og resultat\".",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#knyt-siden-til-et-kursus",
+    "href": "vejledning/ny-oevelsesside.html#knyt-siden-til-et-kursus",
+    "title": "Lav en ny øvelsesside",
+    "section": "5. Knyt siden til et kursus",
+    "text": "5. Knyt siden til et kursus\nTilføj et link på r/intro/index.qmd. Tilføj også filen under det rette kursus i _quarto.yml, eksempelvis:\ncontents:\n  - r/intro/index.qmd\n  - r/intro/vektorer.qmd\n  - r/intro/min-nye-oevelse.qmd\nTil et nyt kursus oprettes en ny mappe, eksempelvis r/visualisering/, med sin egen index.qmd. Tilføj et kursuskort på r/index.qmd og en sektion i sidemenuen. Link også til det eksisterende kursusmateriale.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#se-siden-lokalt",
+    "href": "vejledning/ny-oevelsesside.html#se-siden-lokalt",
+    "title": "Lav en ny øvelsesside",
+    "section": "6. Se siden lokalt",
+    "text": "6. Se siden lokalt\nKør dette i terminalen, fra projektmappen:\nquarto preview\nLav en fuld rendering før commit:\nquarto render\nAfprøv mindst ét rigtigt, ét forkert og ét tomt svar for hver spørgsmålstype, du bruger. Tjek også hints, løsninger, menulinks og siden på en smal skærm.\nBrowserkontrollerne kan køres med:\nnpm install --no-save playwright@1.55.0\nnpx playwright install chromium\nnode tests/site.test.mjs",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#udgiv-ændringen",
+    "href": "vejledning/ny-oevelsesside.html#udgiv-ændringen",
+    "title": "Lav en ny øvelsesside",
+    "section": "7. Udgiv ændringen",
+    "text": "7. Udgiv ændringen\nCommit og push til KUBDatalab/exercises. Workflowet Build and publish Quarto site installerer R og Quarto, bygger sitet, tester interaktionerne og lægger resultatet på gh-pages i samme repo.\nFørste gang skal GitHub Pages være sat til Deploy from a branch → gh-pages → / (root) under repoets Settings → Pages. Herefter er adressen:\nhttps://kubdatalab.github.io/exercises/\nEt mislykket build vises under Actions. Det tidligere publicerede site bevares. Workflowet gemmer også det byggede site og skærmbilleder som artifacts.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#python-senere",
+    "href": "vejledning/ny-oevelsesside.html#python-senere",
+    "title": "Lav en ny øvelsesside",
+    "section": "Python senere",
+    "text": "Python senere\nOpret eksempelvis python/intro/ med samme struktur, og føj python/**/*.qmd til projektets render-liste. Opret en Python-indgang i menuen og på forsiden.\nSpørgsmål om Python kan stadig genereres med R/webexercises. Python-kode vises i almindelige kodeblokke med sproget python, og den studerende kører den i sit eget miljø. Hvis Python-kode også skal eksekveres under bygningen, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  },
+  {
+    "objectID": "vejledning/ny-oevelsesside.html#hvad-siden-gør-og-ikke-gør",
+    "href": "vejledning/ny-oevelsesside.html#hvad-siden-gør-og-ikke-gør",
+    "title": "Lav en ny øvelsesside",
+    "section": "Hvad siden gør og ikke gør",
+    "text": "Hvad siden gør og ikke gør\n\nFacit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.\nSitet kører ikke vilkårlig R- eller Python-kode fra den studerende.\nBesøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.\nDer er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.\n\nSe opsætningen af besøgsstatistik.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Lav en ny øvelsesside"
+    ]
+  }
+]

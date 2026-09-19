@@ -1,0 +1,1 @@
+Sitemap: https://kubdatalab.github.io/exercises/sitemap.xml
