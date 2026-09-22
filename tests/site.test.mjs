@@ -106,7 +106,7 @@ try {
       await editor.press('ControlOrMeta+a');
       await editor.press('Backspace');
       await page.keyboard.insertText(code);
-      assert.equal(await editor.innerText(), code);
+      assert.equal((await editor.locator('.cm-line').allTextContents()).join('\n'), code);
     }
     await run.click();
     if (expected) await block.locator('.cell-output-container-webr').getByText(expected, {exact:false}).last().waitFor({timeout:30000});

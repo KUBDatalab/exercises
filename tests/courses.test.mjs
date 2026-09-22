@@ -50,7 +50,7 @@ try {
       await editor.press('ControlOrMeta+a');
       await editor.press('Backspace');
       await page.keyboard.insertText(code);
-      assert.equal(await editor.innerText(), code);
+      assert.equal((await editor.locator('.cm-line').allTextContents()).join('\n'), code);
       await run.click();
       await lab.locator('.cell-output-stdout').filter({hasText:marker}).first().waitFor({timeout:60000});
       if (test.plot) await lab.locator('.cell-output-display canvas, .cell-output-display img').first().waitFor({timeout:30000});
