@@ -55,51 +55,753 @@
     ]
   },
   {
-    "objectID": "r/intro/vektorer.html",
-    "href": "r/intro/vektorer.html",
-    "title": "Objekter, vektorer og indeksering",
+    "objectID": "vejledning/kursusoverblik.html",
+    "href": "vejledning/kursusoverblik.html",
+    "title": "Fra kursusmateriale til øvelser",
     "section": "",
-    "text": "Introduktion til R · 10–15 minutter\nEfter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.\nKodefelterne kører R direkte i din browser. Vent på indlæsningen, redigér koden, og vælg Run Code (eller Ctrl/Cmd + Enter). Første indlæsning kan tage lidt tid og kræver internet. Start Over gendanner feltets kode; genindlæs siden for at nulstille hele R-sessionen. Du kan også bruge dit eget R-miljø.",
+    "text": "Samlingen er gennemgået og udvidet den 22. september 2026 med 23 nye øvelsessæt. Sammen med det oprindelige vektorsæt er der 24 sæt. Hvert nyt sæt indeholder læringsmål, spørgsmål, en kodeopgave, hint, løsningsforslag og fortolkning.\nØvelserne følger emner i de eksisterende lektioner, men bruger korte, selvstændige opgaver. Et sæt er repetition af udvalgte læringsmål og erstatter ikke hele kurset.",
     "crumbs": [
-      "Øvelser i R",
-      "Introduktion til R",
-      "Objekter, vektorer og indeksering"
+      "Demo-øvelser",
+      "Fra kursusmateriale til øvelser"
     ]
   },
   {
-    "objectID": "r/intro/vektorer.html#læs-en-vektor",
-    "href": "r/intro/vektorer.html#læs-en-vektor",
-    "title": "Objekter, vektorer og indeksering",
-    "section": "1. Læs en vektor",
-    "text": "1. Læs en vektor\n\nSe på koden, og forudsig resultatet uden at køre den først.\nmaal &lt;- c(4, 7, 9, 12)\nHvor mange elementer indeholder maal? \nHvad er værdien af maal[2]? \nHvad er værdien af sum(maal)? \n\n\n\nVis hint\n\nR tæller positioner fra 1. sum() lægger alle elementerne sammen.",
+    "objectID": "vejledning/kursusoverblik.html#find-den-relevante-øvelse",
+    "href": "vejledning/kursusoverblik.html#find-den-relevante-øvelse",
+    "title": "Fra kursusmateriale til øvelser",
+    "section": "Find den relevante øvelse",
+    "text": "Find den relevante øvelse\n\n\n\nUndervisningsmateriale\nØvelsessæt\nFokus\n\n\n\n\nR-intro\nFra tabel til opsummering\nUdvælge rækker og kolonner, beregne nye variable og opsummere grupper.\n\n\nR-EDA\nFordelinger, manglende værdier og joins\nUndersøge manglende værdier, sammenligne grupper og gennemskue en join.\n\n\nR-visualisation\nByg et plot med ggplot2\nVælge geometri og skelne mellem mapping og faste farver.\n\n\nR-visualisation\nFacetter, skalaer og tema\nOpdele et plot i paneler og skelne mellem zoom og ændring af en skala.\n\n\nR-statistic\nBeskriv data og undersøg normalfordelingen\nBeregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot.\n\n\nR-statistic\nRegression, forudsigelser og residualer\nTilpasse en lineær model, lave en forudsigelse og fortolke en justeret koefficient.\n\n\nR-text-analysis\nTokens, frekvenser og sentiment\nTokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.\n\n\nR-api\nAPI-forespørgsler, JSON og tid\nSkelne mellem GET og POST, læse JSON og omforme en dataforespørgsel.\n\n\nR_web_scraping\nFind tekst og tabeller i HTML\nBruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er.\n\n\nR-programming\nFunktioner, løkker og betingelser\nSkrive en funktion med et argument, bruge if og opsamle resultater fra en løkke.\n\n\nR-toolbox\nImport, tidy data og reproducerbarhed\nLæse semikolonseparerede data, forme dem til langt format og dokumentere en analyse.\n\n\nR-toolbox\nLav indholdet til en Table One\nOpsummere grupper, angive nævnere og håndtere manglende værdier i en deskriptiv tabel.\n\n\nR-toolbox\nANOVA, logistisk regression og overfitting\nSkelne mellem modeltyper og fortolke logistiske forudsigelser og validering.\n\n\nR-toolbox\nStikprøvestørrelse, power og CLT\nBeregne stikprøvestørrelse og skelne mellem fordelingen af data og af gennemsnit.\n\n\nR-toolbox\nK-means, skalering og fortolkning\nSkalere variable og forstå, hvad et valgt antal klynger betyder.\n\n\nR-toolbox\nProcentvis enighed og Cohens kappa\nBeregne observeret enighed, forventet enighed fra marginalerne og kappa.\n\n\nR-toolbox\nBeregningsopgaver, parallelisering og miljø\nGenkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø.\n\n\npython\nLister, løkker og betingelser\nBruge indeks, konvertere tal og filtrere en liste med en løkke.\n\n\npython\nFunktioner, dictionaries og fejl\nSkrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer.\n\n\npython\nDataframes, filtrering og gruppevise mål\nLæse CSV-data, filtrere med loc, opsummere grupper og tegne et plot.\n\n\npython-toolbox\nTekstrensning, regex og TF-IDF\nRense tekst, tælle ord og beregne en enkel TF-IDF-vægt.\n\n\nsql-intro\nSELECT, filtrering og opsummering\nFiltrere, sortere og beregne gruppevise resultater i SQL.\n\n\nsql-intro\nJoins, nøgler og tabeldesign\nForbinde tabeller, vælge jointype og forklare primærnøgler.",
     "crumbs": [
-      "Øvelser i R",
-      "Introduktion til R",
-      "Objekter, vektorer og indeksering"
+      "Demo-øvelser",
+      "Fra kursusmateriale til øvelser"
     ]
   },
   {
-    "objectID": "r/intro/vektorer.html#vælg-den-rigtige-kode",
-    "href": "r/intro/vektorer.html#vælg-den-rigtige-kode",
-    "title": "Objekter, vektorer og indeksering",
-    "section": "2. Vælg den rigtige kode",
-    "text": "2. Vælg den rigtige kode\n\nHvilken kode udvælger det første og tredje element?\n\n maal[1:3] maal[c(1, 3)] maal[1, 3]\n\n\n\n\nVis forklaring\n\nc(1, 3) indeholder netop de to positioner. 1:3 omfatter også position 2. Et komma mellem indeks bruges til flere dimensioner, eksempelvis rækker og kolonner i en dataframe.\n\n\nAfprøv dine forudsigelser\nNår du har svaret på opgave 1 og 2, kan du undersøge vektoren her. Tilføj selv kald til eksempelvis length(), sum() og indeksering.",
+    "objectID": "vejledning/kursusoverblik.html#afgrænsning-og-kildeversioner",
+    "href": "vejledning/kursusoverblik.html#afgrænsning-og-kildeversioner",
+    "title": "Fra kursusmateriale til øvelser",
+    "section": "Afgrænsning og kildeversioner",
+    "text": "Afgrænsning og kildeversioner\nKursusforløbene er identificeret gennem deres indholdsfortegnelser og de enkelte lektioner. For R-toolbox er den publicerede episodeoversigt anvendt; in_progress er ikke behandlet som færdigt undervisningsmateriale. Øvelserne dækker centrale begreber fra den aktive samling, men ikke alle specialpakker og variationer. Eksempelvis øves Table One-data før formatering, og LASSO øves gennem valg af valideringsstrategi.\nR-API-2 havde fortsat introduktionskursets episodeoversigt ved gennemgangen og er derfor ikke præsenteret som et selvstændigt niveau 2-kursus. Netværksmaterialet i R-brief-graphs fremstod som en kladde uden for episodeoversigten; det er heller ikke udgivet som et færdigt øvelsesforløb. Gentagne kursusskabeloner og administrationsrepos er ikke selvstændige kurser her.\nDownload oversigten over kildefiler og præcise Git-revisioner. Hver øvelsesside linker også til de relevante kildelektioner. Nye opgaver, formuleringer og løsningsforslag er skrevet til øvelsessitet; der er ikke kopieret hele kursuskapitler eller eksterne datasamlinger.",
     "crumbs": [
-      "Øvelser i R",
-      "Introduktion til R",
-      "Objekter, vektorer og indeksering"
+      "Demo-øvelser",
+      "Fra kursusmateriale til øvelser"
     ]
   },
   {
-    "objectID": "r/intro/vektorer.html#arbejd-selv-i-r",
-    "href": "r/intro/vektorer.html#arbejd-selv-i-r",
-    "title": "Objekter, vektorer og indeksering",
-    "section": "3. Arbejd selv i R",
-    "text": "3. Arbejd selv i R\nOpret en vektor timer med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.\n\n\n\n\n\n\n\n\n\n\nKør din kode, og skriv derefter resultaterne i svarfelterne. Tjek svar kontrollerer felterne, ikke den kode, du har skrevet.\n\nHvad er gennemsnittet? \nHvor mange værdier er større end 3? \n\n\n\nVis løsningsforslag\n\n\ntimer &lt;- c(2, 3, 5, 6)\nsum(timer)\n\n[1] 16\n\nmean(timer)\n\n[1] 4\n\ntimer[timer &gt; 3]\n\n[1] 5 6\n\n\nDen logiske test timer &gt; 3 udvælger værdierne 5 og 6.\n\n← Tilbage til kursets øvelser · Se kursusmaterialet",
+    "objectID": "vejledning/kursusoverblik.html#data-og-eksekvering",
+    "href": "vejledning/kursusoverblik.html#data-og-eksekvering",
+    "title": "Fra kursusmateriale til øvelser",
+    "section": "Data og eksekvering",
+    "text": "Data og eksekvering\n\nR-felter bruger webR; Python-felter bruger Pyodide. De nødvendige pakker hentes på den enkelte side.\nEksemplerne bruger konstruerede små data eller datasæt, som følger med R-pakker, herunder cars, mtcars, iris, PlantGrowth, diamonds og mpg.\nAPI- og scrapingopgaver bruger indlejrede eksempler. De sender ingen eksterne dataforespørgsler og kræver ingen nøgler.\nSQL køres i SQLite via Python i browseren. Databasen oprettes på ny ved kørsel af kodefeltet.\nØvelsen om UCloud og parallelisering bruger browseren til en sekventiel referenceberegning. Den starter ikke UCloud-jobs eller parallelle processer.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Fra kursusmateriale til øvelser"
+    ]
+  },
+  {
+    "objectID": "vejledning/kursusoverblik.html#vedligeholdelse",
+    "href": "vejledning/kursusoverblik.html#vedligeholdelse",
+    "title": "Fra kursusmateriale til øvelser",
+    "section": "Vedligeholdelse",
+    "text": "Vedligeholdelse\nVed ændringer i en kildelektion: sammenlign læringsmålene med det tilhørende sæt, gennemgå opgaven og facit, og opdatér kildeversionen. Browserkontrollen kører løsningsforslagene og kontrollerer deres resultater før publicering. En grøn test kontrollerer beregninger og funktionalitet; undervisernes faglige review er stadig en del af vedligeholdelsen.",
+    "crumbs": [
+      "Demo-øvelser",
+      "Fra kursusmateriale til øvelser"
+    ]
+  },
+  {
+    "objectID": "sql/intro/index.html",
+    "href": "sql/intro/index.html",
+    "title": "Introduktion til SQL",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Introduktion til SQL"
+    ]
+  },
+  {
+    "objectID": "sql/intro/index.html#select-filtrering-og-opsummering",
+    "href": "sql/intro/index.html#select-filtrering-og-opsummering",
+    "title": "Introduktion til SQL",
+    "section": "SELECT, filtrering og opsummering",
+    "text": "SELECT, filtrering og opsummering\n25 minutter · Øv dig i at filtrere, sortere og beregne gruppevise resultater i SQL.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Introduktion til SQL"
+    ]
+  },
+  {
+    "objectID": "sql/intro/index.html#joins-nøgler-og-tabeldesign",
+    "href": "sql/intro/index.html#joins-nøgler-og-tabeldesign",
+    "title": "Introduktion til SQL",
+    "section": "Joins, nøgler og tabeldesign",
+    "text": "Joins, nøgler og tabeldesign\n25 minutter · Øv dig i at forbinde tabeller, vælge jointype og forklare primærnøgler.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Introduktion til SQL"
+    ]
+  },
+  {
+    "objectID": "sql/index.html",
+    "href": "sql/index.html",
+    "title": "Øvelser i SQL",
+    "section": "",
+    "text": "Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.\n\n\nIntroduktion til SQL\nSELECT, filtrering og opsummering · Joins, nøgler og tabeldesign.\nSe øvelser →\n\n\nSe demoen med spørgsmålstyper.",
+    "crumbs": [
+      "SQL",
+      "Øvelser i SQL"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/html-og-tabeller.html",
+    "href": "r/webscraping/html-og-tabeller.html",
+    "title": "Find tekst og tabeller i HTML",
+    "section": "",
+    "text": "Web scraping med R · 25 minutter\nEfter øvelsen kan du bruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Find tekst og tabeller i HTML"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/html-og-tabeller.html#forudsig-og-vælg",
+    "href": "r/webscraping/html-og-tabeller.html#forudsig-og-vælg",
+    "title": "Find tekst og tabeller i HTML",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvilken CSS-selektor vælger et p-element med class=“intro”?\n\n p#intro p.intro intro.p\n\nHvad repræsenterer read_html() i denne øvelse?\n\n Et login til en hjemmeside. Parsing af en indlejret HTML-tekst. En ændring af hjemmesidens data.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Find tekst og tabeller i HTML"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/html-og-tabeller.html#arbejd-selv",
+    "href": "r/webscraping/html-og-tabeller.html#arbejd-selv",
+    "title": "Find tekst og tabeller i HTML",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nUdtræk overskriften, introduktionsteksten og tabellen. Beregn det samlede antal pladser. Dan tre URL’er med page_num=1, 2 og 3. URL’erne skal kun konstrueres, ikke besøges.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nSamlet antal pladser? \nAntal konstruerede URL’er? \n\n\n\nVis hint\n\nVælg først elementet, og udtræk derefter dets tekst eller tabel. Et punktum angiver en klasse i en CSS-selektor.\n\n\n\nVis løsningsforslag\n\n\nlibrary(rvest)\nside &lt;- '&lt;html&gt;&lt;body&gt;&lt;h1&gt;Kurser&lt;/h1&gt;&lt;p class=\"intro\"&gt;Tre korte kurser&lt;/p&gt;\n&lt;table&gt;&lt;tr&gt;&lt;th&gt;kursus&lt;/th&gt;&lt;th&gt;pladser&lt;/th&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;td&gt;R&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Python&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;td&gt;SQL&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;'\ndoc &lt;- read_html(side)\noverskrift &lt;- doc |&gt; html_element(\"h1\") |&gt; html_text2()\nintro &lt;- doc |&gt; html_element(\"p.intro\") |&gt; html_text2()\nkurser &lt;- doc |&gt; html_element(\"table\") |&gt; html_table()\noverskrift\nintro\nkurser\nsum(kurser$pladser)\nurls &lt;- paste0(\"https://example.org/kurser?page_num=\", 1:3)\nurls\n\nTabellen indeholder 30 pladser. Den indlejrede HTML gør øvelsen reproducerbar, også hvis virkelige sider ændres. Browserens CORS-regler og dynamisk indhold kan betyde, at en ekstern side kræver en anden tilgang.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Find tekst og tabeller i HTML"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/html-og-tabeller.html#fortolk-og-gå-videre",
+    "href": "r/webscraping/html-og-tabeller.html#fortolk-og-gå-videre",
+    "title": "Find tekst og tabeller i HTML",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nEn side har fem tabeller. Hvad bør du gøre før du binder dem sammen?\n\n Antage at alle fem har samme struktur. Undersøge tabellernes indhold, kolonner og datatyper. Omdanne alle celler til tal.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Find tekst og tabeller i HTML"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/html-og-tabeller.html#tilbage-til-undervisningen",
+    "href": "r/webscraping/html-og-tabeller.html#tilbage-til-undervisningen",
+    "title": "Find tekst og tabeller i HTML",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: Scraping_tables_on_a_page · scraping_tables_on_multiple_pages_with_predictable_URLS · paragraph.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Find tekst og tabeller i HTML"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/index.html",
+    "href": "r/visualisering/index.html",
+    "title": "Visualisering med R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Visualisering med R"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/index.html#byg-et-plot-med-ggplot2",
+    "href": "r/visualisering/index.html#byg-et-plot-med-ggplot2",
+    "title": "Visualisering med R",
+    "section": "Byg et plot med ggplot2",
+    "text": "Byg et plot med ggplot2\n25 minutter · Øv dig i at vælge geometri og skelne mellem mapping og faste farver.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Visualisering med R"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/index.html#facetter-skalaer-og-tema",
+    "href": "r/visualisering/index.html#facetter-skalaer-og-tema",
+    "title": "Visualisering med R",
+    "section": "Facetter, skalaer og tema",
+    "text": "Facetter, skalaer og tema\n25 minutter · Øv dig i at opdele et plot i paneler og skelne mellem zoom og ændring af en skala.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Visualisering med R"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/tabeller.html",
+    "href": "r/toolbox/tabeller.html",
+    "title": "Lav indholdet til en Table One",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du opsummere grupper, angive nævnere og håndtere manglende værdier i en deskriptiv tabel.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Lav indholdet til en Table One"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/tabeller.html#forudsig-og-vælg",
+    "href": "r/toolbox/tabeller.html#forudsig-og-vælg",
+    "title": "Lav indholdet til en Table One",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad er formålet med en Table One?\n\n At bevise en årsagssammenhæng. At beskrive deltagere eller observationer, ofte opdelt i grupper. At vise alle rådata i én celle.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Lav indholdet til en Table One"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/tabeller.html#arbejd-selv",
+    "href": "r/toolbox/tabeller.html#arbejd-selv",
+    "title": "Lav indholdet til en Table One",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nLav en oversigt pr. gruppe med antal deltagere, antal kendte aldre, gennemsnitsalder og antal rygere. Beregn andelen af rygere blandt dem, der har oplyst rygestatus. Brug tydelige kolonnenavne.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nGennemsnitsalder i gruppe A? \nRygerprocent i gruppe A blandt kendte svar? \n\n\n\nVis hint\n\nTRUE tæller som 1 og FALSE som 0 i mean(). Den relevante nævner for rygerandelen er antallet med kendt rygestatus.\n\n\n\nVis løsningsforslag\n\n\nlibrary(dplyr)\ndeltagere &lt;- tibble(gruppe = c(\"A\", \"A\", \"A\", \"B\", \"B\"),\n  alder = c(20, 30, NA, 40, 50), ryger = c(TRUE, FALSE, NA, FALSE, TRUE))\noversigt &lt;- deltagere |&gt; group_by(gruppe) |&gt;\n  summarise(n = n(), alder_kendt = sum(!is.na(alder)),\n    alder_mean = mean(alder, na.rm = TRUE),\n    rygere = sum(ryger, na.rm = TRUE), rygestatus_kendt = sum(!is.na(ryger)),\n    ryger_pct = 100 * mean(ryger, na.rm = TRUE), .groups = \"drop\")\noversigt\n\nGruppe A har tre deltagere, men kun to kendte aldre og to kendte rygestatusser. Derfor er rygerandelen 1/2 = 50 %. Pakker som table1 og gtsummary kan formatere tabellen, men nævnere, enheder og labels skal stadig være afklaret.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Lav indholdet til en Table One"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/tabeller.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/tabeller.html#fortolk-og-gå-videre",
+    "title": "Lav indholdet til en Table One",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvilken fodnote gør tabellen mest entydig?\n\n Alle manglende værdier er nul. Rygerprocenter beregnes blandt deltagere med kendt rygestatus; alder er i år. En procent kræver ingen nævner.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Lav indholdet til en Table One"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/tabeller.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/tabeller.html#tilbage-til-undervisningen",
+    "title": "Lav indholdet til en Table One",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: table1 · table1-gt · descript-stat.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Lav indholdet til en Table One"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/modeller.html",
+    "href": "r/toolbox/modeller.html",
+    "title": "ANOVA, logistisk regression og overfitting",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du skelne mellem modeltyper og fortolke logistiske forudsigelser og validering.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "ANOVA, logistisk regression og overfitting"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/modeller.html#forudsig-og-vælg",
+    "href": "r/toolbox/modeller.html#forudsig-og-vælg",
+    "title": "ANOVA, logistisk regression og overfitting",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nEn respons er kodet 0/1. Hvilken model er et naturligt udgangspunkt?\n\n K-means med én klynge. En binomial logistisk regression. En normalfordeling med negativ varians.\n\nHvad er nulhypotesen i en envejs-ANOVA med tre grupper?\n\n Alle observationer er identiske. Alle tre populationsmiddelværdier er ens. Mindst én gruppe er normalfordelt.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "ANOVA, logistisk regression og overfitting"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/modeller.html#arbejd-selv",
+    "href": "r/toolbox/modeller.html#arbejd-selv",
+    "title": "ANOVA, logistisk regression og overfitting",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nTilpas en envejs-ANOVA til weight ~ group i PlantGrowth. Tilpas derefter en logistisk model af am ~ wt i mtcars, og beregn sandsynligheden for am = 1 ved wt = 3. Kontrollér forskellen mellem link-skala og response-skala.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHvad modellerer den logistiske models lineære prædiktor?\n\n Sandsynlighed direkte uden transformation. Log-odds for am = 1. En forskel i middelvægt.\n\n\n\n\nVis hint\n\ntype = \"response\" giver en sandsynlighed i en binomialmodel. Standardtypen giver lineær prædiktor, her log-odds. plogis() omregner log-odds til sandsynlighed.\n\n\n\nVis løsningsforslag\n\n\nanova_model &lt;- aov(weight ~ group, data = PlantGrowth)\nsummary(anova_model)\nlog_model &lt;- glm(am ~ wt, data = mtcars, family = binomial())\neta &lt;- predict(log_model, newdata = data.frame(wt = 3), type = \"link\")\nsandsynlighed &lt;- predict(log_model, newdata = data.frame(wt = 3), type = \"response\")\nc(log_odds = eta, sandsynlighed = sandsynlighed)\nplogis(eta)\n\nANOVA’ens p-værdi er cirka 0,016. Den samlede test fortæller ikke alene, hvilke grupper der adskiller sig. Den logistiske forudsigelse ligger mellem 0 og 1; exp(eta) er odds og er derfor et andet tal.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "ANOVA, logistisk regression og overfitting"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/modeller.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/modeller.html#fortolk-og-gå-videre",
+    "title": "ANOVA, logistisk regression og overfitting",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvor bør du vælge LASSO-straffens styrke, hvis du også har et separat testsæt?\n\n På det samme testsæt igen og igen. Med krydsvalidering i træningsdata; testsættet bruges til slutvurdering. Altid ved lambda = 0 uanset data.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "ANOVA, logistisk regression og overfitting"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/modeller.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/modeller.html#tilbage-til-undervisningen",
+    "title": "ANOVA, logistisk regression og overfitting",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: anova · logistic-regression · lasso-regularisation.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "ANOVA, logistisk regression og overfitting"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html",
+    "href": "r/toolbox/index.html",
+    "title": "R-toolbox",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#import-tidy-data-og-reproducerbarhed",
+    "href": "r/toolbox/index.html#import-tidy-data-og-reproducerbarhed",
+    "title": "R-toolbox",
+    "section": "Import, tidy data og reproducerbarhed",
+    "text": "Import, tidy data og reproducerbarhed\n25 minutter · Øv dig i at læse semikolonseparerede data, forme dem til langt format og dokumentere en analyse.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#lav-indholdet-til-en-table-one",
+    "href": "r/toolbox/index.html#lav-indholdet-til-en-table-one",
+    "title": "R-toolbox",
+    "section": "Lav indholdet til en Table One",
+    "text": "Lav indholdet til en Table One\n25 minutter · Øv dig i at opsummere grupper, angive nævnere og håndtere manglende værdier i en deskriptiv tabel.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#anova-logistisk-regression-og-overfitting",
+    "href": "r/toolbox/index.html#anova-logistisk-regression-og-overfitting",
+    "title": "R-toolbox",
+    "section": "ANOVA, logistisk regression og overfitting",
+    "text": "ANOVA, logistisk regression og overfitting\n25 minutter · Øv dig i at skelne mellem modeltyper og fortolke logistiske forudsigelser og validering.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#stikprøvestørrelse-power-og-clt",
+    "href": "r/toolbox/index.html#stikprøvestørrelse-power-og-clt",
+    "title": "R-toolbox",
+    "section": "Stikprøvestørrelse, power og CLT",
+    "text": "Stikprøvestørrelse, power og CLT\n25 minutter · Øv dig i at beregne stikprøvestørrelse og skelne mellem fordelingen af data og af gennemsnit.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#k-means-skalering-og-fortolkning",
+    "href": "r/toolbox/index.html#k-means-skalering-og-fortolkning",
+    "title": "R-toolbox",
+    "section": "K-means, skalering og fortolkning",
+    "text": "K-means, skalering og fortolkning\n25 minutter · Øv dig i at skalere variable og forstå, hvad et valgt antal klynger betyder.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#procentvis-enighed-og-cohens-kappa",
+    "href": "r/toolbox/index.html#procentvis-enighed-og-cohens-kappa",
+    "title": "R-toolbox",
+    "section": "Procentvis enighed og Cohens kappa",
+    "text": "Procentvis enighed og Cohens kappa\n25 minutter · Øv dig i at beregne observeret enighed, forventet enighed fra marginalerne og kappa.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/index.html#beregningsopgaver-parallelisering-og-miljø",
+    "href": "r/toolbox/index.html#beregningsopgaver-parallelisering-og-miljø",
+    "title": "R-toolbox",
+    "section": "Beregningsopgaver, parallelisering og miljø",
+    "text": "Beregningsopgaver, parallelisering og miljø\n25 minutter · Øv dig i at genkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø.\nÅbn kursusmaterialet.\nFlere toolbox-emner øves på siderne om visualisering, statistik og datahåndtering.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "R-toolbox"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/enighed.html",
+    "href": "r/toolbox/enighed.html",
+    "title": "Procentvis enighed og Cohens kappa",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du beregne observeret enighed, forventet enighed fra marginalerne og kappa.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Procentvis enighed og Cohens kappa"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/enighed.html#forudsig-og-vælg",
+    "href": "r/toolbox/enighed.html#forudsig-og-vælg",
+    "title": "Procentvis enighed og Cohens kappa",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad måler Cohens kappa i denne øvelse?\n\n Korrelation mellem to kontinuerte målinger. Enighed mellem to bedømmere ud over den forventede enighed fra deres marginalfordelinger. Antallet af bedømmere.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Procentvis enighed og Cohens kappa"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/enighed.html#arbejd-selv",
+    "href": "r/toolbox/enighed.html#arbejd-selv",
+    "title": "Procentvis enighed og Cohens kappa",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nTo bedømmere klassificerer 100 observationer i ja/nej. De er enige om 40 ja og 40 nej; i hver af de to uenighedskategorier er der 10. Beregn observeret enighed po, forventet enighed pe og kappa = (po − pe)/(1 − pe).\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nObserveret enighed som andel? \nCohens kappa? \n\n\n\nVis hint\n\nEnigheden findes på diagonalen. Gang de to bedømmeres marginalandele for hver kategori, og læg produkterne sammen for at få pe.\n\n\n\nVis løsningsforslag\n\n\nkryds &lt;- matrix(c(40, 10, 10, 40), nrow = 2, byrow = TRUE,\n  dimnames = list(A = c(\"ja\", \"nej\"), B = c(\"ja\", \"nej\")))\nn &lt;- sum(kryds)\npo &lt;- sum(diag(kryds)) / n\npe &lt;- sum((rowSums(kryds) / n) * (colSums(kryds) / n))\nkappa &lt;- (po - pe) / (1 - pe)\nc(po = po, pe = pe, kappa = kappa)\n\npo er 0,8, pe er 0,5, og kappa er 0,6. Kappa afhænger af kategoriernes hyppighed og er ikke det samme som procentvis enighed.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Procentvis enighed og Cohens kappa"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/enighed.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/enighed.html#fortolk-og-gå-videre",
+    "title": "Procentvis enighed og Cohens kappa",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nBegge bedømmere svarer ja på samtlige observationer. Hvad sker der med formlen?\n\n Kappa er automatisk 1. Nævneren bliver nul, så kappa er ikke defineret. Kappa er automatisk minus 1.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Procentvis enighed og Cohens kappa"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/enighed.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/enighed.html#tilbage-til-undervisningen",
+    "title": "Procentvis enighed og Cohens kappa",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: cohens-kappa.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Procentvis enighed og Cohens kappa"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/ord-og-sentiment.html",
+    "href": "r/tekstanalyse/ord-og-sentiment.html",
+    "title": "Tokens, frekvenser og sentiment",
+    "section": "",
+    "text": "Tekstanalyse med R · 25 minutter\nEfter øvelsen kan du tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tokens, frekvenser og sentiment"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/ord-og-sentiment.html#forudsig-og-vælg",
+    "href": "r/tekstanalyse/ord-og-sentiment.html#forudsig-og-vælg",
+    "title": "Tokens, frekvenser og sentiment",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvor mange ordtokens er der i “good good bad”? \nHvad gør anti_join(tokens, stopord, by = “word”)?\n\n Beholder kun stopord. Fjerner tokens, der matcher stopordslisten. Tæller dokumenter.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tokens, frekvenser og sentiment"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/ord-og-sentiment.html#arbejd-selv",
+    "href": "r/tekstanalyse/ord-og-sentiment.html#arbejd-selv",
+    "title": "Tokens, frekvenser og sentiment",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nTokenisér de to korte tekster med unnest_tokens(). Fjern stopord, tæl ord på tværs af tekster, og læg leksikonscorerne sammen pr. dokument. Brug det lille øvelsesleksikon, som står i koden.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nAntal forekomster af good i begge dokumenter? \nSentimentscore for dokument 2 med det angivne leksikon? \n\n\n\nVis hint\n\nBehold dokumentets id gennem hele pipen. inner_join() tilføjer leksikonscoren; group_by(id) sørger for én sum pr. dokument.\n\n\n\nVis løsningsforslag\n\n\nlibrary(dplyr)\nlibrary(tidytext)\ntekster &lt;- tibble(id = 1:2, tekst = c(\"good good bad\", \"not good bad\"))\nstopord &lt;- tibble(word = \"not\")\nleksikon &lt;- tibble(word = c(\"good\", \"bad\"), score = c(1, -1))\ntokens &lt;- tekster |&gt; unnest_tokens(word, tekst)\nrenset &lt;- tokens |&gt; anti_join(stopord, by = \"word\")\nfrekvens &lt;- renset |&gt; count(word, sort = TRUE)\nsentiment &lt;- renset |&gt;\n  inner_join(leksikon, by = \"word\") |&gt;\n  group_by(id) |&gt; summarise(score = sum(score), .groups = \"drop\")\nfrekvens\nsentiment\n\ngood forekommer tre gange. Dokumentscorerne er 1 og 0. Det andet dokument indeholder “not good”: en ordliste, der ser på enkeltord og fjerner not, fanger ikke negationen. Stopordsvalg afhænger af analysens formål.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tokens, frekvenser og sentiment"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/ord-og-sentiment.html#fortolk-og-gå-videre",
+    "href": "r/tekstanalyse/ord-og-sentiment.html#fortolk-og-gå-videre",
+    "title": "Tokens, frekvenser og sentiment",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvordan kan du undersøge, om good er negeret?\n\n Fjern alle små ord før enhver analyse. Se på ordets kontekst eller bigrammer før stopordsfjernelse. Gør leksikonet større uden at undersøge kontekst.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tokens, frekvenser og sentiment"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/ord-og-sentiment.html#tilbage-til-undervisningen",
+    "href": "r/tekstanalyse/ord-og-sentiment.html#tilbage-til-undervisningen",
+    "title": "Tokens, frekvenser og sentiment",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: preparing-data · frequency-analysis · sentiment.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tokens, frekvenser og sentiment"
+    ]
+  },
+  {
+    "objectID": "r/statistik/regression.html",
+    "href": "r/statistik/regression.html",
+    "title": "Regression, forudsigelser og residualer",
+    "section": "",
+    "text": "Statistik med R · 25 minutter\nEfter øvelsen kan du tilpasse en lineær model, lave en forudsigelse og fortolke en justeret koefficient.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Regression, forudsigelser og residualer"
+    ]
+  },
+  {
+    "objectID": "r/statistik/regression.html#forudsig-og-vælg",
+    "href": "r/statistik/regression.html#forudsig-og-vælg",
+    "title": "Regression, forudsigelser og residualer",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad betyder lm(dist ~ speed, data = cars)?\n\n speed er respons, og dist er forklarende variabel. dist er respons, og speed er forklarende variabel. Modellen tester kun om begge variable er normalfordelte.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Regression, forudsigelser og residualer"
+    ]
+  },
+  {
+    "objectID": "r/statistik/regression.html#arbejd-selv",
+    "href": "r/statistik/regression.html#arbejd-selv",
+    "title": "Regression, forudsigelser og residualer",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nTilpas dist ~ speed til cars. Find hældningen, og forudsig dist ved speed = 20. Tegn residualerne mod de forudsagte værdier. Tilpas også mpg ~ wt + hp til mtcars og undersøg koefficienterne.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHældning i cars-modellen? Brug to decimaler. \nForudsagt dist ved speed = 20? Brug to decimaler. \n\n\n\nVis hint\n\ncoef() viser koefficienter. newdata skal være en dataframe med samme variabelnavn som i modellen. Et residual er observeret minus forudsagt.\n\n\n\nVis løsningsforslag\n\n\nmodel &lt;- lm(dist ~ speed, data = cars)\ncoef(model)\nforudsigelse &lt;- predict(model, newdata = data.frame(speed = 20))\nforudsigelse\nplot(fitted(model), residuals(model), xlab = \"Forudsagt dist\", ylab = \"Residual\")\nabline(h = 0, lty = 2)\njusteret &lt;- lm(mpg ~ wt + hp, data = mtcars)\ncoef(justeret)\n\nHældningen er cirka 3,93 feet pr. mph, og forudsigelsen er cirka 61,07 feet. I den multiple model fortolkes vægtkoefficienten ved fastholdt hp. Modellerne beskriver sammenhænge, som ikke i sig selv dokumenterer årsager.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Regression, forudsigelser og residualer"
+    ]
+  },
+  {
+    "objectID": "r/statistik/regression.html#fortolk-og-gå-videre",
+    "href": "r/statistik/regression.html#fortolk-og-gå-videre",
+    "title": "Regression, forudsigelser og residualer",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvorfor bør du være forsigtig med at forudsige cars$dist ved speed = 100?\n\n predict() kan kun bruge tal under 50. Det er langt uden for de observerede hastigheder. En lineær model giver altid en sandsynlighed.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Regression, forudsigelser og residualer"
+    ]
+  },
+  {
+    "objectID": "r/statistik/regression.html#tilbage-til-undervisningen",
+    "href": "r/statistik/regression.html#tilbage-til-undervisningen",
+    "title": "Regression, forudsigelser og residualer",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: linear-regression · multiple-linear-regression.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Regression, forudsigelser og residualer"
+    ]
+  },
+  {
+    "objectID": "r/statistik/fordelinger.html",
+    "href": "r/statistik/fordelinger.html",
+    "title": "Beskriv data og undersøg normalfordelingen",
+    "section": "",
+    "text": "Statistik med R · 25 minutter\nEfter øvelsen kan du beregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Beskriv data og undersøg normalfordelingen"
+    ]
+  },
+  {
+    "objectID": "r/statistik/fordelinger.html#forudsig-og-vælg",
+    "href": "r/statistik/fordelinger.html#forudsig-og-vælg",
+    "title": "Beskriv data og undersøg normalfordelingen",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad er medianen af 2, 3, 4, 5 og 26? \nHvilket mål påvirkes mest af at ændre 26 til 260 i denne liste?\n\n Medianen. Gennemsnittet. Antallet af observationer.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Beskriv data og undersøg normalfordelingen"
+    ]
+  },
+  {
+    "objectID": "r/statistik/fordelinger.html#arbejd-selv",
+    "href": "r/statistik/fordelinger.html#arbejd-selv",
+    "title": "Beskriv data og undersøg normalfordelingen",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nBeregn gennemsnit og median af målingerne. Beregn dernæst P(-1 &lt; Z &lt; 1), når Z er standardnormalfordelt. Generér 100 normalfordelte tal med seed 42, og lav et QQ-plot med referencelinje.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nGennemsnittet af målingerne? \nP(-1 &lt; Z &lt; 1)? Angiv en andel med mindst tre decimaler. \n\n\n\nVis hint\n\npnorm(z) giver sandsynligheden til venstre for z. Træk derfor den venstre grænses sandsynlighed fra den højre.\n\n\n\nVis løsningsforslag\n\n\nmaalinger &lt;- c(2, 3, 4, 5, 26)\nmiddel &lt;- mean(maalinger)\nmidte &lt;- median(maalinger)\nsandsynlighed &lt;- pnorm(1) - pnorm(-1)\nc(middel = middel, median = midte, sandsynlighed = sandsynlighed)\nset.seed(42)\nnormaldata &lt;- rnorm(100)\nqqnorm(normaldata)\nqqline(normaldata)\n\nGennemsnittet er 8 og medianen 4. Sandsynligheden er cirka 0,683. Punkter omtrent langs linjen er forenelige med normalfordeling; et QQ-plot beviser ikke en fordeling.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Beskriv data og undersøg normalfordelingen"
+    ]
+  },
+  {
+    "objectID": "r/statistik/fordelinger.html#fortolk-og-gå-videre",
+    "href": "r/statistik/fordelinger.html#fortolk-og-gå-videre",
+    "title": "Beskriv data og undersøg normalfordelingen",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nEn Shapiro-Wilk-test giver p = 0.20. Hvad kan du konkludere?\n\n Data er bevist normalfordelte. Testen giver ikke grundlag for at forkaste normalfordeling ved 5 %-niveau. Der er 20 % sandsynlighed for at nulhypotesen er sand.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Beskriv data og undersøg normalfordelingen"
+    ]
+  },
+  {
+    "objectID": "r/statistik/fordelinger.html#tilbage-til-undervisningen",
+    "href": "r/statistik/fordelinger.html#tilbage-til-undervisningen",
+    "title": "Beskriv data og undersøg normalfordelingen",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: descript-stat · normal-distribution · is-it-normal.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Beskriv data og undersøg normalfordelingen"
+    ]
+  },
+  {
+    "objectID": "r/programmering/funktioner-og-loekker.html",
+    "href": "r/programmering/funktioner-og-loekker.html",
+    "title": "Funktioner, løkker og betingelser",
+    "section": "",
+    "text": "Programmering i R · 25 minutter\nEfter øvelsen kan du skrive en funktion med et argument, bruge if og opsamle resultater fra en løkke.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Funktioner, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "r/programmering/funktioner-og-loekker.html#forudsig-og-vælg",
+    "href": "r/programmering/funktioner-og-loekker.html#forudsig-og-vælg",
+    "title": "Funktioner, løkker og betingelser",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad giver length(list(c(1, 2, 3), \"R\"))? \nHvordan henter du selve det første element i en liste x?\n\n x[1, ] x[[1]] x{1}",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Funktioner, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "r/programmering/funktioner-og-loekker.html#arbejd-selv",
+    "href": "r/programmering/funktioner-og-loekker.html#arbejd-selv",
+    "title": "Funktioner, løkker og betingelser",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nSkriv over_graense(x, graense = 5), som tæller kendte værdier større end grænsen. Lad funktionen stoppe med en fejl, hvis x ikke er numerisk. Kør den på hver vektor i listen med en for-løkke, og gem resultaterne i antal.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nAntal over grænsen i den anden vektor? \nAntal over grænsen i den tomme vektor? \n\n\n\nVis hint\n\nsum() kan tælle TRUE. Brug seq_along() til sikre indeks, også når listen er tom. Hver listekomponent er en selvstændig vektor.\n\n\n\nVis løsningsforslag\n\n\nover_graense &lt;- function(x, graense = 5) {\n  if (!is.numeric(x)) stop(\"x skal være numerisk\")\n  sum(x &gt; graense, na.rm = TRUE)\n}\nmaalinger &lt;- list(c(2, 7, NA), c(6, 8, 10), numeric(0))\nantal &lt;- integer(length(maalinger))\nfor (i in seq_along(maalinger)) {\n  antal[i] &lt;- over_graense(maalinger[[i]])\n}\nantal\nover_graense(c(2, 7, 9), graense = 8)\n\nResultatet er 1, 3 og 0. En løkke er her en måde at anvende samme funktion på flere datasæt. Samme opgave kan også løses med vapply(); valget af form afhænger af, hvad der er lettest at læse og vedligeholde.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Funktioner, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "r/programmering/funktioner-og-loekker.html#fortolk-og-gå-videre",
+    "href": "r/programmering/funktioner-og-loekker.html#fortolk-og-gå-videre",
+    "title": "Funktioner, løkker og betingelser",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvorfor er seq_along(x) bedre end 1:length(x), hvis x kan være tom?\n\n Den sorterer x. Den giver ingen indeks for en tom x. Den starter altid ved 0.",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Funktioner, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "r/programmering/funktioner-og-loekker.html#tilbage-til-undervisningen",
+    "href": "r/programmering/funktioner-og-loekker.html#tilbage-til-undervisningen",
+    "title": "Funktioner, løkker og betingelser",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: functions · 03-loops-R · 04-cond.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Funktioner, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "r/intro/index.html",
+    "href": "r/intro/index.html",
+    "title": "Introduktion til R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
     "crumbs": [
       "Øvelser i R",
       "Introduktion til R",
-      "Objekter, vektorer og indeksering"
+      "Introduktion til R"
+    ]
+  },
+  {
+    "objectID": "r/intro/index.html#objekter-vektorer-og-indeksering",
+    "href": "r/intro/index.html#objekter-vektorer-og-indeksering",
+    "title": "Introduktion til R",
+    "section": "Objekter, vektorer og indeksering",
+    "text": "Objekter, vektorer og indeksering\n10–15 minutter · Begynd med objekter, vektorer og udvælgelse af elementer.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Introduktion til R"
+    ]
+  },
+  {
+    "objectID": "r/intro/index.html#fra-tabel-til-opsummering",
+    "href": "r/intro/index.html#fra-tabel-til-opsummering",
+    "title": "Introduktion til R",
+    "section": "Fra tabel til opsummering",
+    "text": "Fra tabel til opsummering\n25 minutter · Øv dig i at udvælge rækker og kolonner, beregne nye variable og opsummere grupper.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Introduktion til R"
     ]
   },
   {
@@ -107,44 +809,290 @@
     "href": "r/index.html",
     "title": "Øvelser i R",
     "section": "",
-    "text": "Vælg et kursus, og fortsæt i dit eget tempo. Opgaverne kan gentages, og du behøver ikke logge ind.\nFlere øvelsessæt tilføjes efterhånden, som de er klar.",
+    "text": "Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.\n\n\nIntroduktion til R\nFra tabel til opsummering.\nSe øvelser →\n\n\nEksplorativ dataanalyse\nFordelinger, manglende værdier og joins.\nSe øvelser →\n\n\nVisualisering med R\nByg et plot med ggplot2 · Facetter, skalaer og tema.\nSe øvelser →\n\n\nStatistik med R\nBeskriv data og undersøg normalfordelingen · Regression, forudsigelser og residualer.\nSe øvelser →\n\n\nTekstanalyse med R\nTokens, frekvenser og sentiment.\nSe øvelser →\n\n\nAPI’er med R\nAPI-forespørgsler, JSON og tid.\nSe øvelser →\n\n\nWeb scraping med R\nFind tekst og tabeller i HTML.\nSe øvelser →\n\n\nProgrammering i R\nFunktioner, løkker og betingelser.\nSe øvelser →\n\n\nR-toolbox\nImport, tidy data og reproducerbarhed · Lav indholdet til en Table One · ANOVA, logistisk regression og overfitting · Stikprøvestørrelse, power og CLT · K-means, skalering og fortolkning · Procentvis enighed og Cohens kappa · Beregningsopgaver, parallelisering og miljø.\nSe øvelser →\n\n\nSe demoen med spørgsmålstyper.",
     "crumbs": [
       "Øvelser i R"
     ]
   },
   {
-    "objectID": "r/index.html#introduktion-til-r",
-    "href": "r/index.html#introduktion-til-r",
-    "title": "Øvelser i R",
-    "section": "Introduktion til R",
-    "text": "Introduktion til R\nØv objekter, vektorer og indeksering efter introduktionskurset.\nStart her →",
-    "crumbs": [
-      "Øvelser i R"
-    ]
-  },
-  {
-    "objectID": "r/index.html#prøv-spørgsmålstyperne",
-    "href": "r/index.html#prøv-spørgsmålstyperne",
-    "title": "Øvelser i R",
-    "section": "Prøv spørgsmålstyperne",
-    "text": "Prøv spørgsmålstyperne\nLær sidernes interaktive øvelser at kende. Demoen viser også underviserne, hvordan de er bygget.\nDemo-øvelser →",
-    "crumbs": [
-      "Øvelser i R"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fra kursus til kunnen",
+    "objectID": "r/eda/index.html",
+    "href": "r/eda/index.html",
+    "title": "Eksplorativ dataanalyse",
     "section": "",
-    "text": "KUB Datalab · Øvelser efter kurset\n\n\nSmå opgaver. Plads til at prøve. Find tilbage til det, du lærte på kurset, og brug det på egen hånd.\nFind øvelser i R Prøv demoen"
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Eksplorativ dataanalyse"
+    ]
   },
   {
-    "objectID": "index.html#hvad-vil-du-øve",
-    "href": "index.html#hvad-vil-du-øve",
-    "title": "Fra kursus til kunnen",
-    "section": "Hvad vil du øve?",
-    "text": "Hvad vil du øve?\n\n\nR · Kom i gang\n\nIntroduktion til R\nFå styr på objekter, vektorer og indeksering. Begynd med et kort øvelsessæt, og få feedback undervejs.\nSe øvelser →\n\n\n\nUdforsk · 25–35 minutter\n\nDemo-øvelser\nPrøv alle spørgsmålstyperne: skriv et svar, vælg en mulighed, åbn et hint og tjek en hel mini-quiz.\nÅbn demoen →\n\n\n\n\n\n01 · Vælg et emne\nStart, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækkefølge.\n\n\n02 · Prøv selv\nSvar og kør R-kode direkte på siden. Du kan forsøge igen.\n\n\n03 · Få hjælp undervejs\nÅbn et hint, og sammenlign din løsning med et forklaret løsningsforslag.\n\n\n\nPå vej\n\nFlere kurser. Samme sted.\nSamlingen begynder med R. Senere kan du finde øvelser til flere R-kurser og til Python her.\n\n\nUnderviser du? Se, hvordan du tilføjer en ny øvelsesside."
+    "objectID": "r/eda/index.html#fordelinger-manglende-værdier-og-joins",
+    "href": "r/eda/index.html#fordelinger-manglende-værdier-og-joins",
+    "title": "Eksplorativ dataanalyse",
+    "section": "Fordelinger, manglende værdier og joins",
+    "text": "Fordelinger, manglende værdier og joins\n25 minutter · Øv dig i at undersøge manglende værdier, sammenligne grupper og gennemskue en join.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Eksplorativ dataanalyse"
+    ]
+  },
+  {
+    "objectID": "r/api/forespoergsler-og-json.html",
+    "href": "r/api/forespoergsler-og-json.html",
+    "title": "API-forespørgsler, JSON og tid",
+    "section": "",
+    "text": "API’er med R · 25 minutter\nEfter øvelsen kan du skelne mellem GET og POST, læse JSON og omforme en dataforespørgsel.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API-forespørgsler, JSON og tid"
+    ]
+  },
+  {
+    "objectID": "r/api/forespoergsler-og-json.html#forudsig-og-vælg",
+    "href": "r/api/forespoergsler-og-json.html#forudsig-og-vælg",
+    "title": "API-forespørgsler, JSON og tid",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvor ligger søgeordet i en GET-URL som https://example.org/search?term=dog?\n\n I HTTP-statuskoden. I query-parametrene. I svarformatet.\n\nHvad bør du undersøge før du vælger variable fra Statistikbanken?\n\n Kun tabellens titel. Tabellens metadata, variable og tilladte værdikoder. Kun det første tal i svaret.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API-forespørgsler, JSON og tid"
+    ]
+  },
+  {
+    "objectID": "r/api/forespoergsler-og-json.html#arbejd-selv",
+    "href": "r/api/forespoergsler-og-json.html#arbejd-selv",
+    "title": "API-forespørgsler, JSON og tid",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nParse det indlejrede JSON-svar til en tabel, og beregn summen af value. Lav en liste, der beskriver en lille POST-body, og omdan den til JSON. Øvelsen bruger et konstrueret svar og sender ingen forespørgsel til et eksternt API.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nSummen af value? \nAntal observationer? \n\n\n\nVis hint\n\nfromJSON(svar)$data vælger data-delen. as.Date() forstår datoer som 2024-01-01. toJSON() serialiserer listen; det sender ikke en HTTP-request.\n\n\n\nVis løsningsforslag\n\n\nlibrary(jsonlite)\nsvar &lt;- '{\"data\":[{\"time\":\"2024-01-01\",\"value\":10},{\"time\":\"2024-04-01\",\"value\":15}]}'\ntabel &lt;- fromJSON(svar)$data\ntabel$dato &lt;- as.Date(tabel$time)\nsum(tabel$value)\nbody &lt;- list(table = \"DEMO\", format = \"CSV\", lang = \"da\")\ntoJSON(body, auto_unbox = TRUE)\ntabel\n\nSummen er 25. DEMO er en fiktiv tabel, så denne body skal ikke sendes til Statistikbanken. Ved en rigtig forespørgsel bruges API’ets dokumenterede endpoint, variable og værdikoder. HTTP-kald fra en browser kan desuden være begrænset af CORS.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API-forespørgsler, JSON og tid"
+    ]
+  },
+  {
+    "objectID": "r/api/forespoergsler-og-json.html#fortolk-og-gå-videre",
+    "href": "r/api/forespoergsler-og-json.html#fortolk-og-gå-videre",
+    "title": "API-forespørgsler, JSON og tid",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nI kursusmaterialet sendes en dataforespørgsel med POST. Betyder POST altid, at der oprettes nye data hos modtageren?\n\n Ja, altid. Nej; betydningen afhænger af det konkrete endpoint. Nej, POST kan kun hente billeder.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API-forespørgsler, JSON og tid"
+    ]
+  },
+  {
+    "objectID": "r/api/forespoergsler-og-json.html#tilbage-til-undervisningen",
+    "href": "r/api/forespoergsler-og-json.html#tilbage-til-undervisningen",
+    "title": "API-forespørgsler, JSON og tid",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: api-in-general · getting-data · post-statistics-denmark · danstat · note-on-time.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API-forespørgsler, JSON og tid"
+    ]
+  },
+  {
+    "objectID": "python/videre/funktioner-og-fejl.html",
+    "href": "python/videre/funktioner-og-fejl.html",
+    "title": "Funktioner, dictionaries og fejl",
+    "section": "",
+    "text": "Python for not quite Absolute Beginners · 25 minutter\nEfter øvelsen kan du skrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på Python, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Funktioner, dictionaries og fejl"
+    ]
+  },
+  {
+    "objectID": "python/videre/funktioner-og-fejl.html#forudsig-og-vælg",
+    "href": "python/videre/funktioner-og-fejl.html#forudsig-og-vælg",
+    "title": "Funktioner, dictionaries og fejl",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvor mange elementer har set([\"R\", \"R\", \"Python\"])? \nHvad gør return i en funktion?\n\n Udskriver altid værdien på skærmen. Afslutter funktionskaldet og afleverer en værdi. Gentager hele funktionen.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Funktioner, dictionaries og fejl"
+    ]
+  },
+  {
+    "objectID": "python/videre/funktioner-og-fejl.html#arbejd-selv",
+    "href": "python/videre/funktioner-og-fejl.html#arbejd-selv",
+    "title": "Funktioner, dictionaries og fejl",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nSkriv funktionen laes_tal(tekst), som returnerer int(tekst), men returnerer None ved ValueError. Anvend funktionen på inputtene med en list comprehension. Tæl gyldige værdier og fejl i en dictionary. Skriv de gyldige værdier til en tekststreng via StringIO, som et lille eksempel på fil-lignende arbejde.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nAntal konverteringsfejl? \n\n\n\nVis hint\n\nFang den konkrete fejltype ValueError. Test is not None, så tallet 0 stadig er gyldigt.\n\n\n\nVis løsningsforslag\n\n\nfrom io import StringIO\ndef laes_tal(tekst):\n    try:\n        return int(tekst)\n    except ValueError:\n        return None\n\ninputdata = [\"3\", \"fejl\", \"7\", \"\"]\nvaerdier = [laes_tal(x) for x in inputdata]\ngyldige = [x for x in vaerdier if x is not None]\noversigt = {\"gyldige\": len(gyldige), \"fejl\": len(vaerdier) - len(gyldige)}\nfil = StringIO()\nfor tal in gyldige:\n    fil.write(f\"{tal}\\n\")\nprint(oversigt)\nprint(fil.getvalue())\n\nTo strenge kan konverteres og to kan ikke. StringIO er en buffer i hukommelsen; øvelsen skriver ikke til din computers disk. I et lokalt script kan tilsvarende arbejde udføres med with open(...) as fil:.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Funktioner, dictionaries og fejl"
+    ]
+  },
+  {
+    "objectID": "python/videre/funktioner-og-fejl.html#fortolk-og-gå-videre",
+    "href": "python/videre/funktioner-og-fejl.html#fortolk-og-gå-videre",
+    "title": "Funktioner, dictionaries og fejl",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvorfor kan if x være forkert til at finde gyldige tal her?\n\n Fordi None altid vurderes som sandt. Fordi 0 også vurderes som falsk. Fordi if kun virker med tekst.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Funktioner, dictionaries og fejl"
+    ]
+  },
+  {
+    "objectID": "python/videre/funktioner-og-fejl.html#tilbage-til-undervisningen",
+    "href": "python/videre/funktioner-og-fejl.html#tilbage-til-undervisningen",
+    "title": "Funktioner, dictionaries og fejl",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: 08_sets_and_dictionaries · 09_functions · 11_list_comprehensions · 12_reading_writing · 13_error_handling.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Funktioner, dictionaries og fejl"
+    ]
+  },
+  {
+    "objectID": "python/tekst/index.html",
+    "href": "python/tekst/index.html",
+    "title": "Python-toolbox",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Python-toolbox"
+    ]
+  },
+  {
+    "objectID": "python/tekst/index.html#tekstrensning-regex-og-tf-idf",
+    "href": "python/tekst/index.html#tekstrensning-regex-og-tf-idf",
+    "title": "Python-toolbox",
+    "section": "Tekstrensning, regex og TF-IDF",
+    "text": "Tekstrensning, regex og TF-IDF\n25 minutter · Øv dig i at rense tekst, tælle ord og beregne en enkel TF-IDF-vægt.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Python-toolbox"
+    ]
+  },
+  {
+    "objectID": "python/pandas/index.html",
+    "href": "python/pandas/index.html",
+    "title": "Dataanalyse med pandas",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataanalyse med pandas"
+    ]
+  },
+  {
+    "objectID": "python/pandas/index.html#dataframes-filtrering-og-gruppevise-mål",
+    "href": "python/pandas/index.html#dataframes-filtrering-og-gruppevise-mål",
+    "title": "Dataanalyse med pandas",
+    "section": "Dataframes, filtrering og gruppevise mål",
+    "text": "Dataframes, filtrering og gruppevise mål\n25 minutter · Øv dig i at læse CSV-data, filtrere med loc, opsummere grupper og tegne et plot.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataanalyse med pandas"
+    ]
+  },
+  {
+    "objectID": "python/intro/grundlag.html",
+    "href": "python/intro/grundlag.html",
+    "title": "Lister, løkker og betingelser",
+    "section": "",
+    "text": "Python for Absolute Beginners · 25 minutter\nEfter øvelsen kan du bruge indeks, konvertere tal og filtrere en liste med en løkke.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på Python, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Lister, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "python/intro/grundlag.html#forudsig-og-vælg",
+    "href": "python/intro/grundlag.html#forudsig-og-vælg",
+    "title": "Lister, løkker og betingelser",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad giver [4, 7, 9][1]? \nHvad er typen af resultatet fra int(\"12\")?\n\n str int list",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Lister, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "python/intro/grundlag.html#arbejd-selv",
+    "href": "python/intro/grundlag.html#arbejd-selv",
+    "title": "Lister, løkker og betingelser",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nKonvertér strengene i raadata til heltal. Brug en for-løkke og en if-betingelse til at samle tal på mindst 5 i listen valgte. Beregn deres sum.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHvor mange tal vælges? \nSummen af de valgte tal? \n\n\n\nVis hint\n\nPython tæller positioner fra 0. Brug int() før en numerisk sammenligning, og indryk løkkens og if-blokkens indhold.\n\n\n\nVis løsningsforslag\n\n\nraadata = [\"2\", \"5\", \"8\", \"3\"]\nvalgte = []\nfor tekst in raadata:\n    tal = int(tekst)\n    if tal &gt;= 5:\n        valgte.append(tal)\nprint(valgte)\nprint(sum(valgte))\n\nDe valgte værdier er 5 og 8, og summen er 13. Uden int() ville du arbejde med tekst i stedet for tal.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Lister, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "python/intro/grundlag.html#fortolk-og-gå-videre",
+    "href": "python/intro/grundlag.html#fortolk-og-gå-videre",
+    "title": "Lister, løkker og betingelser",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad indeholder list(range(3))?\n\n [1, 2, 3] [0, 1, 2] [0, 1, 2, 3]",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Lister, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "python/intro/grundlag.html#tilbage-til-undervisningen",
+    "href": "python/intro/grundlag.html#tilbage-til-undervisningen",
+    "title": "Lister, løkker og betingelser",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: 03_type_conversion · 05_lists · 06_for_loops · 07_conditionals.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Lister, løkker og betingelser"
+    ]
+  },
+  {
+    "objectID": "om.html",
+    "href": "om.html",
+    "title": "Om øvelserne",
+    "section": "",
+    "text": "KUB Datalab er en del af Københavns Universitetsbibliotek. Her finder du øvelser, som hjælper dig med at bruge det, du har lært på vores kurser."
+  },
+  {
+    "objectID": "om.html#sådan-bruger-du-siderne",
+    "href": "om.html#sådan-bruger-du-siderne",
+    "title": "Om øvelserne",
+    "section": "Sådan bruger du siderne",
+    "text": "Sådan bruger du siderne\nVælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.\nDe korte spørgsmål besvares på siden. Kodeopgaverne har redigerbare R- og Python-felter, som kører direkte i browseren med WebAssembly. Du kan også bruge dit eget programmeringsmiljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning."
+  },
+  {
+    "objectID": "om.html#besøgsstatistik",
+    "href": "om.html#besøgsstatistik",
+    "title": "Om øvelserne",
+    "section": "Besøgsstatistik",
+    "text": "Besøgsstatistik\nVi bruger GoatCounter til at se, hvor meget de enkelte sider bliver besøgt. Vi sender ikke dine øvelsessvar, quizresultater eller indtastede kode til statistiksystemet. Sidernes URL-parametre og ankre udelades fra vores statistikopsætning.\nLæs om GoatCounters behandling af data. Undervisere kan læse mere på siden om besøgsstatistik."
+  },
+  {
+    "objectID": "om.html#materialer-og-kontakt",
+    "href": "om.html#materialer-og-kontakt",
+    "title": "Om øvelserne",
+    "section": "Materialer og kontakt",
+    "text": "Materialer og kontakt\nKUB Datalabs hjemmeside · Kildekode og fejlrapporter\nR-motoren hentes fra webR og Python-motoren fra Pyodide ved indlæsning af relevante sider. SQL-øvelserne bruger SQLite via Python. Beregningerne foregår i din browser; kode og resultater gemmes ikke af sitet.\nSitet er bygget med Quarto og webexercises. Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets assets/ATTRIBUTION.md."
   },
   {
     "objectID": "demo-oevelser.html",
@@ -307,55 +1255,976 @@
     ]
   },
   {
-    "objectID": "om.html",
-    "href": "om.html",
-    "title": "Om øvelserne",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fra kursus til kunnen",
     "section": "",
-    "text": "KUB Datalab er en del af Københavns Universitetsbibliotek. Her finder du øvelser, som hjælper dig med at bruge det, du har lært på vores kurser."
+    "text": "KUB Datalab · Øvelser efter kurset\n\n\nSmå opgaver. Plads til at prøve. Find tilbage til det, du lærte på kurset, og brug det på egen hånd.\nØvelser i R Python SQL Prøv demoen"
   },
   {
-    "objectID": "om.html#sådan-bruger-du-siderne",
-    "href": "om.html#sådan-bruger-du-siderne",
-    "title": "Om øvelserne",
-    "section": "Sådan bruger du siderne",
-    "text": "Sådan bruger du siderne\nVælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.\nDe korte spørgsmål besvares på siden. Kodeopgaverne har redigerbare R-felter, som kører direkte i browseren med WebAssembly. Du kan også bruge dit eget R-miljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning."
+    "objectID": "index.html#hvad-vil-du-øve",
+    "href": "index.html#hvad-vil-du-øve",
+    "title": "Fra kursus til kunnen",
+    "section": "Hvad vil du øve?",
+    "text": "Hvad vil du øve?\n\n\nR · Kom i gang\n\nR fra introduktion til analyse\nØv datahåndtering, EDA, visualisering, statistik, programmering, tekstanalyse, API’er og web scraping.\nSe R-kurser →\n\n\n\nUdforsk · 25–35 minutter\n\nDemo-øvelser\nPrøv alle spørgsmålstyperne: skriv et svar, vælg en mulighed, åbn et hint og tjek en hel mini-quiz.\nÅbn demoen →\n\n\n\n\n\n01 · Vælg et emne\nStart, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækkefølge.\n\n\n02 · Prøv selv\nSvar og kør R, Python eller SQL direkte på siden. Du kan forsøge igen.\n\n\n03 · Få hjælp undervejs\nÅbn et hint, og sammenlign din løsning med et forklaret løsningsforslag.\n\n\n\n\nPython · Fra begynderniveau\n\nPython og pandas\nLister, løkker, funktioner, fejlbehandling, dataframes og tekstanalyse.\nSe Python-kurser →\n\n\n\nSQL · Databaser\n\nStil spørgsmål til data\nFiltrér og opsummér artikler, og forbind tabeller med joins i en lille SQLite-database.\nSe SQL-øvelser →\n\n\n\nUnderviser du? Se, hvordan du tilføjer en ny øvelsesside."
   },
   {
-    "objectID": "om.html#besøgsstatistik",
-    "href": "om.html#besøgsstatistik",
-    "title": "Om øvelserne",
-    "section": "Besøgsstatistik",
-    "text": "Besøgsstatistik\nVi bruger GoatCounter til at se, hvor meget de enkelte sider bliver besøgt. Vi sender ikke dine øvelsessvar, quizresultater eller indtastede kode til statistiksystemet. Sidernes URL-parametre og ankre udelades fra vores statistikopsætning.\nLæs om GoatCounters behandling af data. Undervisere kan læse mere på siden om besøgsstatistik."
-  },
-  {
-    "objectID": "om.html#materialer-og-kontakt",
-    "href": "om.html#materialer-og-kontakt",
-    "title": "Om øvelserne",
-    "section": "Materialer og kontakt",
-    "text": "Materialer og kontakt\nKUB Datalabs hjemmeside · Kildekode og fejlrapporter\nR-motoren hentes fra webR ved indlæsning af sider med R-felter. Beregningerne foregår i din browser; kode og resultater gemmes ikke af sitet.\nSitet er bygget med Quarto og webexercises. Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets assets/ATTRIBUTION.md."
-  },
-  {
-    "objectID": "r/intro/index.html",
-    "href": "r/intro/index.html",
-    "title": "Introduktion til R",
+    "objectID": "python/index.html",
+    "href": "python/index.html",
+    "title": "Øvelser i Python",
     "section": "",
-    "text": "Du har arbejdet med R på kurset. Her kan du prøve grundbegreberne igen i mindre opgaver.\nForudsætninger: Du har gennemgået den grundlæggende introduktion til R. Du kan køre koden direkte i øvelsessidens R-felter. Ingen lokal installation er nødvendig.\nÅbn kursusmaterialet: Introduction to R.",
+    "text": "Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.\n\n\nPython for Absolute Beginners\nLister, løkker og betingelser.\nSe øvelser →\n\n\nPython for not quite Absolute Beginners\nFunktioner, dictionaries og fejl.\nSe øvelser →\n\n\nDataanalyse med pandas\nDataframes, filtrering og gruppevise mål.\nSe øvelser →\n\n\nPython-toolbox\nTekstrensning, regex og TF-IDF.\nSe øvelser →\n\n\nSe demoen med spørgsmålstyper.",
     "crumbs": [
-      "Øvelser i R",
-      "Introduktion til R",
-      "Introduktion til R"
+      "Python",
+      "Øvelser i Python"
     ]
   },
   {
-    "objectID": "r/intro/index.html#objekter-vektorer-og-indeksering",
-    "href": "r/intro/index.html#objekter-vektorer-og-indeksering",
-    "title": "Introduktion til R",
-    "section": "Objekter, vektorer og indeksering",
-    "text": "Objekter, vektorer og indeksering\nOpret et objekt, forudsig et resultat og vælg elementer fra en vektor.\nStart øvelsessættet →",
+    "objectID": "python/intro/index.html",
+    "href": "python/intro/index.html",
+    "title": "Python for Absolute Beginners",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Python for Absolute Beginners"
+    ]
+  },
+  {
+    "objectID": "python/intro/index.html#lister-løkker-og-betingelser",
+    "href": "python/intro/index.html#lister-løkker-og-betingelser",
+    "title": "Python for Absolute Beginners",
+    "section": "Lister, løkker og betingelser",
+    "text": "Lister, løkker og betingelser\n25 minutter · Øv dig i at bruge indeks, konvertere tal og filtrere en liste med en løkke.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Python",
+      "Python for Absolute Beginners",
+      "Python for Absolute Beginners"
+    ]
+  },
+  {
+    "objectID": "python/pandas/tabeller.html",
+    "href": "python/pandas/tabeller.html",
+    "title": "Dataframes, filtrering og gruppevise mål",
+    "section": "",
+    "text": "Dataanalyse med pandas · 25 minutter\nEfter øvelsen kan du læse CSV-data, filtrere med loc, opsummere grupper og tegne et plot.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på Python, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataframes, filtrering og gruppevise mål"
+    ]
+  },
+  {
+    "objectID": "python/pandas/tabeller.html#forudsig-og-vælg",
+    "href": "python/pandas/tabeller.html#forudsig-og-vælg",
+    "title": "Dataframes, filtrering og gruppevise mål",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad vælger df.iloc[0]?\n\n Rækken med indekslabel 0 i alle tilfælde. Den første række efter position. Den første kolonne.\n\nHvilken metode tæller også manglende værdier som rækker i hver gruppe?\n\n groupby(…)[“alder”].count() groupby(…).size() groupby(…)[“alder”].mean()",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataframes, filtrering og gruppevise mål"
+    ]
+  },
+  {
+    "objectID": "python/pandas/tabeller.html#arbejd-selv",
+    "href": "python/pandas/tabeller.html#arbejd-selv",
+    "title": "Dataframes, filtrering og gruppevise mål",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nIndlæs CSV-teksten. Vælg navne på deltagere med alder mindst 30. Beregn gennemsnitsalder pr. gruppe, og tegn gennemsnittene som et søjlediagram. Sammenlign gruppestørrelse med antal kendte aldre.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nAntal udvalgte navne? \nGennemsnitsalder for B? \n\n\n\nVis hint\n\nBrug en boolesk betingelse som første del af loc. pandas mean() udelader normalt manglende værdier; count() tæller kendte værdier i den valgte kolonne.\n\n\n\nVis løsningsforslag\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom io import StringIO\ncsv = \"navn,gruppe,alder\\nAda,A,20\\nBo,A,40\\nCy,B,30\\nDe,B,\\nEv,B,50\"\ndf = pd.read_csv(StringIO(csv))\nvalgte = df.loc[df[\"alder\"] &gt;= 30, \"navn\"]\nmiddel = df.groupby(\"gruppe\")[\"alder\"].mean()\nprint(valgte.to_list())\nprint(middel)\nprint(df.groupby(\"gruppe\").size())\nprint(df.groupby(\"gruppe\")[\"alder\"].count())\nmiddel.plot(kind=\"bar\", ylabel=\"Gennemsnitsalder (år)\")\nplt.tight_layout()\nplt.show()\n\nTre navne udvælges. Gruppe A har gennemsnitsalder 30 og B har 40. B indeholder tre rækker, men kun to kendte aldre.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataframes, filtrering og gruppevise mål"
+    ]
+  },
+  {
+    "objectID": "python/pandas/tabeller.html#fortolk-og-gå-videre",
+    "href": "python/pandas/tabeller.html#fortolk-og-gå-videre",
+    "title": "Dataframes, filtrering og gruppevise mål",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad bør figurteksten fortælle om gennemsnittet for B?\n\n At den manglende alder er behandlet som 0. At det bygger på to kendte aldre, mens én mangler. At alle tre aldre er kendte.",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataframes, filtrering og gruppevise mål"
+    ]
+  },
+  {
+    "objectID": "python/pandas/tabeller.html#tilbage-til-undervisningen",
+    "href": "python/pandas/tabeller.html#tilbage-til-undervisningen",
+    "title": "Dataframes, filtrering og gruppevise mål",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: 02_pandas_tabular_data · 03_pandas_subsets · 04_pandas_descriptive_statistics · 05_pandas_plot.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Python",
+      "Dataanalyse med pandas",
+      "Dataframes, filtrering og gruppevise mål"
+    ]
+  },
+  {
+    "objectID": "python/tekst/regex-og-frekvens.html",
+    "href": "python/tekst/regex-og-frekvens.html",
+    "title": "Tekstrensning, regex og TF-IDF",
+    "section": "",
+    "text": "Python-toolbox · 25 minutter\nEfter øvelsen kan du rense tekst, tælle ord og beregne en enkel TF-IDF-vægt.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på Python, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Tekstrensning, regex og TF-IDF"
+    ]
+  },
+  {
+    "objectID": "python/tekst/regex-og-frekvens.html#forudsig-og-vælg",
+    "href": "python/tekst/regex-og-frekvens.html#forudsig-og-vælg",
+    "title": "Tekstrensning, regex og TF-IDF",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad hjælper ordgrænsen \\b med i et regex-mønster?\n\n At gøre alle bogstaver små. At afgrænse hele ord. At rette alle OCR-fejl automatisk.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Tekstrensning, regex og TF-IDF"
+    ]
+  },
+  {
+    "objectID": "python/tekst/regex-og-frekvens.html#arbejd-selv",
+    "href": "python/tekst/regex-og-frekvens.html#arbejd-selv",
+    "title": "Tekstrensning, regex og TF-IDF",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nGør teksterne små, og udtræk ord med regex. Tæl ord i det første dokument. Beregn TF som antal forekomster divideret med dokumentets ordantal og IDF som ln(N/df). Find TF-IDF for library i det første dokument. Brug ingen smoothing eller ekstra normalisering.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nDokumentfrekvens for library? \nTF-IDF for library med den angivne definition? \n\n\n\nVis hint\n\nDokumentfrekvens tæller dokumenter, ikke forekomster. library optræder i begge dokumenter, selv om det gentages i det første.\n\n\n\nVis løsningsforslag\n\n\nimport re\nimport math\nfrom collections import Counter\ndocs = [\"Library library data!\", \"Library code.\"]\ntokens = [re.findall(r\"[a-z]+\", tekst.lower()) for tekst in docs]\nantal = Counter(tokens[0])\ntf = antal[\"library\"] / len(tokens[0])\ndf = sum(\"library\" in set(ordliste) for ordliste in tokens)\nidf = math.log(len(docs) / df)\nscore = tf * idf\nprint(antal)\nprint({\"tf\": tf, \"df\": df, \"idf\": idf, \"tf_idf\": score})\n\nTF er 2/3, men IDF er ln(2/2) = 0, så vægten bliver 0. Andre implementeringer kan bruge smoothing og give en anden værdi. Mønstret [a-z]+ er valgt til disse engelske tekster og er ikke en generel løsning til alle sprog.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Tekstrensning, regex og TF-IDF"
+    ]
+  },
+  {
+    "objectID": "python/tekst/regex-og-frekvens.html#fortolk-og-gå-videre",
+    "href": "python/tekst/regex-og-frekvens.html#fortolk-og-gå-videre",
+    "title": "Tekstrensning, regex og TF-IDF",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad bør du gøre med OCR-fejl før en større analyse?\n\n Antage at lower() retter OCR-fejl. Undersøge eksempler og dokumentere konkrete renseregler. Fjerne alle sjældne ord uden kontrol.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Tekstrensning, regex og TF-IDF"
+    ]
+  },
+  {
+    "objectID": "python/tekst/regex-og-frekvens.html#tilbage-til-undervisningen",
+    "href": "python/tekst/regex-og-frekvens.html#tilbage-til-undervisningen",
+    "title": "Tekstrensning, regex og TF-IDF",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: Regex and digitized books · Text preprocessing pipeline · Tf-idf example.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Python",
+      "Python-toolbox",
+      "Tekstrensning, regex og TF-IDF"
+    ]
+  },
+  {
+    "objectID": "python/videre/index.html",
+    "href": "python/videre/index.html",
+    "title": "Python for not quite Absolute Beginners",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Python for not quite Absolute Beginners"
+    ]
+  },
+  {
+    "objectID": "python/videre/index.html#funktioner-dictionaries-og-fejl",
+    "href": "python/videre/index.html#funktioner-dictionaries-og-fejl",
+    "title": "Python for not quite Absolute Beginners",
+    "section": "Funktioner, dictionaries og fejl",
+    "text": "Funktioner, dictionaries og fejl\n25 minutter · Øv dig i at skrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Python",
+      "Python for not quite Absolute Beginners",
+      "Python for not quite Absolute Beginners"
+    ]
+  },
+  {
+    "objectID": "r/api/index.html",
+    "href": "r/api/index.html",
+    "title": "API’er med R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API’er med R"
+    ]
+  },
+  {
+    "objectID": "r/api/index.html#api-forespørgsler-json-og-tid",
+    "href": "r/api/index.html#api-forespørgsler-json-og-tid",
+    "title": "API’er med R",
+    "section": "API-forespørgsler, JSON og tid",
+    "text": "API-forespørgsler, JSON og tid\n25 minutter · Øv dig i at skelne mellem GET og POST, læse JSON og omforme en dataforespørgsel.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "API’er med R",
+      "API’er med R"
+    ]
+  },
+  {
+    "objectID": "r/eda/undersoeg-data.html",
+    "href": "r/eda/undersoeg-data.html",
+    "title": "Fordelinger, manglende værdier og joins",
+    "section": "",
+    "text": "Eksplorativ dataanalyse · 25 minutter\nEfter øvelsen kan du undersøge manglende værdier, sammenligne grupper og gennemskue en join.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Fordelinger, manglende værdier og joins"
+    ]
+  },
+  {
+    "objectID": "r/eda/undersoeg-data.html#forudsig-og-vælg",
+    "href": "r/eda/undersoeg-data.html#forudsig-og-vælg",
+    "title": "Fordelinger, manglende værdier og joins",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad er medianen af 0, 5, 20 og 40? \nHvor finder du betydningen af en forsinkelsesvariabel og dens enhed?\n\n I kolonnens gennemsnit. I metadata eller variabelbeskrivelsen. I rækkefølgen af rækkerne.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Fordelinger, manglende værdier og joins"
+    ]
+  },
+  {
+    "objectID": "r/eda/undersoeg-data.html#arbejd-selv",
+    "href": "r/eda/undersoeg-data.html#arbejd-selv",
+    "title": "Fordelinger, manglende værdier og joins",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nOptæl både alle flyvninger og de kendte forsinkelser pr. selskab. Beregn gennemsnittet af de kendte forsinkelser. Tilføj selskabsnavn med en left join, og tegn et boxplot over de kendte forsinkelser.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHvor mange selskaber er tilbage efter left join? \nHvor mange kendte forsinkelser har BB? \n\n\n\nVis hint\n\nn() tæller alle rækker. sum(!is.na(forsinkelse)) tæller kendte værdier. En left join beholder alle rækker fra venstre tabel.\n\n\n\nVis løsningsforslag\n\n\nlibrary(dplyr)\nfly &lt;- tibble(selskab = c(\"AA\", \"AA\", \"BB\", \"BB\", \"CC\"),\n              forsinkelse = c(0, 20, 5, NA, 40))\nnavne &lt;- tibble(selskab = c(\"AA\", \"BB\"), navn = c(\"Alfa\", \"Beta\"))\noversigt &lt;- fly |&gt;\n  group_by(selskab) |&gt;\n  summarise(antal = n(), kendte = sum(!is.na(forsinkelse)),\n            gennemsnit = mean(forsinkelse, na.rm = TRUE), .groups = \"drop\") |&gt;\n  left_join(navne, by = \"selskab\")\noversigt\nboxplot(fly$forsinkelse, ylab = \"Forsinkelse (minutter)\")\n\nAA har gennemsnit 10, BB har 5 baseret på kun én kendt observation, og CC har 40. CC bliver i tabellen, men navnet er NA. Et boxplot af fire observationer siger kun lidt; se også på de enkelte værdier.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Fordelinger, manglende værdier og joins"
+    ]
+  },
+  {
+    "objectID": "r/eda/undersoeg-data.html#fortolk-og-gå-videre",
+    "href": "r/eda/undersoeg-data.html#fortolk-og-gå-videre",
+    "title": "Fordelinger, manglende værdier og joins",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad kan der ske, hvis AA forekommer to gange i navnetabellen?\n\n Left join fjerner automatisk dubletter. Rækken for AA kan blive duplikeret i join-resultatet. Gennemsnittet bliver automatisk genberegnet.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Fordelinger, manglende værdier og joins"
+    ]
+  },
+  {
+    "objectID": "r/eda/undersoeg-data.html#tilbage-til-undervisningen",
+    "href": "r/eda/undersoeg-data.html#tilbage-til-undervisningen",
+    "title": "Fordelinger, manglende værdier og joins",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: getting-to-know-data · summary-statistics · joins · boxplots.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Eksplorativ dataanalyse",
+      "Fordelinger, manglende værdier og joins"
+    ]
+  },
+  {
+    "objectID": "r/intro/data.html",
+    "href": "r/intro/data.html",
+    "title": "Fra tabel til opsummering",
+    "section": "",
+    "text": "Introduktion til R · 25 minutter\nEfter øvelsen kan du udvælge rækker og kolonner, beregne nye variable og opsummere grupper.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
     "crumbs": [
       "Øvelser i R",
       "Introduktion til R",
-      "Introduktion til R"
+      "Fra tabel til opsummering"
+    ]
+  },
+  {
+    "objectID": "r/intro/data.html#forudsig-og-vælg",
+    "href": "r/intro/data.html#forudsig-og-vælg",
+    "title": "Fra tabel til opsummering",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvilken funktion udvælger rækker?\n\n select() filter() mutate()\n\nHvor mange rækker får filter(film, type == \"film\")?",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Fra tabel til opsummering"
+    ]
+  },
+  {
+    "objectID": "r/intro/data.html#arbejd-selv",
+    "href": "r/intro/data.html#arbejd-selv",
+    "title": "Fra tabel til opsummering",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nBrug tabellen nedenfor. Behold film med kendt spilletid, tilføj timer = minutter / 60, og vælg titel og timer. Lav dernæst en separat opsummering af den gennemsnitlige score for hver type; udelad manglende scorer.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nSamlet spilletid i timer for de udvalgte film? Brug punktum. \nGennemsnitlig score for film? Brug mindst to decimaler. \n\n\n\nVis hint\n\nfilter() vælger rækker; select() vælger kolonner. is.na() finder manglende værdier. Brug na.rm = TRUE inde i mean().\n\n\n\nVis løsningsforslag\n\n\nlibrary(dplyr)\nfilm &lt;- tibble(\n  titel = c(\"Havn\", \"Skov\", \"By\", \"Bro\", \"Oe\"),\n  type = c(\"film\", \"serie\", \"film\", \"film\", \"serie\"),\n  minutter = c(90, 45, 120, NA, 60),\n  score = c(6, 8, 9, 7, NA)\n)\nudvalg &lt;- film |&gt;\n  filter(type == \"film\", !is.na(minutter)) |&gt;\n  mutate(timer = minutter / 60) |&gt;\n  select(titel, timer)\noversigt &lt;- film |&gt;\n  group_by(type) |&gt;\n  summarise(score = mean(score, na.rm = TRUE), .groups = \"drop\")\nudvalg\noversigt\n\nHavn og By har tilsammen 3,5 timers spilletid. Filmgruppens score er (6 + 9 + 7) / 3; den manglende spilletid udelukker ikke Bro fra den separate scoreopsummering.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Fra tabel til opsummering"
+    ]
+  },
+  {
+    "objectID": "r/intro/data.html#fortolk-og-gå-videre",
+    "href": "r/intro/data.html#fortolk-og-gå-videre",
+    "title": "Fra tabel til opsummering",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad sker der med seriens gennemsnit, hvis na.rm = TRUE fjernes?\n\n Det bliver 0. Det bliver NA. R fjerner automatisk rækken.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Fra tabel til opsummering"
+    ]
+  },
+  {
+    "objectID": "r/intro/data.html#tilbage-til-undervisningen",
+    "href": "r/intro/data.html#tilbage-til-undervisningen",
+    "title": "Fra tabel til opsummering",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: starting-with-data · dplyr-tidyr.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Fra tabel til opsummering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html",
+    "href": "r/intro/vektorer.html",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "",
+    "text": "Introduktion til R · 10–15 minutter\nEfter øvelserne kan du oprette en vektor, udvælge dens elementer og beregne en sum. Svarene gemmes ikke, når du forlader eller genindlæser siden.\nKodefelterne kører R direkte i din browser. Vent på indlæsningen, redigér koden, og vælg Run Code (eller Ctrl/Cmd + Enter). Første indlæsning kan tage lidt tid og kræver internet. Start Over gendanner feltets kode; genindlæs siden for at nulstille hele R-sessionen. Du kan også bruge dit eget R-miljø.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html#læs-en-vektor",
+    "href": "r/intro/vektorer.html#læs-en-vektor",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "1. Læs en vektor",
+    "text": "1. Læs en vektor\n\nSe på koden, og forudsig resultatet uden at køre den først.\nmaal &lt;- c(4, 7, 9, 12)\nHvor mange elementer indeholder maal? \nHvad er værdien af maal[2]? \nHvad er værdien af sum(maal)? \n\n\n\nVis hint\n\nR tæller positioner fra 1. sum() lægger alle elementerne sammen.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html#vælg-den-rigtige-kode",
+    "href": "r/intro/vektorer.html#vælg-den-rigtige-kode",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "2. Vælg den rigtige kode",
+    "text": "2. Vælg den rigtige kode\n\nHvilken kode udvælger det første og tredje element?\n\n maal[1:3] maal[c(1, 3)] maal[1, 3]\n\n\n\n\nVis forklaring\n\nc(1, 3) indeholder netop de to positioner. 1:3 omfatter også position 2. Et komma mellem indeks bruges til flere dimensioner, eksempelvis rækker og kolonner i en dataframe.\n\n\nAfprøv dine forudsigelser\nNår du har svaret på opgave 1 og 2, kan du undersøge vektoren her. Tilføj selv kald til eksempelvis length(), sum() og indeksering.",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/intro/vektorer.html#arbejd-selv-i-r",
+    "href": "r/intro/vektorer.html#arbejd-selv-i-r",
+    "title": "Objekter, vektorer og indeksering",
+    "section": "3. Arbejd selv i R",
+    "text": "3. Arbejd selv i R\nOpret en vektor timer med værdierne 2, 3, 5 og 6. Beregn den samlede tid og gennemsnittet. Udvælg derefter kun de værdier, der er større end 3.\n\n\n\n\n\n\n\n\n\n\nKør din kode, og skriv derefter resultaterne i svarfelterne. Tjek svar kontrollerer felterne, ikke den kode, du har skrevet.\n\nHvad er gennemsnittet? \nHvor mange værdier er større end 3? \n\n\n\nVis løsningsforslag\n\n\ntimer &lt;- c(2, 3, 5, 6)\nsum(timer)\n\n[1] 16\n\nmean(timer)\n\n[1] 4\n\ntimer[timer &gt; 3]\n\n[1] 5 6\n\n\nDen logiske test timer &gt; 3 udvælger værdierne 5 og 6.\n\n← Tilbage til kursets øvelser · Se kursusmaterialet",
+    "crumbs": [
+      "Øvelser i R",
+      "Introduktion til R",
+      "Objekter, vektorer og indeksering"
+    ]
+  },
+  {
+    "objectID": "r/programmering/index.html",
+    "href": "r/programmering/index.html",
+    "title": "Programmering i R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Programmering i R"
+    ]
+  },
+  {
+    "objectID": "r/programmering/index.html#funktioner-løkker-og-betingelser",
+    "href": "r/programmering/index.html#funktioner-løkker-og-betingelser",
+    "title": "Programmering i R",
+    "section": "Funktioner, løkker og betingelser",
+    "text": "Funktioner, løkker og betingelser\n25 minutter · Øv dig i at skrive en funktion med et argument, bruge if og opsamle resultater fra en løkke.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Programmering i R",
+      "Programmering i R"
+    ]
+  },
+  {
+    "objectID": "r/statistik/index.html",
+    "href": "r/statistik/index.html",
+    "title": "Statistik med R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Statistik med R"
+    ]
+  },
+  {
+    "objectID": "r/statistik/index.html#beskriv-data-og-undersøg-normalfordelingen",
+    "href": "r/statistik/index.html#beskriv-data-og-undersøg-normalfordelingen",
+    "title": "Statistik med R",
+    "section": "Beskriv data og undersøg normalfordelingen",
+    "text": "Beskriv data og undersøg normalfordelingen\n25 minutter · Øv dig i at beregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Statistik med R"
+    ]
+  },
+  {
+    "objectID": "r/statistik/index.html#regression-forudsigelser-og-residualer",
+    "href": "r/statistik/index.html#regression-forudsigelser-og-residualer",
+    "title": "Statistik med R",
+    "section": "Regression, forudsigelser og residualer",
+    "text": "Regression, forudsigelser og residualer\n25 minutter · Øv dig i at tilpasse en lineær model, lave en forudsigelse og fortolke en justeret koefficient.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Statistik med R",
+      "Statistik med R"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/index.html",
+    "href": "r/tekstanalyse/index.html",
+    "title": "Tekstanalyse med R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tekstanalyse med R"
+    ]
+  },
+  {
+    "objectID": "r/tekstanalyse/index.html#tokens-frekvenser-og-sentiment",
+    "href": "r/tekstanalyse/index.html#tokens-frekvenser-og-sentiment",
+    "title": "Tekstanalyse med R",
+    "section": "Tokens, frekvenser og sentiment",
+    "text": "Tokens, frekvenser og sentiment\n25 minutter · Øv dig i at tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Tekstanalyse med R",
+      "Tekstanalyse med R"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/beregning-og-miljoe.html",
+    "href": "r/toolbox/beregning-og-miljoe.html",
+    "title": "Beregningsopgaver, parallelisering og miljø",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du genkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Beregningsopgaver, parallelisering og miljø"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/beregning-og-miljoe.html#forudsig-og-vælg",
+    "href": "r/toolbox/beregning-og-miljoe.html#forudsig-og-vælg",
+    "title": "Beregningsopgaver, parallelisering og miljø",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvilke opgaver er lettest at parallelisere?\n\n En kæde hvor hvert trin kræver det foregående resultat. Uafhængige beregninger på hver sin fil. Manuel indtastning i en konsol.\n\nHvorfor kan parallelisering være langsommere på små opgaver?\n\n Flere kerner giver altid forkerte resultater. Opstart og dataoverførsel kan koste mere end den sparede regnetid. R kan ikke beregne gennemsnit parallelt.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Beregningsopgaver, parallelisering og miljø"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/beregning-og-miljoe.html#arbejd-selv",
+    "href": "r/toolbox/beregning-og-miljoe.html#arbejd-selv",
+    "title": "Beregningsopgaver, parallelisering og miljø",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nLav en sekventiel referenceberegning: beregn summen af hver vektor i listen med lapply(), og omdan resultatet til en numerisk vektor med vapply(). Den indlejrede R-session bruges til referenceberegningen; opstart af parallelle processer og UCloud kræver et andet miljø.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nSummen af den anden del? \n\n\n\nVis hint\n\nlapply() returnerer en liste; vapply() kræver en angivelse af hvert resultats type og længde.\n\n\n\nVis løsningsforslag\n\n\ndele &lt;- list(c(1, 2), c(10, 20, 30), c(-1, 1))\nliste_resultat &lt;- lapply(dele, sum)\nsummer &lt;- vapply(dele, sum, numeric(1))\nliste_resultat\nsummer\n\nSummerne er 3, 60 og 0. Brug en lille referenceberegning til at kontrollere resultatet før en større parallel kørsel. På UCloud skal projektfiler og miljøbeskrivelse ligge på vedvarende lager, så de kan bruges i et nyt job.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Beregningsopgaver, parallelisering og miljø"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/beregning-og-miljoe.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/beregning-og-miljoe.html#fortolk-og-gå-videre",
+    "title": "Beregningsopgaver, parallelisering og miljø",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvilken kontrol er mest nyttig før et stort job?\n\n Stol på objekterne i dit nuværende workspace. Kør en lille prøve fra en frisk session og kontrollér data-, pakke- og filstier. Vælg flest mulige CPU’er uden en prøve.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Beregningsopgaver, parallelisering og miljø"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/beregning-og-miljoe.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/beregning-og-miljoe.html#tilbage-til-undervisningen",
+    "title": "Beregningsopgaver, parallelisering og miljø",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: parallellization · ucloud · reproducible-analysis.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Beregningsopgaver, parallelisering og miljø"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/import-og-reproducerbarhed.html",
+    "href": "r/toolbox/import-og-reproducerbarhed.html",
+    "title": "Import, tidy data og reproducerbarhed",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du læse semikolonseparerede data, forme dem til langt format og dokumentere en analyse.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Import, tidy data og reproducerbarhed"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/import-og-reproducerbarhed.html#forudsig-og-vælg",
+    "href": "r/toolbox/import-og-reproducerbarhed.html#forudsig-og-vælg",
+    "title": "Import, tidy data og reproducerbarhed",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nEn fil bruger semikolon som separator og komma som decimaltegn. Hvad skal importen tage højde for?\n\n Kun filendelsen. Begge dele. Kun kolonnenavnene.\n\nHvilket projekt kan en kollega bedst reproducere?\n\n Et gemt workspace uden forklaring. Et script med dataimport, pakker og dokumenterede trin. Et skærmbillede af konsollen.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Import, tidy data og reproducerbarhed"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/import-og-reproducerbarhed.html#arbejd-selv",
+    "href": "r/toolbox/import-og-reproducerbarhed.html#arbejd-selv",
+    "title": "Import, tidy data og reproducerbarhed",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nLæs teksten med read.csv2(text = ...). Omdan før/efter-kolonnerne til langt format med pivot_longer(), så hver række er én persons måling på ét tidspunkt. Beregn gennemsnittet pr. tidspunkt.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nAntal rækker i langt format? \nGennemsnit ved efter? \n\n\n\nVis hint\n\nread.csv2() er base R’s variant til dette separator/decimalformat. pivot_longer() får navnene på målekolonnerne i cols.\n\n\n\nVis løsningsforslag\n\n\nlibrary(tidyr)\nlibrary(dplyr)\ncsv &lt;- \"id;foer;efter\\n1;2,5;3,5\\n2;4,0;6,0\"\nbred &lt;- read.csv2(text = csv)\nlang &lt;- bred |&gt; pivot_longer(cols = c(foer, efter),\n                            names_to = \"tid\", values_to = \"vaerdi\")\noversigt &lt;- lang |&gt; group_by(tid) |&gt;\n  summarise(gennemsnit = mean(vaerdi), .groups = \"drop\")\nlang\noversigt\n\nDer bliver fire rækker: to personer gange to tidspunkter. Gennemsnittet efter er 4,75. Gem rådata uændret og beskriv importvalg; en analyse bør kunne køres fra starten i en frisk session.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Import, tidy data og reproducerbarhed"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/import-og-reproducerbarhed.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/import-og-reproducerbarhed.html#fortolk-og-gå-videre",
+    "title": "Import, tidy data og reproducerbarhed",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad gør den native pipe x |&gt; mean()?\n\n Overskriver altid x. Sender x som første argument til mean(). Indlæser automatisk en pakke.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Import, tidy data og reproducerbarhed"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/import-og-reproducerbarhed.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/import-og-reproducerbarhed.html#tilbage-til-undervisningen",
+    "title": "Import, tidy data og reproducerbarhed",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: reading-files · tidy-data · reproducible-analysis · pipes.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Import, tidy data og reproducerbarhed"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/klynger.html",
+    "href": "r/toolbox/klynger.html",
+    "title": "K-means, skalering og fortolkning",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du skalere variable og forstå, hvad et valgt antal klynger betyder.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "K-means, skalering og fortolkning"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/klynger.html#forudsig-og-vælg",
+    "href": "r/toolbox/klynger.html#forudsig-og-vælg",
+    "title": "K-means, skalering og fortolkning",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvorfor skalerer man ofte variable før k-means?\n\n Så alle observationer bliver identiske. Store numeriske skalaer kan ellers dominere afstandene. Så antallet af variable bliver lig antallet af klynger.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "K-means, skalering og fortolkning"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/klynger.html#arbejd-selv",
+    "href": "r/toolbox/klynger.html#arbejd-selv",
+    "title": "K-means, skalering og fortolkning",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nBrug de første fire kolonner i iris. Skalér dem, og kør k-means med tre centre og nstart = 20. Sæt seed 42. Optæl klyngernes størrelser og sammenlign med Species uden at bruge Species i selve klyngedannelsen.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHvor mange observationer er fordelt på klyngerne? \nHvor mange numeriske variable indgår? \n\n\n\nVis hint\n\nSpecies er en kendt etiket og skal ikke med i x. nstart = 20 prøver flere initialiseringer. Klyngenumre er etiketter uden naturlig rækkefølge.\n\n\n\nVis løsningsforslag\n\n\nx &lt;- scale(iris[, 1:4])\nset.seed(42)\nmodel &lt;- kmeans(x, centers = 3, nstart = 20)\nmodel$size\ntable(klynge = model$cluster, art = iris$Species)\nplot(x[, 1:2], col = model$cluster, pch = 19,\n     xlab = \"Skaleret bægerbladslængde\", ylab = \"Skaleret bægerbladsbredde\")\n\nAlle 150 blomster placeres i tre klynger, fordi vi bad om tre. Det dokumenterer ikke, at tre er det naturlige antal. Klyngenumre kan bytte plads uden at medlemskabet ændres.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "K-means, skalering og fortolkning"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/klynger.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/klynger.html#fortolk-og-gå-videre",
+    "title": "K-means, skalering og fortolkning",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nK-means finder tre klynger i støjdata, når centers = 3. Hvad viser det?\n\n At data nødvendigvis indeholder tre naturlige grupper. Algoritmen kan lave den ønskede opdeling også uden tydelig klyngestruktur. At støj altid har tre dimensioner.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "K-means, skalering og fortolkning"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/klynger.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/klynger.html#tilbage-til-undervisningen",
+    "title": "K-means, skalering og fortolkning",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: kmeans.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "K-means, skalering og fortolkning"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/power-og-clt.html",
+    "href": "r/toolbox/power-og-clt.html",
+    "title": "Stikprøvestørrelse, power og CLT",
+    "section": "",
+    "text": "R-toolbox · 25 minutter\nEfter øvelsen kan du beregne stikprøvestørrelse og skelne mellem fordelingen af data og af gennemsnit.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Stikprøvestørrelse, power og CLT"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/power-og-clt.html#forudsig-og-vælg",
+    "href": "r/toolbox/power-og-clt.html#forudsig-og-vælg",
+    "title": "Stikprøvestørrelse, power og CLT",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvis risikoen for type II-fejl er 0.2, hvad er power? \nHvad beskriver den centrale grænseværdisætning under passende betingelser?\n\n At alle rådata er normalfordelte. Fordelingen af standardiserede stikprøvegennemsnit ved voksende n. At alle stikprøver har præcis samme gennemsnit.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Stikprøvestørrelse, power og CLT"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/power-og-clt.html#arbejd-selv",
+    "href": "r/toolbox/power-og-clt.html#arbejd-selv",
+    "title": "Stikprøvestørrelse, power og CLT",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nBeregn n pr. gruppe til en tosidet t-test for to uafhængige grupper med d = 0.5, signifikansniveau 0.05 og power 0.80. Rund op. Gentag med power 0.90. Simulér derefter 1000 gennemsnit af hver 30 uniformt fordelte tal, og tegn et histogram.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nn pr. gruppe ved power 0.80, rundet op? \nSamlet n for to grupper ved power 0.80? \n\n\n\nVis hint\n\nResultatets n gælder hver gruppe. Brug ceiling() frem for almindelig afrunding. replicate() gentager hele beregningen af et gennemsnit.\n\n\n\nVis løsningsforslag\n\n\nlibrary(pwr)\nplan80 &lt;- pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.80,\n                    type = \"two.sample\", alternative = \"two.sided\")\nplan90 &lt;- pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.90,\n                    type = \"two.sample\", alternative = \"two.sided\")\nc(n80 = ceiling(plan80$n), n90 = ceiling(plan90$n))\nset.seed(42)\ngennemsnit &lt;- replicate(1000, mean(runif(30)))\nhist(gennemsnit, breaks = 25, xlab = \"Stikprøvegennemsnit\", main = \"Uniforme rådata, n = 30\")\n\nDer kræves 64 pr. gruppe ved power 0,80 og 86 ved 0,90 under modellens antagelser. Power er 1 − beta. Uniforme rådata bliver ikke normalfordelte, men deres gennemsnit kan være omtrent normalfordelte.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Stikprøvestørrelse, power og CLT"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/power-og-clt.html#fortolk-og-gå-videre",
+    "href": "r/toolbox/power-og-clt.html#fortolk-og-gå-videre",
+    "title": "Stikprøvestørrelse, power og CLT",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad sker der typisk med det nødvendige n, hvis den ønskede detekterbare effekt halveres?\n\n Det halveres altid. Det stiger. Det er uændret.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Stikprøvestørrelse, power og CLT"
+    ]
+  },
+  {
+    "objectID": "r/toolbox/power-og-clt.html#tilbage-til-undervisningen",
+    "href": "r/toolbox/power-og-clt.html#tilbage-til-undervisningen",
+    "title": "Stikprøvestørrelse, power og CLT",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: powerberegninger · clt · which-distribution.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "R-toolbox",
+      "Stikprøvestørrelse, power og CLT"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/facetter-og-skalaer.html",
+    "href": "r/visualisering/facetter-og-skalaer.html",
+    "title": "Facetter, skalaer og tema",
+    "section": "",
+    "text": "Visualisering med R · 25 minutter\nEfter øvelsen kan du opdele et plot i paneler og skelne mellem zoom og ændring af en skala.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Facetter, skalaer og tema"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/facetter-og-skalaer.html#forudsig-og-vælg",
+    "href": "r/visualisering/facetter-og-skalaer.html#forudsig-og-vælg",
+    "title": "Facetter, skalaer og tema",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nDu vil zoome ind uden at fjerne observationer før en statistisk beregning. Hvad vælger du?\n\n ylim() coord_cartesian() filter()\n\nHvad ændrer theme_minimal() primært?\n\n Dataenes værdier. Plottets visuelle udformning. Regressionsmodellens koefficienter.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Facetter, skalaer og tema"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/facetter-og-skalaer.html#arbejd-selv",
+    "href": "r/visualisering/facetter-og-skalaer.html#arbejd-selv",
+    "title": "Facetter, skalaer og tema",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nTegn et histogram over hwy fra mpg, med én facet pr. drv. Brug binwidth 5, et minimalt tema og en aksetitel, der angiver miles per gallon. Sammenlign derefter med binwidth 2.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHvor mange facetpaneler får du? \n\n\n\nVis hint\n\nfacet_wrap(~ drv) laver paneler. En binwidth på 5 giver intervaller med bredde 5 på x-aksen.\n\n\n\nVis løsningsforslag\n\n\nlibrary(ggplot2)\nfigur &lt;- ggplot(mpg, aes(x = hwy)) +\n  geom_histogram(binwidth = 5, boundary = 0, fill = \"steelblue\") +\n  facet_wrap(~ drv) + theme_minimal() +\n  labs(x = \"Brændstoføkonomi (miles per gallon)\", y = \"Antal biler\")\nprint(figur)\nlength(unique(mpg$drv))\n\nDer kommer tre paneler. Mindre intervaller viser flere lokale variationer, men er ikke automatisk mere informative. Paneler med samme skala er lettere at sammenligne.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Facetter, skalaer og tema"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/facetter-og-skalaer.html#fortolk-og-gå-videre",
+    "href": "r/visualisering/facetter-og-skalaer.html#fortolk-og-gå-videre",
+    "title": "Facetter, skalaer og tema",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nNår du gemmer et plot med ggsave(), hvad gør plot = figur?\n\n Gør billedet interaktivt. Vælger eksplicit hvilket plot der gemmes. Ændrer datasættet til figur.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Facetter, skalaer og tema"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/facetter-og-skalaer.html#tilbage-til-undervisningen",
+    "href": "r/visualisering/facetter-og-skalaer.html#tilbage-til-undervisningen",
+    "title": "Facetter, skalaer og tema",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: facets · scaling-and-coordinates · theming · saving.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Facetter, skalaer og tema"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/lag-og-mapping.html",
+    "href": "r/visualisering/lag-og-mapping.html",
+    "title": "Byg et plot med ggplot2",
+    "section": "",
+    "text": "Visualisering med R · 25 minutter\nEfter øvelsen kan du vælge geometri og skelne mellem mapping og faste farver.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på R, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Byg et plot med ggplot2"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/lag-og-mapping.html#forudsig-og-vælg",
+    "href": "r/visualisering/lag-og-mapping.html#forudsig-og-vælg",
+    "title": "Byg et plot med ggplot2",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvilken geometri passer til sammenhængen mellem to numeriske variable?\n\n geom_bar() geom_point() geom_histogram()\n\nHvordan får alle punkter samme blå farve uden en farvelegend?\n\n aes(colour = “blue”) geom_point(colour = “blue”) aes(blue = colour)",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Byg et plot med ggplot2"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/lag-og-mapping.html#arbejd-selv",
+    "href": "r/visualisering/lag-og-mapping.html#arbejd-selv",
+    "title": "Byg et plot med ggplot2",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nBrug diamonds fra ggplot2. Vælg de første 200 rækker. Tegn carat på x-aksen og price på y-aksen. Map cut til farve, gør punkterne delvist gennemsigtige, og giv akserne læsbare titler.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nHvor mange punkter tegnes før eventuelt overlap? \n\n\n\nVis hint\n\nVariable, som skal styre farverne, placeres inde i aes(). Faste indstillinger som alpha = 0.6 placeres udenfor.\n\n\n\nVis løsningsforslag\n\n\nlibrary(ggplot2)\nsten &lt;- diamonds[1:200, ]\nfigur &lt;- ggplot(sten, aes(x = carat, y = price, colour = cut)) +\n  geom_point(alpha = 0.6) +\n  labs(x = \"Vægt (carat)\", y = \"Pris (USD)\", colour = \"Slibning\")\nprint(figur)\n\nDer tegnes ét punkt pr. række. Farven viser cut, og alpha hjælper med at se overlap. De første 200 rækker er et udsnit til kodeøvelsen, ikke en tilfældig stikprøve.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Byg et plot med ggplot2"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/lag-og-mapping.html#fortolk-og-gå-videre",
+    "href": "r/visualisering/lag-og-mapping.html#fortolk-og-gå-videre",
+    "title": "Byg et plot med ggplot2",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nDu har allerede en tabel med antal pr. kategori. Hvilken geometri bruger selve antallet som søjlehøjde?\n\n geom_bar() med standardindstillinger geom_col() geom_density()",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Byg et plot med ggplot2"
+    ]
+  },
+  {
+    "objectID": "r/visualisering/lag-og-mapping.html#tilbage-til-undervisningen",
+    "href": "r/visualisering/lag-og-mapping.html#tilbage-til-undervisningen",
+    "title": "Byg et plot med ggplot2",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: getting_started · further_mapping · different_plots.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "Øvelser i R",
+      "Visualisering med R",
+      "Byg et plot med ggplot2"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/index.html",
+    "href": "r/webscraping/index.html",
+    "title": "Web scraping med R",
+    "section": "",
+    "text": "Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Web scraping med R"
+    ]
+  },
+  {
+    "objectID": "r/webscraping/index.html#find-tekst-og-tabeller-i-html",
+    "href": "r/webscraping/index.html#find-tekst-og-tabeller-i-html",
+    "title": "Web scraping med R",
+    "section": "Find tekst og tabeller i HTML",
+    "text": "Find tekst og tabeller i HTML\n25 minutter · Øv dig i at bruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er.\nÅbn kursusmaterialet.\nTilbage til oversigten.",
+    "crumbs": [
+      "Øvelser i R",
+      "Web scraping med R",
+      "Web scraping med R"
+    ]
+  },
+  {
+    "objectID": "sql/intro/forespoergsler.html",
+    "href": "sql/intro/forespoergsler.html",
+    "title": "SELECT, filtrering og opsummering",
+    "section": "",
+    "text": "Introduktion til SQL · 25 minutter\nEfter øvelsen kan du filtrere, sortere og beregne gruppevise resultater i SQL.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på Python, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar. SQL køres i en SQLite-database i hukommelsen via Python. Redigér query-teksten; opstartskoden gendanner øvelsesdatabasen ved hver kørsel.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "SELECT, filtrering og opsummering"
+    ]
+  },
+  {
+    "objectID": "sql/intro/forespoergsler.html#forudsig-og-vælg",
+    "href": "sql/intro/forespoergsler.html#forudsig-og-vælg",
+    "title": "SELECT, filtrering og opsummering",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvilken del af en SELECT-forespørgsel filtrerer rækker før gruppering?\n\n ORDER BY WHERE SELECT DISTINCT\n\nHvordan tester du, om citations mangler?\n\n citations = NULL citations IS NULL citations == “NA”",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "SELECT, filtrering og opsummering"
+    ]
+  },
+  {
+    "objectID": "sql/intro/forespoergsler.html#arbejd-selv",
+    "href": "sql/intro/forespoergsler.html#arbejd-selv",
+    "title": "SELECT, filtrering og opsummering",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nRet kun SQL-teksten mellem de tredobbelte anførselstegn efter query. Find titel og citationstal for artikler med mindst 6 citationer; sortér faldende efter citationstal. Prøv derefter at beregne AVG(citations) pr. journal_id. Tabellen er konstrueret til øvelsen.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nAntal artikler med mindst 6 citationer? \nGennemsnit for journal_id = 1? \n\n\n\nVis hint\n\nBrug WHERE til grænsen og ORDER BY citations DESC til sorteringen. AVG() udelader NULL.\n\n\n\nVis løsningsforslag\n\n\nimport sqlite3\ndb = sqlite3.connect(\":memory:\")\ndb.executescript(\"\"\"\nCREATE TABLE articles (id INTEGER PRIMARY KEY, title TEXT, journal_id INTEGER, citations INTEGER);\nINSERT INTO articles VALUES (1, 'Alpha', 1, 4), (2, 'Beta', 1, 10),\n (3, 'Gamma', 2, 6), (4, 'Delta', 3, NULL);\nCREATE TABLE journals (id INTEGER PRIMARY KEY, name TEXT);\nINSERT INTO journals VALUES (1, 'Data'), (2, 'Methods');\n\"\"\")\nquery = \"\"\"\nSELECT title, citations FROM articles\nWHERE citations &gt;= 6 ORDER BY citations DESC;\n\"\"\"\nvalgte = db.execute(query).fetchall()\nprint(valgte)\nprint(db.execute(\"SELECT journal_id, AVG(citations) FROM articles GROUP BY journal_id;\").fetchall())\n\nBeta kommer før Gamma. Tidsskrift 1 har gennemsnit (4 + 10)/2 = 7. For tidsskrift 3 er der ingen kendte citationstal, så gennemsnittet er NULL, som Python viser som None.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "SELECT, filtrering og opsummering"
+    ]
+  },
+  {
+    "objectID": "sql/intro/forespoergsler.html#fortolk-og-gå-videre",
+    "href": "sql/intro/forespoergsler.html#fortolk-og-gå-videre",
+    "title": "SELECT, filtrering og opsummering",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvad er forskellen på COUNT(*) og COUNT(citations)?\n\n De er altid ens. COUNT() tæller rækker; COUNT(citations) tæller ikke-NULL citationstal. COUNT() tæller kun unikke titler.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "SELECT, filtrering og opsummering"
+    ]
+  },
+  {
+    "objectID": "sql/intro/forespoergsler.html#tilbage-til-undervisningen",
+    "href": "sql/intro/forespoergsler.html#tilbage-til-undervisningen",
+    "title": "SELECT, filtrering og opsummering",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: 02-selecting-sorting-data · 03-filtering · 04-ordering-commenting · 05-aggregating-calculating.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "SELECT, filtrering og opsummering"
+    ]
+  },
+  {
+    "objectID": "sql/intro/joins-og-noegler.html",
+    "href": "sql/intro/joins-og-noegler.html",
+    "title": "Joins, nøgler og tabeldesign",
+    "section": "",
+    "text": "Introduktion til SQL · 25 minutter\nEfter øvelsen kan du forbinde tabeller, vælge jointype og forklare primærnøgler.\nDataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.\nVent på Python, redigér feltet, og vælg Run Code. Første indlæsning af motor og pakker kan tage lidt tid. Start Over gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar. SQL køres i en SQLite-database i hukommelsen via Python. Redigér query-teksten; opstartskoden gendanner øvelsesdatabasen ved hver kørsel.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Joins, nøgler og tabeldesign"
+    ]
+  },
+  {
+    "objectID": "sql/intro/joins-og-noegler.html#forudsig-og-vælg",
+    "href": "sql/intro/joins-og-noegler.html#forudsig-og-vælg",
+    "title": "Joins, nøgler og tabeldesign",
+    "section": "1. Forudsig og vælg",
+    "text": "1. Forudsig og vælg\n\nHvad kræves af en primærnøgle?\n\n Den skal være en persons navn. Den identificerer hver række entydigt og må ikke være NULL. Den skal være det største tal i rækken.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Joins, nøgler og tabeldesign"
+    ]
+  },
+  {
+    "objectID": "sql/intro/joins-og-noegler.html#arbejd-selv",
+    "href": "sql/intro/joins-og-noegler.html#arbejd-selv",
+    "title": "Joins, nøgler og tabeldesign",
+    "section": "2. Arbejd selv",
+    "text": "2. Arbejd selv\nKobl articles sammen med journals via journal_id og id. Brug en LEFT JOIN, så artiklen Delta bliver bevaret. Vis titel og tidsskriftnavn, sorteret efter artikel-id. Sammenlign derefter med INNER JOIN.\n\n\n\n\n\n\n\n\n\n\nSkriv dine resultater nedenfor. Tjek svar kontrollerer svarfelterne, ikke din kode.\n\nRækker efter LEFT JOIN? \nRækker efter INNER JOIN? \n\n\n\nVis hint\n\nLEFT JOIN bevarer alle venstre rækker. a og j er aliaser, så du kan skelne mellem tabellernes kolonner.\n\n\n\nVis løsningsforslag\n\n\nimport sqlite3\ndb = sqlite3.connect(\":memory:\")\ndb.executescript(\"\"\"\nCREATE TABLE articles (id INTEGER PRIMARY KEY, title TEXT, journal_id INTEGER, citations INTEGER);\nINSERT INTO articles VALUES (1, 'Alpha', 1, 4), (2, 'Beta', 1, 10),\n (3, 'Gamma', 2, 6), (4, 'Delta', 3, NULL);\nCREATE TABLE journals (id INTEGER PRIMARY KEY, name TEXT);\nINSERT INTO journals VALUES (1, 'Data'), (2, 'Methods');\n\"\"\")\nquery = \"\"\"\nSELECT a.title, j.name\nFROM articles AS a LEFT JOIN journals AS j ON a.journal_id = j.id\nORDER BY a.id;\n\"\"\"\nresultat = db.execute(query).fetchall()\nprint(resultat)\ninner = db.execute(\"SELECT a.title, j.name FROM articles AS a INNER JOIN journals AS j ON a.journal_id=j.id;\").fetchall()\nprint(inner)\n\nLEFT JOIN giver fire rækker, og Delta får NULL som tidsskriftnavn. INNER JOIN giver tre. Øvelsen indeholder bevidst en manglende reference og har ingen foreign key-constraint; en aktiv constraint kunne forhindre denne indsættelse i en rigtig database.\nKopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Joins, nøgler og tabeldesign"
+    ]
+  },
+  {
+    "objectID": "sql/intro/joins-og-noegler.html#fortolk-og-gå-videre",
+    "href": "sql/intro/joins-og-noegler.html#fortolk-og-gå-videre",
+    "title": "Joins, nøgler og tabeldesign",
+    "section": "3. Fortolk og gå videre",
+    "text": "3. Fortolk og gå videre\n\nHvorfor gemme tidsskriftnavnet i en separat tabel?\n\n Så dubletter af primærnøglen bliver tilladt. Så navnet kan opdateres ét sted og genbruges via en nøgle. Så joins aldrig er nødvendige.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Joins, nøgler og tabeldesign"
+    ]
+  },
+  {
+    "objectID": "sql/intro/joins-og-noegler.html#tilbage-til-undervisningen",
+    "href": "sql/intro/joins-og-noegler.html#tilbage-til-undervisningen",
+    "title": "Joins, nøgler og tabeldesign",
+    "section": "Tilbage til undervisningen",
+    "text": "Tilbage til undervisningen\nKursusmaterialet. Relevante kildelektioner: 06-joins-aliases · 07-saving-queries · 08-database-design · 09-create.\nTilbage til kursets øvelser.",
+    "crumbs": [
+      "SQL",
+      "Introduktion til SQL",
+      "Joins, nøgler og tabeldesign"
     ]
   },
   {
@@ -418,7 +2287,7 @@
     "href": "vejledning/ny-oevelsesside.html#r-i-browseren",
     "title": "Lav en ny øvelsesside",
     "section": "R i browseren",
-    "text": "R i browseren\nBrug et redigerbart R-felt, når den studerende skal undersøge data, skrive kode eller tegne en figur. Et tekstspørgsmål behøver ikke sit eget R-felt. Se demoen og vektorøvelserne.\nSkabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien ../../scripts/live-knitr.qmd passer til sider i r/intro/. På en side i projektets rod bruges scripts/live-knitr.qmd. Stien regnes fra .qmd-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.\nKopiér denne blok til din øvelsesside:\n```{webr}\n#| caption: Undersøg tallene\nx &lt;- c(2, 4, 6)\nmean(x)\n```\n{webr} betyder, at koden køres af den studerende i browseren. En almindelig {r}-chunk køres derimod under bygningen. Inline R og webexercises-funktioner skal fortsat bruge build-R. Objekter og pakker fra build-R findes ikke automatisk i browseren.\nBrug startkode og kommentarer til opgaver, og læg det færdige løsningsforslag bag et hint eller en løsningsknap. Tilføj et webexercises-svarfelt efter kodefeltet, hvis den studerende skal aflevere et beregnet resultat. Der er ingen automatisk bedømmelse af koden.\n\nBetjening og fælles objekter\n\nRun Code eller Ctrl/Cmd + Enter kører feltet; output og figurer vises nedenunder. Felterne kører ikke automatisk.\nFelter på samme side deler R-objekter. Sørg for, at hvert eksempel kan køres selvstændigt, eller skriv tydeligt, hvilket felt der skal køres først.\nStart Over nulstiller feltets kode og output, men fjerner ikke objekter fra sessionen. Genindlæsning starter en ny session og nulstiller også øvelsessvarene.\nKode og resultater gemmes ikke mellem besøg. Første indlæsning kræver internet. Hvis indlæsningen fejler, kan den studerende stadig kopiere koden til lokal R.\nEn kørsel har en tidsgrænse på 30 sekunder. Hold øvelserne små og undgå tunge datasæt.\n\n\n\nPakker og data\nDe nuværende eksempler bruger base R. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:\nwebr:\n  packages: [ggplot2]\nBrug derefter library(ggplot2) i en {webr}-blok. Test pakken i browseren; en pakke installeret i GitHub Actions er ikke dermed tilgængelig i webR. Projektet indlæser som udgangspunkt ingen datafiler i R-sessionen (resources: []). Tilføj nødvendige filer via sidens webr.resources efter Quarto Lives vejledning, og test deres stier fra den udgivne side.\nSe også Quarto Lives dokumentation for pakker, kodefelter og Python.",
+    "text": "R i browseren\nBrug et redigerbart R-felt, når den studerende skal undersøge data, skrive kode eller tegne en figur. Et tekstspørgsmål behøver ikke sit eget R-felt. Se demoen og vektorøvelserne.\nSkabelonen indeholder allerede Quarto Lives knitr-opsætning. Include-stien ../../scripts/live-knitr.qmd passer til sider i r/intro/. På en side i projektets rod bruges scripts/live-knitr.qmd. Stien regnes fra .qmd-filens mappe og skal justeres, hvis du flytter siden. Behold inkluderingen før den første kodeblok.\nKopiér denne blok til din øvelsesside:\n```{webr}\n#| caption: Undersøg tallene\nx &lt;- c(2, 4, 6)\nmean(x)\n```\n{webr} betyder, at koden køres af den studerende i browseren. En almindelig {r}-chunk køres derimod under bygningen. Inline R og webexercises-funktioner skal fortsat bruge build-R. Objekter og pakker fra build-R findes ikke automatisk i browseren.\nBrug startkode og kommentarer til opgaver, og læg det færdige løsningsforslag bag et hint eller en løsningsknap. Tilføj et webexercises-svarfelt efter kodefeltet, hvis den studerende skal aflevere et beregnet resultat. Der er ingen automatisk bedømmelse af koden.\n\nBetjening og fælles objekter\n\nRun Code eller Ctrl/Cmd + Enter kører feltet; output og figurer vises nedenunder. Felterne kører ikke automatisk.\nFelter på samme side deler R-objekter. Sørg for, at hvert eksempel kan køres selvstændigt, eller skriv tydeligt, hvilket felt der skal køres først.\nStart Over nulstiller feltets kode og output, men fjerner ikke objekter fra sessionen. Genindlæsning starter en ny session og nulstiller også øvelsessvarene.\nKode og resultater gemmes ikke mellem besøg. Første indlæsning kræver internet. Hvis indlæsningen fejler, kan den studerende stadig kopiere koden til lokal R.\nEn kørsel har en tidsgrænse på 30 sekunder. Hold øvelserne små og undgå tunge datasæt.\n\n\n\nPakker og data\nDe grundlæggende eksempler bruger base R; kursusøvelserne bruger også blandt andet dplyr, ggplot2, tidytext og rvest. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:\nwebr:\n  packages: [ggplot2]\nBrug derefter library(ggplot2) i en {webr}-blok. Test pakken i browseren; en pakke installeret i GitHub Actions er ikke dermed tilgængelig i webR. Projektet indlæser som udgangspunkt ingen datafiler i R-sessionen (resources: []). Tilføj nødvendige filer via sidens webr.resources efter Quarto Lives vejledning, og test deres stier fra den udgivne side.\nSe også Quarto Lives dokumentation for pakker, kodefelter og Python.",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"
@@ -458,11 +2327,11 @@
     ]
   },
   {
-    "objectID": "vejledning/ny-oevelsesside.html#python-senere",
-    "href": "vejledning/ny-oevelsesside.html#python-senere",
+    "objectID": "vejledning/ny-oevelsesside.html#python-og-sql",
+    "href": "vejledning/ny-oevelsesside.html#python-og-sql",
     "title": "Lav en ny øvelsesside",
-    "section": "Python senere",
-    "text": "Python senere\nOpret eksempelvis python/intro/ med samme struktur, og føj python/**/*.qmd til projektets render-liste. Opret en Python-indgang i menuen og på forsiden.\nSpørgsmål om Python kan stadig genereres med R/webexercises. Quarto Live understøtter også redigerbare {pyodide}-blokke til Python i browseren. Behold knitr-opsætningen til webexercises, og afprøv Python-runtime og pakker særskilt, når det første Python-kursus tilføjes. Almindelige python-kodeblokke viser kun koden. Hvis Python-kode også skal eksekveres under bygningen, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.",
+    "section": "Python og SQL",
+    "text": "Python og SQL\nDer er nu øvelser til Python og SQL. Begge mapper indgår i projektets render-liste og navigation.\nEn Python-side bruger samme knitr-opsætning som R-siderne: webexercises genererer svarfelterne under bygningen, mens {pyodide}-blokke kører den studerendes Python-kode i browseren. Angiv engine: knitr i sidens YAML, og inkludér ../../scripts/live-knitr.qmd, når siden ligger to mapper under roden.\n```{pyodide}\n#| caption: Prøv Python\ntal = [2, 4, 6]\nprint(sum(tal))\n```\nEkstra Python-pakker angives under pyodide.packages, eksempelvis [pandas, matplotlib]. De to SQL-sider bruger [sqlite3] og en database i hukommelsen; den studerende redigerer SQL-teksten i Python-feltet. De kræver ingen databaseserver.\nSe kursusoverblikket for sammenhængen mellem øvelser og undervisningsmateriale. Når du tilføjer et sæt, skal det også tilføjes til kursets index og sidemenu.\n\nKontrol af nye kodeøvelser\ntests/course-cases.json beskriver de nye øvelsessider og kontrollerer deres forventede resultater. Browserkontrollen læser løsningskoden direkte fra sidens markerede løsningsblok, kører den i det redigerbare felt og afprøver både beregninger og eventuelle figurer. Ved ændringer i data eller facit skal kontroludtrykkene også gennemgås.\nKør node tests/courses.test.mjs efter quarto render. Testen bruger rigtige webR- og Pyodide-sessioner og kræver internet til motorer og pakker.",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"
@@ -473,7 +2342,7 @@
     "href": "vejledning/ny-oevelsesside.html#hvad-siden-gør-og-ikke-gør",
     "title": "Lav en ny øvelsesside",
     "section": "Hvad siden gør og ikke gør",
-    "text": "Hvad siden gør og ikke gør\n\nFacit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.\nR-felterne kører den studerendes kode lokalt i browseren via WebAssembly. Der er ingen fælles R-server.\nBesøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.\nDer er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.\n\nSe opsætningen af besøgsstatistik.",
+    "text": "Hvad siden gør og ikke gør\n\nFacit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.\nR- og Python-felterne kører den studerendes kode lokalt i browseren via WebAssembly. SQL kører i SQLite via Python. Der er ingen fælles beregningsserver.\nBesøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.\nDer er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.\n\nSe opsætningen af besøgsstatistik.",
     "crumbs": [
       "Demo-øvelser",
       "Lav en ny øvelsesside"

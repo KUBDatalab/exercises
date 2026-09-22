@@ -138,6 +138,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Øvelser i R</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../python/index.html"> 
+<span class="menu-text">Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sql/index.html"> 
+<span class="menu-text">SQL</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="../demo-oevelser.html" aria-current="page"> 
 <span class="menu-text">Demo-øvelser</span></a>
   </li>  
@@ -187,6 +195,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../vejledning/kursusoverblik.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fra kursusmateriale til øvelser</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../demo-oevelser.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Demo-øvelser</span></a>
   </div>
@@ -223,7 +237,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#knyt-siden-til-et-kursus" id="toc-knyt-siden-til-et-kursus" class="nav-link" data-scroll-target="#knyt-siden-til-et-kursus">5. Knyt siden til et kursus</a></li>
   <li><a href="#se-siden-lokalt" id="toc-se-siden-lokalt" class="nav-link" data-scroll-target="#se-siden-lokalt">6. Se siden lokalt</a></li>
   <li><a href="#udgiv-ændringen" id="toc-udgiv-ændringen" class="nav-link" data-scroll-target="#udgiv-ændringen">7. Udgiv ændringen</a></li>
-  <li><a href="#python-senere" id="toc-python-senere" class="nav-link" data-scroll-target="#python-senere">Python senere</a></li>
+  <li><a href="#python-og-sql" id="toc-python-og-sql" class="nav-link" data-scroll-target="#python-og-sql">Python og SQL</a>
+  <ul class="collapse">
+  <li><a href="#kontrol-af-nye-kodeøvelser" id="toc-kontrol-af-nye-kodeøvelser" class="nav-link" data-scroll-target="#kontrol-af-nye-kodeøvelser">Kontrol af nye kodeøvelser</a></li>
+  </ul></li>
   <li><a href="#hvad-siden-gør-og-ikke-gør" id="toc-hvad-siden-gør-og-ikke-gør" class="nav-link" data-scroll-target="#hvad-siden-gør-og-ikke-gør">Hvad siden gør og ikke gør</a></li>
   </ul>
 </nav>
@@ -369,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pakker-og-data" class="level3">
 <h3 class="anchored" data-anchor-id="pakker-og-data">Pakker og data</h3>
-<p>De nuværende eksempler bruger base R. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:</p>
+<p>De grundlæggende eksempler bruger base R; kursusøvelserne bruger også blandt andet dplyr, ggplot2, tidytext og rvest. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">webr</span><span class="kw">:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">packages</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">ggplot2</span><span class="kw">]</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Brug derefter <code>library(ggplot2)</code> i en <code>{webr}</code>-blok. Test pakken i browseren; en pakke installeret i GitHub Actions er ikke dermed tilgængelig i webR. Projektet indlæser som udgangspunkt ingen datafiler i R-sessionen (<code>resources: []</code>). Tilføj nødvendige filer via sidens <code>webr.resources</code> efter <a href="https://r-wasm.github.io/quarto-live/">Quarto Lives vejledning</a>, og test deres stier fra den udgivne side.</p>
@@ -405,16 +422,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://kubdatalab.github.io/exercises/">https://kubdatalab.github.io/exercises/</a></p>
 <p>Et mislykket build vises under <a href="https://github.com/KUBDatalab/exercises/actions">Actions</a>. Det tidligere publicerede site bevares. Workflowet gemmer også det byggede site og skærmbilleder som artifacts.</p>
 </section>
-<section id="python-senere" class="level2">
-<h2 class="anchored" data-anchor-id="python-senere">Python senere</h2>
-<p>Opret eksempelvis <code>python/intro/</code> med samme struktur, og føj <code>python/**/*.qmd</code> til projektets <code>render</code>-liste. Opret en Python-indgang i menuen og på forsiden.</p>
-<p>Spørgsmål om Python kan stadig genereres med R/webexercises. Quarto Live understøtter også redigerbare <code>{pyodide}</code>-blokke til Python i browseren. Behold knitr-opsætningen til webexercises, og afprøv Python-runtime og pakker særskilt, når det første Python-kursus tilføjes. Almindelige <code>python</code>-kodeblokke viser kun koden. Hvis Python-kode også skal <strong>eksekveres under bygningen</strong>, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.</p>
+<section id="python-og-sql" class="level2">
+<h2 class="anchored" data-anchor-id="python-og-sql">Python og SQL</h2>
+<p>Der er nu øvelser til <a href="../python/index.html">Python</a> og <a href="../sql/index.html">SQL</a>. Begge mapper indgår i projektets render-liste og navigation.</p>
+<p>En Python-side bruger samme knitr-opsætning som R-siderne: webexercises genererer svarfelterne under bygningen, mens <code>{pyodide}</code>-blokke kører den studerendes Python-kode i browseren. Angiv <code>engine: knitr</code> i sidens YAML, og inkludér <code>../../scripts/live-knitr.qmd</code>, når siden ligger to mapper under roden.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| caption: Prøv Python</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>tal <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(tal))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ekstra Python-pakker angives under <code>pyodide.packages</code>, eksempelvis <code>[pandas, matplotlib]</code>. De to SQL-sider bruger <code>[sqlite3]</code> og en database i hukommelsen; den studerende redigerer SQL-teksten i Python-feltet. De kræver ingen databaseserver.</p>
+<p>Se <a href="../vejledning/kursusoverblik.html">kursusoverblikket</a> for sammenhængen mellem øvelser og undervisningsmateriale. Når du tilføjer et sæt, skal det også tilføjes til kursets index og sidemenu.</p>
+<section id="kontrol-af-nye-kodeøvelser" class="level3">
+<h3 class="anchored" data-anchor-id="kontrol-af-nye-kodeøvelser">Kontrol af nye kodeøvelser</h3>
+<p><code>tests/course-cases.json</code> beskriver de nye øvelsessider og kontrollerer deres forventede resultater. Browserkontrollen læser løsningskoden direkte fra sidens markerede løsningsblok, kører den i det redigerbare felt og afprøver både beregninger og eventuelle figurer. Ved ændringer i data eller facit skal kontroludtrykkene også gennemgås.</p>
+<p>Kør <code>node tests/courses.test.mjs</code> efter <code>quarto render</code>. Testen bruger rigtige webR- og Pyodide-sessioner og kræver internet til motorer og pakker.</p>
+</section>
 </section>
 <section id="hvad-siden-gør-og-ikke-gør" class="level2">
 <h2 class="anchored" data-anchor-id="hvad-siden-gør-og-ikke-gør">Hvad siden gør og ikke gør</h2>
 <ul>
 <li>Facit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.</li>
-<li>R-felterne kører den studerendes kode lokalt i browseren via WebAssembly. Der er ingen fælles R-server.</li>
+<li>R- og Python-felterne kører den studerendes kode lokalt i browseren via WebAssembly. SQL kører i SQLite via Python. Der er ingen fælles beregningsserver.</li>
 <li>Besøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.</li>
 <li>Der er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.</li>
 </ul>

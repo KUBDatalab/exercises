@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Øvelser til KUB Datalabs kurser.">
+<meta name="description" content="Gentag kursets emner med kode, hints og feedback.">
 
-<title>Øvelser i R – KUB Datalab · Øvelser</title>
+<title>Programmering i R – KUB Datalab · Øvelser</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +24,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/kub-datalab.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-82c066dbc46400f1ddc3d20af5ee93b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
-<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/kub-datalab.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-82c066dbc46400f1ddc3d20af5ee93b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,12 +70,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Søg"
   }
 }</script>
-<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../assets/vendor/webex.css">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/vendor/webex.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
@@ -85,10 +85,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/kub-datalab.svg" alt="KUB Datalab" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/kub-datalab.svg" alt="KUB Datalab" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">KUB Datalab</span>
     </a>
   </div>
@@ -99,29 +99,29 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../r/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../r/index.html" aria-current="page"> 
 <span class="menu-text">Øvelser i R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../python/index.html"> 
+    <a class="nav-link" href="../../python/index.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sql/index.html"> 
+    <a class="nav-link" href="../../sql/index.html"> 
 <span class="menu-text">SQL</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../demo-oevelser.html"> 
+    <a class="nav-link" href="../../demo-oevelser.html"> 
 <span class="menu-text">Demo-øvelser</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../vejledning/ny-oevelsesside.html"> 
+    <a class="nav-link" href="../../vejledning/ny-oevelsesside.html"> 
 <span class="menu-text">Til undervisere</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../om.html"> 
+    <a class="nav-link" href="../../om.html"> 
 <span class="menu-text">Om sitet</span></a>
   </li>  
   <li class="nav-item compact">
@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/index.html">Øvelser i R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../r/programmering/index.html">Programmering i R</a></li><li class="breadcrumb-item"><a href="../../r/programmering/index.html">Programmering i R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../r/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Øvelser i R</span></a>
   </div>
 </li>
@@ -169,19 +169,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/intro/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduktion til R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/intro/vektorer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/intro/vektorer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Objekter, vektorer og indeksering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/intro/data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/intro/data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fra tabel til opsummering</span></a>
   </div>
 </li>
@@ -198,13 +198,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/eda/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/eda/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Eksplorativ dataanalyse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/eda/undersoeg-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/eda/undersoeg-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fordelinger, manglende værdier og joins</span></a>
   </div>
 </li>
@@ -221,19 +221,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/visualisering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/visualisering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualisering med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/visualisering/lag-og-mapping.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/visualisering/lag-og-mapping.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Byg et plot med ggplot2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/visualisering/facetter-og-skalaer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/visualisering/facetter-og-skalaer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Facetter, skalaer og tema</span></a>
   </div>
 </li>
@@ -250,19 +250,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/statistik/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/statistik/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistik med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/statistik/fordelinger.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/statistik/fordelinger.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beskriv data og undersøg normalfordelingen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/statistik/regression.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/statistik/regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regression, forudsigelser og residualer</span></a>
   </div>
 </li>
@@ -279,13 +279,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tekstanalyse/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tekstanalyse/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tekstanalyse med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tekstanalyse/ord-og-sentiment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tekstanalyse/ord-og-sentiment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tokens, frekvenser og sentiment</span></a>
   </div>
 </li>
@@ -302,13 +302,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/api/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/api/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">API’er med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/api/forespoergsler-og-json.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/api/forespoergsler-og-json.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">API-forespørgsler, JSON og tid</span></a>
   </div>
 </li>
@@ -325,13 +325,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/webscraping/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/webscraping/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Web scraping med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/webscraping/html-og-tabeller.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/webscraping/html-og-tabeller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Find tekst og tabeller i HTML</span></a>
   </div>
 </li>
@@ -348,13 +348,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/programmering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/programmering/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Programmering i R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/programmering/funktioner-og-loekker.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/programmering/funktioner-og-loekker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Funktioner, løkker og betingelser</span></a>
   </div>
 </li>
@@ -371,49 +371,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R-toolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/import-og-reproducerbarhed.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/import-og-reproducerbarhed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Import, tidy data og reproducerbarhed</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/tabeller.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/tabeller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lav indholdet til en Table One</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/modeller.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/modeller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ANOVA, logistisk regression og overfitting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/power-og-clt.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/power-og-clt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stikprøvestørrelse, power og CLT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/klynger.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/klynger.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">K-means, skalering og fortolkning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/enighed.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/enighed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Procentvis enighed og Cohens kappa</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/beregning-og-miljoe.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/beregning-og-miljoe.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beregningsopgaver, parallelisering og miljø</span></a>
   </div>
 </li>
@@ -428,14 +428,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../r/programmering/index.html">Programmering i R</a></li><li class="breadcrumb-item"><a href="../../r/programmering/index.html">Programmering i R</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Øvelser i R</h1>
+<h1 class="title">Programmering i R</h1>
 </div>
 
 <div>
   <div class="description">
-    Øvelser til KUB Datalabs kurser.
+    Gentag kursets emner med kode, hints og feedback.
   </div>
 </div>
 
@@ -452,55 +452,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.</p>
-<div class="card-grid">
-<section id="introduktion-til-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="introduktion-til-r">Introduktion til R</h3>
-<p>Fra tabel til opsummering.</p>
-<p><a href="../r/intro/index.html">Se øvelser →</a></p>
-</section>
-<section id="eksplorativ-dataanalyse" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="eksplorativ-dataanalyse">Eksplorativ dataanalyse</h3>
-<p>Fordelinger, manglende værdier og joins.</p>
-<p><a href="../r/eda/index.html">Se øvelser →</a></p>
-</section>
-<section id="visualisering-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="visualisering-med-r">Visualisering med R</h3>
-<p>Byg et plot med ggplot2 · Facetter, skalaer og tema.</p>
-<p><a href="../r/visualisering/index.html">Se øvelser →</a></p>
-</section>
-<section id="statistik-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="statistik-med-r">Statistik med R</h3>
-<p>Beskriv data og undersøg normalfordelingen · Regression, forudsigelser og residualer.</p>
-<p><a href="../r/statistik/index.html">Se øvelser →</a></p>
-</section>
-<section id="tekstanalyse-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="tekstanalyse-med-r">Tekstanalyse med R</h3>
-<p>Tokens, frekvenser og sentiment.</p>
-<p><a href="../r/tekstanalyse/index.html">Se øvelser →</a></p>
-</section>
-<section id="apier-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="apier-med-r">API’er med R</h3>
-<p>API-forespørgsler, JSON og tid.</p>
-<p><a href="../r/api/index.html">Se øvelser →</a></p>
-</section>
-<section id="web-scraping-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="web-scraping-med-r">Web scraping med R</h3>
-<p>Find tekst og tabeller i HTML.</p>
-<p><a href="../r/webscraping/index.html">Se øvelser →</a></p>
-</section>
-<section id="programmering-i-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="programmering-i-r">Programmering i R</h3>
-<p>Funktioner, løkker og betingelser.</p>
-<p><a href="../r/programmering/index.html">Se øvelser →</a></p>
-</section>
-<section id="r-toolbox" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="r-toolbox">R-toolbox</h3>
-<p>Import, tidy data og reproducerbarhed · Lav indholdet til en Table One · ANOVA, logistisk regression og overfitting · Stikprøvestørrelse, power og CLT · K-means, skalering og fortolkning · Procentvis enighed og Cohens kappa · Beregningsopgaver, parallelisering og miljø.</p>
-<p><a href="../r/toolbox/index.html">Se øvelser →</a></p>
-</section>
-</div>
-<p><a href="../demo-oevelser.html">Se demoen med spørgsmålstyper</a>.</p>
+<p>Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.</p>
+<section id="funktioner-løkker-og-betingelser" class="level2">
+<h2 class="anchored" data-anchor-id="funktioner-løkker-og-betingelser"><a href="../../r/programmering/funktioner-og-loekker.html">Funktioner, løkker og betingelser</a></h2>
+<p>25 minutter · Øv dig i at skrive en funktion med et argument, bruge if og opsamle resultater fra en løkke.</p>
+<p><a href="https://kubdatalab.github.io/R-programming/">Åbn kursusmaterialet</a>.</p>
+<p><a href="../../r/index.html">Tilbage til oversigten</a>.</p>
 
 
 <script type="ojs-module-contents">
@@ -517,6 +474,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -726,16 +684,16 @@ window.onload = function() {
 
 </script>
 
-<script src="../assets/site.js"></script>
-<script src="../assets/analytics.js"></script>
+<script src="../../assets/site.js"></script>
+<script src="../../assets/analytics.js"></script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../r";
+window._ojs.paths.runtimeToDoc = "../../r/programmering";
 window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "..";
+window._ojs.paths.docToRoot = "../..";
 window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>
@@ -1150,12 +1108,12 @@ window._ojs.runtime.interpretFromScriptTags();
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../om.html">
+    <a class="nav-link" href="../../om.html">
 <p>Om sitet og statistik</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../vejledning/ny-oevelsesside.html">
+    <a class="nav-link" href="../../vejledning/ny-oevelsesside.html">
 <p>Lav en øvelsesside</p>
 </a>
   </li>  

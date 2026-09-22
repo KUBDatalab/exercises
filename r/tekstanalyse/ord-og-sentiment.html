@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Øvelser til KUB Datalabs kurser.">
+<meta name="description" content="Tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.">
 
-<title>Øvelser i R – KUB Datalab · Øvelser</title>
+<title>Tokens, frekvenser og sentiment – KUB Datalab · Øvelser</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,29 +21,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/kub-datalab.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-82c066dbc46400f1ddc3d20af5ee93b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
-<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/kub-datalab.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-82c066dbc46400f1ddc3d20af5ee93b1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,25 +105,25 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Søg"
   }
 }</script>
-<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../assets/vendor/webex.css">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/vendor/webex.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/kub-datalab.svg" alt="KUB Datalab" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/kub-datalab.svg" alt="KUB Datalab" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">KUB Datalab</span>
     </a>
   </div>
@@ -99,29 +134,29 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../r/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../r/index.html" aria-current="page"> 
 <span class="menu-text">Øvelser i R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../python/index.html"> 
+    <a class="nav-link" href="../../python/index.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sql/index.html"> 
+    <a class="nav-link" href="../../sql/index.html"> 
 <span class="menu-text">SQL</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../demo-oevelser.html"> 
+    <a class="nav-link" href="../../demo-oevelser.html"> 
 <span class="menu-text">Demo-øvelser</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../vejledning/ny-oevelsesside.html"> 
+    <a class="nav-link" href="../../vejledning/ny-oevelsesside.html"> 
 <span class="menu-text">Til undervisere</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../om.html"> 
+    <a class="nav-link" href="../../om.html"> 
 <span class="menu-text">Om sitet</span></a>
   </li>  
   <li class="nav-item compact">
@@ -140,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/index.html">Øvelser i R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../r/tekstanalyse/index.html">Tekstanalyse med R</a></li><li class="breadcrumb-item"><a href="../../r/tekstanalyse/ord-og-sentiment.html">Tokens, frekvenser og sentiment</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Skift sidebjælke" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../r/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Øvelser i R</span></a>
   </div>
 </li>
@@ -169,19 +204,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/intro/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/intro/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduktion til R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/intro/vektorer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/intro/vektorer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Objekter, vektorer og indeksering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/intro/data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/intro/data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fra tabel til opsummering</span></a>
   </div>
 </li>
@@ -198,13 +233,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/eda/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/eda/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Eksplorativ dataanalyse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/eda/undersoeg-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/eda/undersoeg-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fordelinger, manglende værdier og joins</span></a>
   </div>
 </li>
@@ -221,19 +256,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/visualisering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/visualisering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualisering med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/visualisering/lag-og-mapping.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/visualisering/lag-og-mapping.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Byg et plot med ggplot2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/visualisering/facetter-og-skalaer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/visualisering/facetter-og-skalaer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Facetter, skalaer og tema</span></a>
   </div>
 </li>
@@ -250,19 +285,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/statistik/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/statistik/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistik med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/statistik/fordelinger.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/statistik/fordelinger.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beskriv data og undersøg normalfordelingen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/statistik/regression.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/statistik/regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regression, forudsigelser og residualer</span></a>
   </div>
 </li>
@@ -279,13 +314,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tekstanalyse/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tekstanalyse/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tekstanalyse med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tekstanalyse/ord-og-sentiment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tekstanalyse/ord-og-sentiment.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tokens, frekvenser og sentiment</span></a>
   </div>
 </li>
@@ -302,13 +337,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/api/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/api/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">API’er med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/api/forespoergsler-og-json.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/api/forespoergsler-og-json.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">API-forespørgsler, JSON og tid</span></a>
   </div>
 </li>
@@ -325,13 +360,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/webscraping/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/webscraping/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Web scraping med R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/webscraping/html-og-tabeller.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/webscraping/html-og-tabeller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Find tekst og tabeller i HTML</span></a>
   </div>
 </li>
@@ -348,13 +383,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/programmering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/programmering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programmering i R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/programmering/funktioner-og-loekker.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/programmering/funktioner-og-loekker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Funktioner, løkker og betingelser</span></a>
   </div>
 </li>
@@ -371,49 +406,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R-toolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/import-og-reproducerbarhed.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/import-og-reproducerbarhed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Import, tidy data og reproducerbarhed</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/tabeller.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/tabeller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lav indholdet til en Table One</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/modeller.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/modeller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ANOVA, logistisk regression og overfitting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/power-og-clt.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/power-og-clt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stikprøvestørrelse, power og CLT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/klynger.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/klynger.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">K-means, skalering og fortolkning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/enighed.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/enighed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Procentvis enighed og Cohens kappa</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/toolbox/beregning-og-miljoe.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/toolbox/beregning-og-miljoe.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beregningsopgaver, parallelisering og miljø</span></a>
   </div>
 </li>
@@ -424,18 +459,29 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">På denne side</h2>
+   
+  <ul>
+  <li><a href="#forudsig-og-vælg" id="toc-forudsig-og-vælg" class="nav-link active" data-scroll-target="#forudsig-og-vælg">1. Forudsig og vælg</a></li>
+  <li><a href="#arbejd-selv" id="toc-arbejd-selv" class="nav-link" data-scroll-target="#arbejd-selv">2. Arbejd selv</a></li>
+  <li><a href="#fortolk-og-gå-videre" id="toc-fortolk-og-gå-videre" class="nav-link" data-scroll-target="#fortolk-og-gå-videre">3. Fortolk og gå videre</a></li>
+  <li><a href="#tilbage-til-undervisningen" id="toc-tilbage-til-undervisningen" class="nav-link" data-scroll-target="#tilbage-til-undervisningen">Tilbage til undervisningen</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../r/tekstanalyse/index.html">Tekstanalyse med R</a></li><li class="breadcrumb-item"><a href="../../r/tekstanalyse/ord-og-sentiment.html">Tokens, frekvenser og sentiment</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Øvelser i R</h1>
+<h1 class="title">Tokens, frekvenser og sentiment</h1>
 </div>
 
 <div>
   <div class="description">
-    Øvelser til KUB Datalabs kurser.
+    Tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.
   </div>
 </div>
 
@@ -452,59 +498,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.</p>
-<div class="card-grid">
-<section id="introduktion-til-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="introduktion-til-r">Introduktion til R</h3>
-<p>Fra tabel til opsummering.</p>
-<p><a href="../r/intro/index.html">Se øvelser →</a></p>
-</section>
-<section id="eksplorativ-dataanalyse" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="eksplorativ-dataanalyse">Eksplorativ dataanalyse</h3>
-<p>Fordelinger, manglende værdier og joins.</p>
-<p><a href="../r/eda/index.html">Se øvelser →</a></p>
-</section>
-<section id="visualisering-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="visualisering-med-r">Visualisering med R</h3>
-<p>Byg et plot med ggplot2 · Facetter, skalaer og tema.</p>
-<p><a href="../r/visualisering/index.html">Se øvelser →</a></p>
-</section>
-<section id="statistik-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="statistik-med-r">Statistik med R</h3>
-<p>Beskriv data og undersøg normalfordelingen · Regression, forudsigelser og residualer.</p>
-<p><a href="../r/statistik/index.html">Se øvelser →</a></p>
-</section>
-<section id="tekstanalyse-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="tekstanalyse-med-r">Tekstanalyse med R</h3>
-<p>Tokens, frekvenser og sentiment.</p>
-<p><a href="../r/tekstanalyse/index.html">Se øvelser →</a></p>
-</section>
-<section id="apier-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="apier-med-r">API’er med R</h3>
-<p>API-forespørgsler, JSON og tid.</p>
-<p><a href="../r/api/index.html">Se øvelser →</a></p>
-</section>
-<section id="web-scraping-med-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="web-scraping-med-r">Web scraping med R</h3>
-<p>Find tekst og tabeller i HTML.</p>
-<p><a href="../r/webscraping/index.html">Se øvelser →</a></p>
-</section>
-<section id="programmering-i-r" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="programmering-i-r">Programmering i R</h3>
-<p>Funktioner, løkker og betingelser.</p>
-<p><a href="../r/programmering/index.html">Se øvelser →</a></p>
-</section>
-<section id="r-toolbox" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="r-toolbox">R-toolbox</h3>
-<p>Import, tidy data og reproducerbarhed · Lav indholdet til en Table One · ANOVA, logistisk regression og overfitting · Stikprøvestørrelse, power og CLT · K-means, skalering og fortolkning · Procentvis enighed og Cohens kappa · Beregningsopgaver, parallelisering og miljø.</p>
-<p><a href="../r/toolbox/index.html">Se øvelser →</a></p>
-</section>
+<p><span class="meta-line">Tekstanalyse med R · 25 minutter</span></p>
+<p>Efter øvelsen kan du tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.</p>
+<p>Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.</p>
+<p>Vent på R, redigér feltet, og vælg <strong>Run Code</strong>. Første indlæsning af motor og pakker kan tage lidt tid. <strong>Start Over</strong> gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.</p>
+<section id="forudsig-og-vælg" class="level2">
+<h2 class="anchored" data-anchor-id="forudsig-og-vælg">1. Forudsig og vælg</h2>
+<div class="exercise webex-check">
+<p>Hvor mange ordtokens er der i “good good bad”? <input class="webex-solveme nospaces" size="10" data-answer="[&quot;3&quot;]"></p>
+<p>Hvad gør anti_join(tokens, stopord, by = “word”)?</p>
+<div id="radio_AGQQBQAXND" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_AGQQBQAXND" value=""> <span>Beholder kun stopord.</span></label><label><input type="radio" autocomplete="off" name="radio_AGQQBQAXND" value="answer"> <span>Fjerner tokens, der matcher stopordslisten.</span></label><label><input type="radio" autocomplete="off" name="radio_AGQQBQAXND" value=""> <span>Tæller dokumenter.</span></label>
 </div>
-<p><a href="../demo-oevelser.html">Se demoen med spørgsmålstyper</a>.</p>
+</div>
+</section>
+<section id="arbejd-selv" class="level2">
+<h2 class="anchored" data-anchor-id="arbejd-selv">2. Arbejd selv</h2>
+<p>Tokenisér de to korte tekster med <code>unnest_tokens()</code>. Fjern stopord, tæl ord på tværs af tekster, og læg leksikonscorerne sammen pr. dokument. Brug det lille øvelsesleksikon, som står i koden.</p>
+<div id="exercise-lab">
+<div class="cell" data-caption="Din løsning">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJhdHRyIjp7ImNhcHRpb24iOiJEaW4gbMO4c25pbmciLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KHRpZHl0ZXh0KVxudGVrc3RlciA8LSB0aWJibGUoaWQgPSAxOjIsIHRla3N0ID0gYyhcImdvb2QgZ29vZCBiYWRcIiwgXCJub3QgZ29vZCBiYWRcIikpXG5zdG9wb3JkIDwtIHRpYmJsZSh3b3JkID0gXCJub3RcIilcbmxla3Npa29uIDwtIHRpYmJsZSh3b3JkID0gYyhcImdvb2RcIiwgXCJiYWRcIiksIHNjb3JlID0gYygxLCAtMSkpXG4jIEdlbSB0b2tlbnMsIGZyZWt2ZW5zIG9nIHNlbnRpbWVudCBzb20gdHJlIG9iamVrdGVyIn0=
+</script>
+</div>
+</div>
+</div>
+<p>Skriv dine resultater nedenfor. <strong>Tjek svar</strong> kontrollerer svarfelterne, ikke din kode.</p>
+<div id="result-check" class="exercise webex-check">
+<p>Antal forekomster af good i begge dokumenter? <input class="webex-solveme nospaces" size="10" data-answer="[&quot;3&quot;]"></p>
+<p>Sentimentscore for dokument 2 med det angivne leksikon? <input class="webex-solveme nospaces" size="10" data-answer="[&quot;0&quot;]"></p>
+</div>
+<div class="webex-solution">
+<button>
+Vis hint
+</button>
+<p>Behold dokumentets id gennem hele pipen. <code>inner_join()</code> tilføjer leksikonscoren; <code>group_by(id)</code> sørger for én sum pr. dokument.</p>
+</div>
+<div class="webex-solution">
+<button>
+Vis løsningsforslag
+</button>
+<!-- solution:start -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tekster <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">tekst =</span> <span class="fu">c</span>(<span class="st">"good good bad"</span>, <span class="st">"not good bad"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>stopord <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> <span class="st">"not"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>leksikon <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">word =</span> <span class="fu">c</span>(<span class="st">"good"</span>, <span class="st">"bad"</span>), <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>tokens <span class="ot">&lt;-</span> tekster <span class="sc">|&gt;</span> <span class="fu">unnest_tokens</span>(word, tekst)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>renset <span class="ot">&lt;-</span> tokens <span class="sc">|&gt;</span> <span class="fu">anti_join</span>(stopord, <span class="at">by =</span> <span class="st">"word"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>frekvens <span class="ot">&lt;-</span> renset <span class="sc">|&gt;</span> <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sentiment <span class="ot">&lt;-</span> renset <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(leksikon, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">score =</span> <span class="fu">sum</span>(score), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>frekvens</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>sentiment</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- solution:end -->
+<p>good forekommer tre gange. Dokumentscorerne er 1 og 0. Det andet dokument indeholder “not good”: en ordliste, der ser på enkeltord og fjerner not, fanger ikke negationen. Stopordsvalg afhænger af analysens formål.</p>
+<p>Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.</p>
+</div>
+</section>
+<section id="fortolk-og-gå-videre" class="level2">
+<h2 class="anchored" data-anchor-id="fortolk-og-gå-videre">3. Fortolk og gå videre</h2>
+<div class="exercise webex-check">
+<p>Hvordan kan du undersøge, om good er negeret?</p>
+<div id="radio_HITRXSVCNM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HITRXSVCNM" value=""> <span>Fjern alle små ord før enhver analyse.</span></label><label><input type="radio" autocomplete="off" name="radio_HITRXSVCNM" value="answer"> <span>Se på ordets kontekst eller bigrammer før stopordsfjernelse.</span></label><label><input type="radio" autocomplete="off" name="radio_HITRXSVCNM" value=""> <span>Gør leksikonet større uden at undersøge kontekst.</span></label>
+</div>
+</div>
+</section>
+<section id="tilbage-til-undervisningen" class="level2">
+<h2 class="anchored" data-anchor-id="tilbage-til-undervisningen">Tilbage til undervisningen</h2>
+<p><a href="https://kubdatalab.github.io/R-text-analysis/">Kursusmaterialet</a>. Relevante kildelektioner: <a href="https://github.com/KUBDatalab/R-text-analysis/blob/main/episodes/preparing-data.Rmd">preparing-data</a> · <a href="https://github.com/KUBDatalab/R-text-analysis/blob/main/episodes/frequency-analysis.Rmd">frequency-analysis</a> · <a href="https://github.com/KUBDatalab/R-text-analysis/blob/main/episodes/sentiment.Rmd">sentiment</a>.</p>
+<p><a href="../../r/tekstanalyse/index.html">Tilbage til kursets øvelser</a>.</p>
 
 
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC42LjAvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImRwbHlyIiwidGlkeXRleHQiXSwicmVwb3MiOltdfSwicmVuZGVyX2RmIjoiZGVmYXVsdCJ9
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8xO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8xLCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgY29uc3QgYW5hbHlzaXMgPSBhd2FpdCB3ZWJSLkZTLmFuYWx5emVQYXRoKHBhdGgpO1xuICAgICAgICBpZiAoIWFuYWx5c2lzLmV4aXN0cykge1xuICAgICAgICAgIHRyeSB7XG4gICAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvcjogXCIke2UubWVzc2FnZX1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -517,6 +593,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -726,16 +803,16 @@ window.onload = function() {
 
 </script>
 
-<script src="../assets/site.js"></script>
-<script src="../assets/analytics.js"></script>
+<script src="../../assets/site.js"></script>
+<script src="../../assets/analytics.js"></script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../r";
+window._ojs.paths.runtimeToDoc = "../../r/tekstanalyse";
 window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "..";
+window._ojs.paths.docToRoot = "../..";
 window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>
@@ -1150,12 +1227,12 @@ window._ojs.runtime.interpretFromScriptTags();
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../om.html">
+    <a class="nav-link" href="../../om.html">
 <p>Om sitet og statistik</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../vejledning/ny-oevelsesside.html">
+    <a class="nav-link" href="../../vejledning/ny-oevelsesside.html">
 <p>Lav en øvelsesside</p>
 </a>
   </li>  

@@ -2,34 +2,190 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kubdatalab.github.io/exercises/vejledning/statistik.html</loc>
-    <lastmod>2026-09-19T06:57:13.416Z</lastmod>
+    <lastmod>2026-09-22T08:51:28.393Z</lastmod>
   </url>
   <url>
-    <loc>https://kubdatalab.github.io/exercises/r/intro/vektorer.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <loc>https://kubdatalab.github.io/exercises/vejledning/kursusoverblik.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
   </url>
   <url>
-    <loc>https://kubdatalab.github.io/exercises/r/index.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <loc>https://kubdatalab.github.io/exercises/sql/intro/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
   </url>
   <url>
-    <loc>https://kubdatalab.github.io/exercises/index.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <loc>https://kubdatalab.github.io/exercises/sql/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
   </url>
   <url>
-    <loc>https://kubdatalab.github.io/exercises/demo-oevelser.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <loc>https://kubdatalab.github.io/exercises/r/webscraping/html-og-tabeller.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
   </url>
   <url>
-    <loc>https://kubdatalab.github.io/exercises/om.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <loc>https://kubdatalab.github.io/exercises/r/visualisering/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/tabeller.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/modeller.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/enighed.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/tekstanalyse/ord-og-sentiment.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/statistik/regression.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/statistik/fordelinger.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/programmering/funktioner-og-loekker.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
   </url>
   <url>
     <loc>https://kubdatalab.github.io/exercises/r/intro/index.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/eda/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/api/forespoergsler-og-json.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/videre/funktioner-og-fejl.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/tekst/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/pandas/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/intro/grundlag.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/om.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/demo-oevelser.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/intro/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/pandas/tabeller.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/tekst/regex-og-frekvens.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/python/videre/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/api/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/eda/undersoeg-data.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/intro/data.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/intro/vektorer.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/programmering/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/statistik/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/tekstanalyse/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/beregning-og-miljoe.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/import-og-reproducerbarhed.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/klynger.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/toolbox/power-og-clt.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/visualisering/facetter-og-skalaer.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/visualisering/lag-og-mapping.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/r/webscraping/index.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/sql/intro/forespoergsler.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kubdatalab.github.io/exercises/sql/intro/joins-og-noegler.html</loc>
+    <lastmod>2026-09-22T08:51:28.392Z</lastmod>
   </url>
   <url>
     <loc>https://kubdatalab.github.io/exercises/vejledning/ny-oevelsesside.html</loc>
-    <lastmod>2026-09-19T06:57:13.415Z</lastmod>
+    <lastmod>2026-09-22T08:51:28.393Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,241 @@
+{
+  "reviewed": "2026-09-22",
+  "description": "New exercises aligned to the listed lessons; examples use synthetic or package-provided data.",
+  "courses": [
+    {
+      "exercise": "r/intro/data.qmd",
+      "repository": "KUBDatalab/R-intro",
+      "revision": "0a4af86dc777de7703a33be4f78acbd001197ab7",
+      "lessons": [
+        "episodes/starting-with-data.Rmd",
+        "episodes/dplyr-tidyr.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/eda/undersoeg-data.qmd",
+      "repository": "KUBDatalab/R-EDA",
+      "revision": "c49322e4ced7e8d60b6340e206699c089220b223",
+      "lessons": [
+        "episodes/getting-to-know-data.Rmd",
+        "episodes/summary-statistics.Rmd",
+        "episodes/joins.Rmd",
+        "episodes/boxplots.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/visualisering/lag-og-mapping.qmd",
+      "repository": "KUBDatalab/R-visualisation",
+      "revision": "987c221d3d76e381a7540ac676ff2cc29153ae17",
+      "lessons": [
+        "episodes/getting_started.Rmd",
+        "episodes/further_mapping.Rmd",
+        "episodes/different_plots.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/visualisering/facetter-og-skalaer.qmd",
+      "repository": "KUBDatalab/R-visualisation",
+      "revision": "987c221d3d76e381a7540ac676ff2cc29153ae17",
+      "lessons": [
+        "episodes/facets.Rmd",
+        "episodes/scaling-and-coordinates.Rmd",
+        "episodes/theming.Rmd",
+        "episodes/saving.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/statistik/fordelinger.qmd",
+      "repository": "KUBDatalab/R-statistic",
+      "revision": "34da476fd7dad41e3d94e9e95babf14293322b93",
+      "lessons": [
+        "episodes/descript-stat.Rmd",
+        "episodes/normal-distribution.Rmd",
+        "episodes/is-it-normal.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/statistik/regression.qmd",
+      "repository": "KUBDatalab/R-statistic",
+      "revision": "34da476fd7dad41e3d94e9e95babf14293322b93",
+      "lessons": [
+        "episodes/linear-regression.Rmd",
+        "episodes/multiple-linear-regression.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/tekstanalyse/ord-og-sentiment.qmd",
+      "repository": "KUBDatalab/R-text-analysis",
+      "revision": "9f7744b200436f1a4c0e350206e3f66205132602",
+      "lessons": [
+        "episodes/preparing-data.Rmd",
+        "episodes/frequency-analysis.Rmd",
+        "episodes/sentiment.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/api/forespoergsler-og-json.qmd",
+      "repository": "KUBDatalab/R-api",
+      "revision": "583763c35bed4326abcdfc2e6e63359775052670",
+      "lessons": [
+        "episodes/api-in-general.Rmd",
+        "episodes/getting-data.Rmd",
+        "episodes/post-statistics-denmark.Rmd",
+        "episodes/danstat.Rmd",
+        "episodes/note-on-time.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/webscraping/html-og-tabeller.qmd",
+      "repository": "KUBDatalab/R_web_scraping",
+      "revision": "d9302361fb2518d818a2aecf75175aa5ce61635d",
+      "lessons": [
+        "episodes/Scraping_tables_on_a_page.Rmd",
+        "episodes/scraping_tables_on_multiple_pages_with_predictable_URLS.Rmd",
+        "episodes/paragraph.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/programmering/funktioner-og-loekker.qmd",
+      "repository": "KUBDatalab/R-programming",
+      "revision": "dba662ced2b5f327800f57a052c896a3493f46a5",
+      "lessons": [
+        "episodes/functions.Rmd",
+        "episodes/03-loops-R.Rmd",
+        "episodes/04-cond.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/import-og-reproducerbarhed.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/reading-files.Rmd",
+        "episodes/tidy-data.Rmd",
+        "episodes/reproducible-analysis.Rmd",
+        "episodes/pipes.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/tabeller.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/table1.Rmd",
+        "episodes/table1-gt.Rmd",
+        "episodes/descript-stat.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/modeller.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/anova.Rmd",
+        "episodes/logistic-regression.Rmd",
+        "episodes/lasso-regularisation.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/power-og-clt.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/powerberegninger.Rmd",
+        "episodes/clt.Rmd",
+        "episodes/which-distribution.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/klynger.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/kmeans.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/enighed.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/cohens-kappa.Rmd"
+      ]
+    },
+    {
+      "exercise": "r/toolbox/beregning-og-miljoe.qmd",
+      "repository": "KUBDatalab/R-toolbox",
+      "revision": "f2ac690b73edb146d830cb754052c52b23cbf9c3",
+      "lessons": [
+        "episodes/parallellization.Rmd",
+        "episodes/ucloud.Rmd",
+        "episodes/reproducible-analysis.Rmd"
+      ]
+    },
+    {
+      "exercise": "python/intro/grundlag.qmd",
+      "repository": "KUBDatalab/python",
+      "revision": "1183341a4cc710b32e414da3c8ed2338bbb675df",
+      "lessons": [
+        "docs/101/03_type_conversion.ipynb",
+        "docs/101/05_lists.ipynb",
+        "docs/101/06_for_loops.ipynb",
+        "docs/101/07_conditionals.ipynb"
+      ]
+    },
+    {
+      "exercise": "python/videre/funktioner-og-fejl.qmd",
+      "repository": "KUBDatalab/python",
+      "revision": "1183341a4cc710b32e414da3c8ed2338bbb675df",
+      "lessons": [
+        "docs/101/08_sets_and_dictionaries.ipynb",
+        "docs/101/09_functions.ipynb",
+        "docs/101/11_list_comprehensions.ipynb",
+        "docs/101/12_reading_writing.ipynb",
+        "docs/101/13_error_handling.ipynb"
+      ]
+    },
+    {
+      "exercise": "python/pandas/tabeller.qmd",
+      "repository": "KUBDatalab/python",
+      "revision": "1183341a4cc710b32e414da3c8ed2338bbb675df",
+      "lessons": [
+        "docs/pandas/02_pandas_tabular_data.ipynb",
+        "docs/pandas/03_pandas_subsets.ipynb",
+        "docs/pandas/04_pandas_descriptive_statistics.ipynb",
+        "docs/pandas/05_pandas_plot.ipynb"
+      ]
+    },
+    {
+      "exercise": "python/tekst/regex-og-frekvens.qmd",
+      "repository": "KUBDatalab/python-toolbox",
+      "revision": "7eb6d7fbf4431103b2fb03057b9770889a81a160",
+      "lessons": [
+        "_sources/Regex and digitized books.ipynb",
+        "_sources/Text preprocessing pipeline.ipynb",
+        "_sources/Tf-idf example.ipynb"
+      ]
+    },
+    {
+      "exercise": "sql/intro/forespoergsler.qmd",
+      "repository": "KUBDatalab/sql-intro",
+      "revision": "7d78a27782b4917cb3df3e5f1a62ec1a28ce5962",
+      "lessons": [
+        "episodes/02-selecting-sorting-data.md",
+        "episodes/03-filtering.md",
+        "episodes/04-ordering-commenting.md",
+        "episodes/05-aggregating-calculating.md"
+      ]
+    },
+    {
+      "exercise": "sql/intro/joins-og-noegler.qmd",
+      "repository": "KUBDatalab/sql-intro",
+      "revision": "7d78a27782b4917cb3df3e5f1a62ec1a28ce5962",
+      "lessons": [
+        "episodes/06-joins-aliases.md",
+        "episodes/07-saving-queries.md",
+        "episodes/08-database-design.md",
+        "episodes/09-create.md"
+      ]
+    }
+  ]
+}
