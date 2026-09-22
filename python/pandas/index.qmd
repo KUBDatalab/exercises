@@ -1,0 +1,15 @@
+---
+title: Dataanalyse med pandas
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Dataframes, filtrering og gruppevise mål](tabeller.qmd)
+
+25 minutter · Øv dig i at læse CSV-data, filtrere med loc, opsummere grupper og tegne et plot.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/python/).
+
+[Tilbage til oversigten](../index.qmd).

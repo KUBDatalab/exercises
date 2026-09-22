@@ -1,0 +1,110 @@
+---
+title: Tokens, frekvenser og sentiment
+description: Tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.
+engine: knitr
+webr:
+  packages:
+  - dplyr
+  - tidytext
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Tekstanalyse med R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvor mange ordtokens er der i "good good bad"? `r fitb(3, width = 10)`
+
+Hvad gør anti_join(tokens, stopord, by = "word")?
+
+`r longmcq(c("Beholder kun stopord.", answer = "Fjerner tokens, der matcher stopordslisten.", "Tæller dokumenter."))`
+
+:::
+
+## 2. Arbejd selv
+
+Tokenisér de to korte tekster med `unnest_tokens()`. Fjern stopord, tæl ord på tværs af tekster, og læg leksikonscorerne sammen pr. dokument. Brug det lille øvelsesleksikon, som står i koden.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(dplyr)
+library(tidytext)
+tekster <- tibble(id = 1:2, tekst = c("good good bad", "not good bad"))
+stopord <- tibble(word = "not")
+leksikon <- tibble(word = c("good", "bad"), score = c(1, -1))
+# Gem tokens, frekvens og sentiment som tre objekter
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Antal forekomster af good i begge dokumenter? `r fitb(3, width = 10)`
+
+Sentimentscore for dokument 2 med det angivne leksikon? `r fitb(0, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Behold dokumentets id gennem hele pipen. `inner_join()` tilføjer leksikonscoren; `group_by(id)` sørger for én sum pr. dokument.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(dplyr)
+library(tidytext)
+tekster <- tibble(id = 1:2, tekst = c("good good bad", "not good bad"))
+stopord <- tibble(word = "not")
+leksikon <- tibble(word = c("good", "bad"), score = c(1, -1))
+tokens <- tekster |> unnest_tokens(word, tekst)
+renset <- tokens |> anti_join(stopord, by = "word")
+frekvens <- renset |> count(word, sort = TRUE)
+sentiment <- renset |>
+  inner_join(leksikon, by = "word") |>
+  group_by(id) |> summarise(score = sum(score), .groups = "drop")
+frekvens
+sentiment
+```
+<!-- solution:end -->
+
+good forekommer tre gange. Dokumentscorerne er 1 og 0. Det andet dokument indeholder "not good": en ordliste, der ser på enkeltord og fjerner not, fanger ikke negationen. Stopordsvalg afhænger af analysens formål.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvordan kan du undersøge, om good er negeret?
+
+`r longmcq(c("Fjern alle små ord før enhver analyse.", answer = "Se på ordets kontekst eller bigrammer før stopordsfjernelse.", "Gør leksikonet større uden at undersøge kontekst."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-text-analysis/). Relevante kildelektioner: [preparing-data](https://github.com/KUBDatalab/R-text-analysis/blob/main/episodes/preparing-data.Rmd) · [frequency-analysis](https://github.com/KUBDatalab/R-text-analysis/blob/main/episodes/frequency-analysis.Rmd) · [sentiment](https://github.com/KUBDatalab/R-text-analysis/blob/main/episodes/sentiment.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

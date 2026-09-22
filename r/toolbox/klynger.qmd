@@ -1,0 +1,94 @@
+---
+title: K-means, skalering og fortolkning
+description: Skalere variable og forstå, hvad et valgt antal klynger betyder.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[R-toolbox · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du skalere variable og forstå, hvad et valgt antal klynger betyder.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvorfor skalerer man ofte variable før k-means?
+
+`r longmcq(c("Så alle observationer bliver identiske.", answer = "Store numeriske skalaer kan ellers dominere afstandene.", "Så antallet af variable bliver lig antallet af klynger."))`
+
+:::
+
+## 2. Arbejd selv
+
+Brug de første fire kolonner i iris. Skalér dem, og kør k-means med tre centre og nstart = 20. Sæt seed 42. Optæl klyngernes størrelser og sammenlign med Species uden at bruge Species i selve klyngedannelsen.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+# Gem skalerede data som x og modellen som model
+# Brug scale(), kmeans() og table()
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Hvor mange observationer er fordelt på klyngerne? `r fitb(150, width = 10)`
+
+Hvor mange numeriske variable indgår? `r fitb(4, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Species er en kendt etiket og skal ikke med i x. `nstart = 20` prøver flere initialiseringer. Klyngenumre er etiketter uden naturlig rækkefølge.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+x <- scale(iris[, 1:4])
+set.seed(42)
+model <- kmeans(x, centers = 3, nstart = 20)
+model$size
+table(klynge = model$cluster, art = iris$Species)
+plot(x[, 1:2], col = model$cluster, pch = 19,
+     xlab = "Skaleret bægerbladslængde", ylab = "Skaleret bægerbladsbredde")
+```
+<!-- solution:end -->
+
+Alle 150 blomster placeres i tre klynger, fordi vi bad om tre. Det dokumenterer ikke, at tre er det naturlige antal. Klyngenumre kan bytte plads uden at medlemskabet ændres.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+K-means finder tre klynger i støjdata, når centers = 3. Hvad viser det?
+
+`r longmcq(c("At data nødvendigvis indeholder tre naturlige grupper.", answer = "Algoritmen kan lave den ønskede opdeling også uden tydelig klyngestruktur.", "At støj altid har tre dimensioner."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-toolbox/). Relevante kildelektioner: [kmeans](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/kmeans.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

@@ -1,0 +1,94 @@
+---
+title: Beregningsopgaver, parallelisering og miljø
+description: Genkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[R-toolbox · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du genkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvilke opgaver er lettest at parallelisere?
+
+`r longmcq(c("En kæde hvor hvert trin kræver det foregående resultat.", answer = "Uafhængige beregninger på hver sin fil.", "Manuel indtastning i en konsol."))`
+
+Hvorfor kan parallelisering være langsommere på små opgaver?
+
+`r longmcq(c("Flere kerner giver altid forkerte resultater.", answer = "Opstart og dataoverførsel kan koste mere end den sparede regnetid.", "R kan ikke beregne gennemsnit parallelt."))`
+
+:::
+
+## 2. Arbejd selv
+
+Lav en sekventiel referenceberegning: beregn summen af hver vektor i listen med lapply(), og omdan resultatet til en numerisk vektor med vapply(). Den indlejrede R-session bruges til referenceberegningen; opstart af parallelle processer og UCloud kræver et andet miljø.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+dele <- list(c(1, 2), c(10, 20, 30), c(-1, 1))
+# Gem numeriske summer som summer
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Summen af den anden del? `r fitb(60, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+`lapply()` returnerer en liste; `vapply()` kræver en angivelse af hvert resultats type og længde.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+dele <- list(c(1, 2), c(10, 20, 30), c(-1, 1))
+liste_resultat <- lapply(dele, sum)
+summer <- vapply(dele, sum, numeric(1))
+liste_resultat
+summer
+```
+<!-- solution:end -->
+
+Summerne er 3, 60 og 0. Brug en lille referenceberegning til at kontrollere resultatet før en større parallel kørsel. På UCloud skal projektfiler og miljøbeskrivelse ligge på vedvarende lager, så de kan bruges i et nyt job.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvilken kontrol er mest nyttig før et stort job?
+
+`r longmcq(c("Stol på objekterne i dit nuværende workspace.", answer = "Kør en lille prøve fra en frisk session og kontrollér data-, pakke- og filstier.", "Vælg flest mulige CPU’er uden en prøve."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-toolbox/). Relevante kildelektioner: [parallellization](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/parallellization.Rmd) · [ucloud](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/ucloud.Rmd) · [reproducible-analysis](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/reproducible-analysis.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

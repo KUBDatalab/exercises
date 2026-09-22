@@ -5,6 +5,8 @@ project:
   render:
     - '*.qmd'
     - 'r/**/*.qmd'
+    - 'python/**/*.qmd'
+    - 'sql/**/*.qmd'
     - 'vejledning/*.qmd'
     - '!templates/'
     - '!scripts/'
@@ -25,6 +27,10 @@ website:
     left:
       - text: Øvelser i R
         href: r/index.qmd
+      - text: Python
+        href: python/index.qmd
+      - text: SQL
+        href: sql/index.qmd
       - text: Demo-øvelser
         href: demo-oevelser.qmd
       - text: Til undervisere
@@ -36,21 +42,94 @@ website:
         href: https://github.com/KUBDatalab/exercises
         aria-label: Kildekode på GitHub
   sidebar:
-    - id: r
-      title: Øvelser i R
-      style: docked
+  - id: r
+    title: Øvelser i R
+    style: docked
+    contents:
+    - r/index.qmd
+    - section: Introduktion til R
       contents:
-        - r/index.qmd
-        - section: Introduktion til R
-          contents:
-            - r/intro/index.qmd
-            - r/intro/vektorer.qmd
-    - id: underviser
-      title: Til undervisere
+      - r/intro/index.qmd
+      - r/intro/vektorer.qmd
+      - r/intro/data.qmd
+    - section: Eksplorativ dataanalyse
       contents:
-        - vejledning/ny-oevelsesside.qmd
-        - demo-oevelser.qmd
-        - vejledning/statistik.qmd
+      - r/eda/index.qmd
+      - r/eda/undersoeg-data.qmd
+    - section: Visualisering med R
+      contents:
+      - r/visualisering/index.qmd
+      - r/visualisering/lag-og-mapping.qmd
+      - r/visualisering/facetter-og-skalaer.qmd
+    - section: Statistik med R
+      contents:
+      - r/statistik/index.qmd
+      - r/statistik/fordelinger.qmd
+      - r/statistik/regression.qmd
+    - section: Tekstanalyse med R
+      contents:
+      - r/tekstanalyse/index.qmd
+      - r/tekstanalyse/ord-og-sentiment.qmd
+    - section: API’er med R
+      contents:
+      - r/api/index.qmd
+      - r/api/forespoergsler-og-json.qmd
+    - section: Web scraping med R
+      contents:
+      - r/webscraping/index.qmd
+      - r/webscraping/html-og-tabeller.qmd
+    - section: Programmering i R
+      contents:
+      - r/programmering/index.qmd
+      - r/programmering/funktioner-og-loekker.qmd
+    - section: R-toolbox
+      contents:
+      - r/toolbox/index.qmd
+      - r/toolbox/import-og-reproducerbarhed.qmd
+      - r/toolbox/tabeller.qmd
+      - r/toolbox/modeller.qmd
+      - r/toolbox/power-og-clt.qmd
+      - r/toolbox/klynger.qmd
+      - r/toolbox/enighed.qmd
+      - r/toolbox/beregning-og-miljoe.qmd
+  - id: python
+    title: Øvelser i Python
+    style: docked
+    contents:
+    - python/index.qmd
+    - section: Python for Absolute Beginners
+      contents:
+      - python/intro/index.qmd
+      - python/intro/grundlag.qmd
+    - section: Python for not quite Absolute Beginners
+      contents:
+      - python/videre/index.qmd
+      - python/videre/funktioner-og-fejl.qmd
+    - section: Dataanalyse med pandas
+      contents:
+      - python/pandas/index.qmd
+      - python/pandas/tabeller.qmd
+    - section: Python-toolbox
+      contents:
+      - python/tekst/index.qmd
+      - python/tekst/regex-og-frekvens.qmd
+  - id: sql
+    title: Øvelser i SQL
+    style: docked
+    contents:
+    - sql/index.qmd
+    - section: Introduktion til SQL
+      contents:
+      - sql/intro/index.qmd
+      - sql/intro/forespoergsler.qmd
+      - sql/intro/joins-og-noegler.qmd
+  - id: underviser
+    title: Til undervisere
+    contents:
+    - vejledning/ny-oevelsesside.qmd
+    - vejledning/kursusoverblik.qmd
+    - demo-oevelser.qmd
+    - vejledning/statistik.qmd
   page-footer:
     left: 'KUB Datalab · Københavns Universitetsbibliotek'
     right:
@@ -66,6 +145,13 @@ format:
   live-html:
     webr:
       engine-url: https://webr.r-wasm.org/v0.6.0/
+      resources: []
+      cell-options:
+        autorun: false
+        persist: false
+        timelimit: 30
+    pyodide:
+      engine-url: https://cdn.jsdelivr.net/pyodide/v0.28.1/full/
       resources: []
       cell-options:
         autorun: false

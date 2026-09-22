@@ -1,0 +1,121 @@
+---
+title: SELECT, filtrering og opsummering
+description: Filtrere, sortere og beregne gruppevise resultater i SQL.
+engine: knitr
+pyodide:
+  packages:
+  - sqlite3
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Introduktion til SQL · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du filtrere, sortere og beregne gruppevise resultater i SQL.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på Python, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar. SQL køres i en SQLite-database i hukommelsen via Python. Redigér query-teksten; opstartskoden gendanner øvelsesdatabasen ved hver kørsel.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvilken del af en SELECT-forespørgsel filtrerer rækker før gruppering?
+
+`r longmcq(c("ORDER BY", answer = "WHERE", "SELECT DISTINCT"))`
+
+Hvordan tester du, om citations mangler?
+
+`r longmcq(c("citations = NULL", answer = "citations IS NULL", "citations == \"NA\""))`
+
+:::
+
+## 2. Arbejd selv
+
+Ret kun SQL-teksten mellem de tredobbelte anførselstegn efter query. Find titel og citationstal for artikler med mindst 6 citationer; sortér faldende efter citationstal. Prøv derefter at beregne AVG(citations) pr. journal_id. Tabellen er konstrueret til øvelsen.
+
+::: {#exercise-lab}
+```{pyodide}
+#| caption: Din løsning
+import sqlite3
+db = sqlite3.connect(":memory:")
+db.executescript("""
+CREATE TABLE articles (id INTEGER PRIMARY KEY, title TEXT, journal_id INTEGER, citations INTEGER);
+INSERT INTO articles VALUES (1, 'Alpha', 1, 4), (2, 'Beta', 1, 10),
+ (3, 'Gamma', 2, 6), (4, 'Delta', 3, NULL);
+CREATE TABLE journals (id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO journals VALUES (1, 'Data'), (2, 'Methods');
+""")
+query = """
+SELECT * FROM articles;
+"""
+print(db.execute(query).fetchall())
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Antal artikler med mindst 6 citationer? `r fitb(2, width = 10)`
+
+Gennemsnit for journal_id = 1? `r fitb(7, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Brug WHERE til grænsen og ORDER BY citations DESC til sorteringen. AVG() udelader NULL.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```python
+import sqlite3
+db = sqlite3.connect(":memory:")
+db.executescript("""
+CREATE TABLE articles (id INTEGER PRIMARY KEY, title TEXT, journal_id INTEGER, citations INTEGER);
+INSERT INTO articles VALUES (1, 'Alpha', 1, 4), (2, 'Beta', 1, 10),
+ (3, 'Gamma', 2, 6), (4, 'Delta', 3, NULL);
+CREATE TABLE journals (id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO journals VALUES (1, 'Data'), (2, 'Methods');
+""")
+query = """
+SELECT title, citations FROM articles
+WHERE citations >= 6 ORDER BY citations DESC;
+"""
+valgte = db.execute(query).fetchall()
+print(valgte)
+print(db.execute("SELECT journal_id, AVG(citations) FROM articles GROUP BY journal_id;").fetchall())
+```
+<!-- solution:end -->
+
+Beta kommer før Gamma. Tidsskrift 1 har gennemsnit (4 + 10)/2 = 7. For tidsskrift 3 er der ingen kendte citationstal, så gennemsnittet er NULL, som Python viser som None.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvad er forskellen på COUNT(*) og COUNT(citations)?
+
+`r longmcq(c("De er altid ens.", answer = "COUNT(*) tæller rækker; COUNT(citations) tæller ikke-NULL citationstal.", "COUNT(*) tæller kun unikke titler."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/sql-intro/). Relevante kildelektioner: [02-selecting-sorting-data](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/02-selecting-sorting-data.md) · [03-filtering](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/03-filtering.md) · [04-ordering-commenting](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/04-ordering-commenting.md) · [05-aggregating-calculating](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/05-aggregating-calculating.md).
+
+[Tilbage til kursets øvelser](index.qmd).

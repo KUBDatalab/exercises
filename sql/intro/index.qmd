@@ -1,0 +1,19 @@
+---
+title: Introduktion til SQL
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [SELECT, filtrering og opsummering](forespoergsler.qmd)
+
+25 minutter · Øv dig i at filtrere, sortere og beregne gruppevise resultater i SQL.
+
+## [Joins, nøgler og tabeldesign](joins-og-noegler.qmd)
+
+25 minutter · Øv dig i at forbinde tabeller, vælge jointype og forklare primærnøgler.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/sql-intro/).
+
+[Tilbage til oversigten](../index.qmd).

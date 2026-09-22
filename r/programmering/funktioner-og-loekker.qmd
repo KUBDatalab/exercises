@@ -1,0 +1,102 @@
+---
+title: Funktioner, løkker og betingelser
+description: Skrive en funktion med et argument, bruge if og opsamle resultater fra
+  en løkke.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Programmering i R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du skrive en funktion med et argument, bruge if og opsamle resultater fra en løkke.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad giver `length(list(c(1, 2, 3), "R"))`? `r fitb(2, width = 10)`
+
+Hvordan henter du selve det første element i en liste x?
+
+`r longmcq(c("x[1, ]", answer = "x[[1]]", "x{1}"))`
+
+:::
+
+## 2. Arbejd selv
+
+Skriv `over_graense(x, graense = 5)`, som tæller kendte værdier større end grænsen. Lad funktionen stoppe med en fejl, hvis x ikke er numerisk. Kør den på hver vektor i listen med en for-løkke, og gem resultaterne i `antal`.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+maalinger <- list(c(2, 7, NA), c(6, 8, 10), numeric(0))
+# Definér over_graense()
+# Opret antal og udfyld den med en løkke
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Antal over grænsen i den anden vektor? `r fitb(3, width = 10)`
+
+Antal over grænsen i den tomme vektor? `r fitb(0, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+`sum()` kan tælle TRUE. Brug `seq_along()` til sikre indeks, også når listen er tom. Hver listekomponent er en selvstændig vektor.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+over_graense <- function(x, graense = 5) {
+  if (!is.numeric(x)) stop("x skal være numerisk")
+  sum(x > graense, na.rm = TRUE)
+}
+maalinger <- list(c(2, 7, NA), c(6, 8, 10), numeric(0))
+antal <- integer(length(maalinger))
+for (i in seq_along(maalinger)) {
+  antal[i] <- over_graense(maalinger[[i]])
+}
+antal
+over_graense(c(2, 7, 9), graense = 8)
+```
+<!-- solution:end -->
+
+Resultatet er 1, 3 og 0. En løkke er her en måde at anvende samme funktion på flere datasæt. Samme opgave kan også løses med `vapply()`; valget af form afhænger af, hvad der er lettest at læse og vedligeholde.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvorfor er seq_along(x) bedre end 1:length(x), hvis x kan være tom?
+
+`r longmcq(c("Den sorterer x.", answer = "Den giver ingen indeks for en tom x.", "Den starter altid ved 0."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-programming/). Relevante kildelektioner: [functions](https://github.com/KUBDatalab/R-programming/blob/main/episodes/functions.Rmd) · [03-loops-R](https://github.com/KUBDatalab/R-programming/blob/main/episodes/03-loops-R.Rmd) · [04-cond](https://github.com/KUBDatalab/R-programming/blob/main/episodes/04-cond.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

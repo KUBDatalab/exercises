@@ -1,30 +1,93 @@
 ---
 title: Øvelser i R
-description: Find øvelser til det kursus, du har deltaget i.
+description: Øvelser til KUB Datalabs kurser.
 toc: false
 ---
 
-Vælg et kursus, og fortsæt i dit eget tempo. Opgaverne kan gentages, og du behøver ikke logge ind.
+Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.
 
 ::: {.card-grid}
 ::: {.course-card}
-[R · Grundlæggende]{.card-label}
 
-## Introduktion til R
+### Introduktion til R
 
-Øv objekter, vektorer og indeksering efter introduktionskurset.
+Fra tabel til opsummering.
 
-[Start her →](intro/index.qmd)
+[Se øvelser →](intro/index.qmd)
+
 :::
 ::: {.course-card}
-[R · Demo]{.card-label}
 
-## Prøv spørgsmålstyperne
+### Eksplorativ dataanalyse
 
-Lær sidernes interaktive øvelser at kende. Demoen viser også underviserne, hvordan de er bygget.
+Fordelinger, manglende værdier og joins.
 
-[Demo-øvelser →](../demo-oevelser.qmd)
+[Se øvelser →](eda/index.qmd)
+
+:::
+::: {.course-card}
+
+### Visualisering med R
+
+Byg et plot med ggplot2 · Facetter, skalaer og tema.
+
+[Se øvelser →](visualisering/index.qmd)
+
+:::
+::: {.course-card}
+
+### Statistik med R
+
+Beskriv data og undersøg normalfordelingen · Regression, forudsigelser og residualer.
+
+[Se øvelser →](statistik/index.qmd)
+
+:::
+::: {.course-card}
+
+### Tekstanalyse med R
+
+Tokens, frekvenser og sentiment.
+
+[Se øvelser →](tekstanalyse/index.qmd)
+
+:::
+::: {.course-card}
+
+### API’er med R
+
+API-forespørgsler, JSON og tid.
+
+[Se øvelser →](api/index.qmd)
+
+:::
+::: {.course-card}
+
+### Web scraping med R
+
+Find tekst og tabeller i HTML.
+
+[Se øvelser →](webscraping/index.qmd)
+
+:::
+::: {.course-card}
+
+### Programmering i R
+
+Funktioner, løkker og betingelser.
+
+[Se øvelser →](programmering/index.qmd)
+
+:::
+::: {.course-card}
+
+### R-toolbox
+
+Import, tidy data og reproducerbarhed · Lav indholdet til en Table One · ANOVA, logistisk regression og overfitting · Stikprøvestørrelse, power og CLT · K-means, skalering og fortolkning · Procentvis enighed og Cohens kappa · Beregningsopgaver, parallelisering og miljø.
+
+[Se øvelser →](toolbox/index.qmd)
+
 :::
 :::
 
-Flere øvelsessæt tilføjes efterhånden, som de er klar.
+[Se demoen med spørgsmålstyper](../demo-oevelser.qmd).

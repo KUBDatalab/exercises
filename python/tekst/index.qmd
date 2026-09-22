@@ -1,0 +1,15 @@
+---
+title: Python-toolbox
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Tekstrensning, regex og TF-IDF](regex-og-frekvens.qmd)
+
+25 minutter · Øv dig i at rense tekst, tælle ord og beregne en enkel TF-IDF-vægt.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/python-toolbox/).
+
+[Tilbage til oversigten](../index.qmd).

@@ -1,0 +1,19 @@
+---
+title: Visualisering med R
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Byg et plot med ggplot2](lag-og-mapping.qmd)
+
+25 minutter · Øv dig i at vælge geometri og skelne mellem mapping og faste farver.
+
+## [Facetter, skalaer og tema](facetter-og-skalaer.qmd)
+
+25 minutter · Øv dig i at opdele et plot i paneler og skelne mellem zoom og ændring af en skala.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R-visualisation/).
+
+[Tilbage til oversigten](../index.qmd).

@@ -14,3 +14,10 @@
   https://github.com/r-wasm/quarto-live/blob/v0.2.0/_extensions/live/_knitr.qmd
   George Stagg, MIT. Licenstekst: `scripts/quarto-live-LICENSE.md`.
   Filen medfølger, så Quarto kan læse projektet før udvidelsen installeres.
+
+- De nye øvelser fra september 2026 er knyttet til KUB Datalabs kursusmaterialer.
+  Se `data/course-sources.json` for kildefiler og revisioner samt
+  `vejledning/kursusoverblik.qmd` for omfang. Kildematerialernes egne licenser
+  fremgår af de respektive repositories. Der er brugt egne små øvelsesdata
+  og de navngivne pakkedatasæt; billeder og eksterne artikelsamlinger fra
+  kurserne er ikke genudgivet.

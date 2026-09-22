@@ -1,0 +1,140 @@
+[
+  {
+    "path": "r/intro/data.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(udvalg) == 2, sum(udvalg$timer) == 3.5, oversigt$score[oversigt$type == \"film\"] == 22/3)",
+    "plot": false
+  },
+  {
+    "path": "r/eda/undersoeg-data.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(oversigt) == 3, oversigt$gennemsnit[1] == 10, oversigt$kendte[2] == 1, is.na(oversigt$navn[3]))",
+    "plot": true
+  },
+  {
+    "path": "r/visualisering/lag-og-mapping.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(ggplot_build(figur)$data[[1]]) == 200, length(unique(ggplot_build(figur)$data[[1]]$colour)) == 5)",
+    "plot": true
+  },
+  {
+    "path": "r/visualisering/facetter-og-skalaer.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(ggplot_build(figur)$layout$layout) == 3)",
+    "plot": true
+  },
+  {
+    "path": "r/statistik/fordelinger.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(middel == 8, midte == 4, abs(sandsynlighed - 0.6826895) < 1e-6)",
+    "plot": true
+  },
+  {
+    "path": "r/statistik/regression.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(abs(coef(model)[[2]] - 3.932409) < 1e-5, abs(forudsigelse - 61.06908) < 1e-4, coef(justeret)[[\"wt\"]] < 0)",
+    "plot": true
+  },
+  {
+    "path": "r/tekstanalyse/ord-og-sentiment.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(tokens) == 6, frekvens$n[frekvens$word == \"good\"] == 3, identical(sentiment$score, c(1, 0)))",
+    "plot": false
+  },
+  {
+    "path": "r/api/forespoergsler-og-json.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(tabel) == 2, sum(tabel$value) == 25, inherits(tabel$dato, \"Date\"), body$lang == \"da\")",
+    "plot": false
+  },
+  {
+    "path": "r/webscraping/html-og-tabeller.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(overskrift == \"Kurser\", nrow(kurser) == 3, sum(kurser$pladser) == 30, endsWith(urls[3], \"=3\"))",
+    "plot": false
+  },
+  {
+    "path": "r/programmering/funktioner-og-loekker.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(identical(as.numeric(antal), c(1,3,0)), over_graense(c(2,7,9), 8) == 1, inherits(try(over_graense(\"x\"), silent = TRUE), \"try-error\"))",
+    "plot": false
+  },
+  {
+    "path": "r/toolbox/import-og-reproducerbarhed.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(nrow(lang) == 4, is.numeric(bred$foer), mean(bred$efter) == 4.75)",
+    "plot": false
+  },
+  {
+    "path": "r/toolbox/tabeller.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(oversigt$n[1] == 3, oversigt$alder_mean[1] == 25, oversigt$ryger_pct[1] == 50)",
+    "plot": false
+  },
+  {
+    "path": "r/toolbox/modeller.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(sandsynlighed > 0, sandsynlighed < 1, isTRUE(all.equal(unname(plogis(eta)), unname(sandsynlighed))), summary(anova_model)[[1]][[\"Pr(>F)\"]][1] < 0.05)",
+    "plot": false
+  },
+  {
+    "path": "r/toolbox/power-og-clt.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(ceiling(plan80$n) == 64, ceiling(plan90$n) == 86, length(gennemsnit) == 1000, abs(mean(gennemsnit) - 0.5) < 0.02)",
+    "plot": true
+  },
+  {
+    "path": "r/toolbox/klynger.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(sum(model$size) == 150, length(model$size) == 3, all(abs(colMeans(x)) < 1e-10))",
+    "plot": true
+  },
+  {
+    "path": "r/toolbox/enighed.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(abs(po-0.8)<1e-10, abs(pe-0.5)<1e-10, abs(kappa-0.6)<1e-10)",
+    "plot": false
+  },
+  {
+    "path": "r/toolbox/beregning-og-miljoe.qmd",
+    "engine": "webr",
+    "checks": "stopifnot(identical(summer, c(3,60,0)))",
+    "plot": false
+  },
+  {
+    "path": "python/intro/grundlag.qmd",
+    "engine": "pyodide",
+    "checks": "assert valgte == [5, 8]\nassert sum(valgte) == 13",
+    "plot": false
+  },
+  {
+    "path": "python/videre/funktioner-og-fejl.qmd",
+    "engine": "pyodide",
+    "checks": "assert vaerdier == [3, None, 7, None]\nassert oversigt == {\"gyldige\": 2, \"fejl\": 2}\nassert fil.getvalue() == \"3\\n7\\n\"",
+    "plot": false
+  },
+  {
+    "path": "python/pandas/tabeller.qmd",
+    "engine": "pyodide",
+    "checks": "assert valgte.to_list() == [\"Bo\", \"Cy\", \"Ev\"]\nassert middel.to_dict() == {\"A\": 30.0, \"B\": 40.0}\nassert df.groupby(\"gruppe\").size()[\"B\"] == 3",
+    "plot": true
+  },
+  {
+    "path": "python/tekst/regex-og-frekvens.qmd",
+    "engine": "pyodide",
+    "checks": "assert antal[\"library\"] == 2\nassert df == 2\nassert score == 0",
+    "plot": false
+  },
+  {
+    "path": "sql/intro/forespoergsler.qmd",
+    "engine": "pyodide",
+    "checks": "assert valgte == [(\"Beta\",10),(\"Gamma\",6)]\nassert db.execute(\"SELECT AVG(citations) FROM articles WHERE journal_id=1\").fetchone()[0] == 7",
+    "plot": false
+  },
+  {
+    "path": "sql/intro/joins-og-noegler.qmd",
+    "engine": "pyodide",
+    "checks": "assert len(resultat) == 4\nassert resultat[-1] == (\"Delta\",None)\nassert len(inner) == 3",
+    "plot": false
+  }
+]

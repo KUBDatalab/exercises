@@ -1,0 +1,112 @@
+---
+title: Dataframes, filtrering og gruppevise mål
+description: Læse CSV-data, filtrere med loc, opsummere grupper og tegne et plot.
+engine: knitr
+pyodide:
+  packages:
+  - pandas
+  - matplotlib
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Dataanalyse med pandas · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du læse CSV-data, filtrere med loc, opsummere grupper og tegne et plot.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på Python, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad vælger `df.iloc[0]`?
+
+`r longmcq(c("Rækken med indekslabel 0 i alle tilfælde.", answer = "Den første række efter position.", "Den første kolonne."))`
+
+Hvilken metode tæller også manglende værdier som rækker i hver gruppe?
+
+`r longmcq(c("groupby(...)[\"alder\"].count()", answer = "groupby(...).size()", "groupby(...)[\"alder\"].mean()"))`
+
+:::
+
+## 2. Arbejd selv
+
+Indlæs CSV-teksten. Vælg navne på deltagere med alder mindst 30. Beregn gennemsnitsalder pr. gruppe, og tegn gennemsnittene som et søjlediagram. Sammenlign gruppestørrelse med antal kendte aldre.
+
+::: {#exercise-lab}
+```{pyodide}
+#| caption: Din løsning
+import pandas as pd
+from io import StringIO
+csv = "navn,gruppe,alder\nAda,A,20\nBo,A,40\nCy,B,30\nDe,B,\nEv,B,50"
+df = pd.read_csv(StringIO(csv))
+# Gem navneudvalget som valgte og gruppemidler som middel
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Antal udvalgte navne? `r fitb(3, width = 10)`
+
+Gennemsnitsalder for B? `r fitb(40, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Brug en boolesk betingelse som første del af loc. pandas mean() udelader normalt manglende værdier; count() tæller kendte værdier i den valgte kolonne.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+from io import StringIO
+csv = "navn,gruppe,alder\nAda,A,20\nBo,A,40\nCy,B,30\nDe,B,\nEv,B,50"
+df = pd.read_csv(StringIO(csv))
+valgte = df.loc[df["alder"] >= 30, "navn"]
+middel = df.groupby("gruppe")["alder"].mean()
+print(valgte.to_list())
+print(middel)
+print(df.groupby("gruppe").size())
+print(df.groupby("gruppe")["alder"].count())
+middel.plot(kind="bar", ylabel="Gennemsnitsalder (år)")
+plt.tight_layout()
+plt.show()
+```
+<!-- solution:end -->
+
+Tre navne udvælges. Gruppe A har gennemsnitsalder 30 og B har 40. B indeholder tre rækker, men kun to kendte aldre.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvad bør figurteksten fortælle om gennemsnittet for B?
+
+`r longmcq(c("At den manglende alder er behandlet som 0.", answer = "At det bygger på to kendte aldre, mens én mangler.", "At alle tre aldre er kendte."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/python/). Relevante kildelektioner: [02_pandas_tabular_data](https://github.com/KUBDatalab/python/blob/main/docs/pandas/02_pandas_tabular_data.ipynb) · [03_pandas_subsets](https://github.com/KUBDatalab/python/blob/main/docs/pandas/03_pandas_subsets.ipynb) · [04_pandas_descriptive_statistics](https://github.com/KUBDatalab/python/blob/main/docs/pandas/04_pandas_descriptive_statistics.ipynb) · [05_pandas_plot](https://github.com/KUBDatalab/python/blob/main/docs/pandas/05_pandas_plot.ipynb).
+
+[Tilbage til kursets øvelser](index.qmd).

@@ -1,0 +1,15 @@
+---
+title: Tekstanalyse med R
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Tokens, frekvenser og sentiment](ord-og-sentiment.qmd)
+
+25 minutter · Øv dig i at tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R-text-analysis/).
+
+[Tilbage til oversigten](../index.qmd).

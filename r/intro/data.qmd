@@ -1,0 +1,115 @@
+---
+title: Fra tabel til opsummering
+description: Udvælge rækker og kolonner, beregne nye variable og opsummere grupper.
+engine: knitr
+webr:
+  packages:
+  - dplyr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Introduktion til R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du udvælge rækker og kolonner, beregne nye variable og opsummere grupper.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvilken funktion udvælger rækker?
+
+`r longmcq(c("select()", answer = "filter()", "mutate()"))`
+
+Hvor mange rækker får `filter(film, type == "film")`? `r fitb(3, width = 10)`
+
+:::
+
+## 2. Arbejd selv
+
+Brug tabellen nedenfor. Behold film med kendt spilletid, tilføj `timer = minutter / 60`, og vælg titel og timer. Lav dernæst en separat opsummering af den gennemsnitlige score for hver type; udelad manglende scorer.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(dplyr)
+film <- tibble(
+  titel = c("Havn", "Skov", "By", "Bro", "Oe"),
+  type = c("film", "serie", "film", "film", "serie"),
+  minutter = c(90, 45, 120, NA, 60),
+  score = c(6, 8, 9, 7, NA)
+)
+# Gem de udvalgte film som udvalg
+# Gem gruppeopsummeringen som oversigt
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Samlet spilletid i timer for de udvalgte film? Brug punktum. `r fitb(3.5, width = 10)`
+
+Gennemsnitlig score for film? Brug mindst to decimaler. `r fitb(7.333333333333333, tol = 0.01, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+`filter()` vælger rækker; `select()` vælger kolonner. `is.na()` finder manglende værdier. Brug `na.rm = TRUE` inde i `mean()`.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(dplyr)
+film <- tibble(
+  titel = c("Havn", "Skov", "By", "Bro", "Oe"),
+  type = c("film", "serie", "film", "film", "serie"),
+  minutter = c(90, 45, 120, NA, 60),
+  score = c(6, 8, 9, 7, NA)
+)
+udvalg <- film |>
+  filter(type == "film", !is.na(minutter)) |>
+  mutate(timer = minutter / 60) |>
+  select(titel, timer)
+oversigt <- film |>
+  group_by(type) |>
+  summarise(score = mean(score, na.rm = TRUE), .groups = "drop")
+udvalg
+oversigt
+```
+<!-- solution:end -->
+
+Havn og By har tilsammen 3,5 timers spilletid. Filmgruppens score er (6 + 9 + 7) / 3; den manglende spilletid udelukker ikke Bro fra den separate scoreopsummering.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvad sker der med seriens gennemsnit, hvis `na.rm = TRUE` fjernes?
+
+`r longmcq(c("Det bliver 0.", answer = "Det bliver NA.", "R fjerner automatisk rækken."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-intro/). Relevante kildelektioner: [starting-with-data](https://github.com/KUBDatalab/R-intro/blob/main/episodes/starting-with-data.Rmd) · [dplyr-tidyr](https://github.com/KUBDatalab/R-intro/blob/main/episodes/dplyr-tidyr.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

@@ -1,0 +1,19 @@
+---
+title: Statistik med R
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Beskriv data og undersøg normalfordelingen](fordelinger.qmd)
+
+25 minutter · Øv dig i at beregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot.
+
+## [Regression, forudsigelser og residualer](regression.qmd)
+
+25 minutter · Øv dig i at tilpasse en lineær model, lave en forudsigelse og fortolke en justeret koefficient.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R-statistic/).
+
+[Tilbage til oversigten](../index.qmd).

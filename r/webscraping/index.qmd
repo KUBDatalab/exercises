@@ -1,0 +1,15 @@
+---
+title: Web scraping med R
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Find tekst og tabeller i HTML](html-og-tabeller.qmd)
+
+25 minutter · Øv dig i at bruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R_web_scraping/).
+
+[Tilbage til oversigten](../index.qmd).

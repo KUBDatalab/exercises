@@ -15,7 +15,7 @@ page-layout: full
 
 Små opgaver. Plads til at prøve. Find tilbage til det, du lærte på kurset, og brug det på egen hånd.
 
-[Find øvelser i R](r/index.qmd){.btn .btn-primary} [Prøv demoen](demo-oevelser.qmd){.btn .btn-outline-primary}
+[Øvelser i R](r/index.qmd){.btn .btn-primary} [Python](python/index.qmd){.btn .btn-outline-primary} [SQL](sql/index.qmd){.btn .btn-outline-primary} [Prøv demoen](demo-oevelser.qmd){.btn .btn-outline-primary}
 :::
 
 ![](assets/kub-datalab.svg){.hero-logo fig-alt="KUB Datalabs logo"}
@@ -28,11 +28,11 @@ Små opgaver. Plads til at prøve. Find tilbage til det, du lærte på kurset, o
 ::: {.course-card}
 [R · Kom i gang]{.card-label}
 
-### Introduktion til R
+### R fra introduktion til analyse
 
-Få styr på objekter, vektorer og indeksering. Begynd med et kort øvelsessæt, og få feedback undervejs.
+Øv datahåndtering, EDA, visualisering, statistik, programmering, tekstanalyse, API’er og web scraping.
 
-[Se øvelser →](r/intro/index.qmd)
+[Se R-kurser →](r/index.qmd)
 :::
 ::: {.course-card}
 [Udforsk · 25–35 minutter]{.card-label}
@@ -54,7 +54,7 @@ Start, hvor du har brug for repetition. Du behøver ikke følge en bestemt rækk
 ::: {}
 **02 · Prøv selv**
 
-Svar og kør R-kode direkte på siden. Du kan forsøge igen.
+Svar og kør R, Python eller SQL direkte på siden. Du kan forsøge igen.
 :::
 ::: {}
 **03 · Få hjælp undervejs**
@@ -63,12 +63,25 @@ Svar og kør R-kode direkte på siden. Du kan forsøge igen.
 :::
 :::
 
-::: {.course-card .future}
-[På vej]{.card-label}
+::: {.card-grid}
+::: {.course-card}
+[Python · Fra begynderniveau]{.card-label}
 
-### Flere kurser. Samme sted.
+### Python og pandas
 
-Samlingen begynder med R. Senere kan du finde øvelser til flere R-kurser og til Python her.
+Lister, løkker, funktioner, fejlbehandling, dataframes og tekstanalyse.
+
+[Se Python-kurser →](python/index.qmd)
+:::
+::: {.course-card}
+[SQL · Databaser]{.card-label}
+
+### Stil spørgsmål til data
+
+Filtrér og opsummér artikler, og forbind tabeller med joins i en lille SQLite-database.
+
+[Se SQL-øvelser →](sql/index.qmd)
+:::
 :::
 
 Underviser du? [Se, hvordan du tilføjer en ny øvelsesside](vejledning/ny-oevelsesside.qmd).

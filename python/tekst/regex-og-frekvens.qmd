@@ -1,0 +1,100 @@
+---
+title: Tekstrensning, regex og TF-IDF
+description: Rense tekst, tælle ord og beregne en enkel TF-IDF-vægt.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Python-toolbox · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du rense tekst, tælle ord og beregne en enkel TF-IDF-vægt.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på Python, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad hjælper ordgrænsen `\b` med i et regex-mønster?
+
+`r longmcq(c("At gøre alle bogstaver små.", answer = "At afgrænse hele ord.", "At rette alle OCR-fejl automatisk."))`
+
+:::
+
+## 2. Arbejd selv
+
+Gør teksterne små, og udtræk ord med regex. Tæl ord i det første dokument. Beregn TF som antal forekomster divideret med dokumentets ordantal og IDF som ln(N/df). Find TF-IDF for library i det første dokument. Brug ingen smoothing eller ekstra normalisering.
+
+::: {#exercise-lab}
+```{pyodide}
+#| caption: Din løsning
+docs = ["Library library data!", "Library code."]
+# Brug re.findall(), Counter, set() og math.log()
+# Gem resultatet som score
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Dokumentfrekvens for library? `r fitb(2, width = 10)`
+
+TF-IDF for library med den angivne definition? `r fitb(0, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Dokumentfrekvens tæller dokumenter, ikke forekomster. library optræder i begge dokumenter, selv om det gentages i det første.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```python
+import re
+import math
+from collections import Counter
+docs = ["Library library data!", "Library code."]
+tokens = [re.findall(r"[a-z]+", tekst.lower()) for tekst in docs]
+antal = Counter(tokens[0])
+tf = antal["library"] / len(tokens[0])
+df = sum("library" in set(ordliste) for ordliste in tokens)
+idf = math.log(len(docs) / df)
+score = tf * idf
+print(antal)
+print({"tf": tf, "df": df, "idf": idf, "tf_idf": score})
+```
+<!-- solution:end -->
+
+TF er 2/3, men IDF er ln(2/2) = 0, så vægten bliver 0. Andre implementeringer kan bruge smoothing og give en anden værdi. Mønstret [a-z]+ er valgt til disse engelske tekster og er ikke en generel løsning til alle sprog.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvad bør du gøre med OCR-fejl før en større analyse?
+
+`r longmcq(c("Antage at lower() retter OCR-fejl.", answer = "Undersøge eksempler og dokumentere konkrete renseregler.", "Fjerne alle sjældne ord uden kontrol."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/python-toolbox/). Relevante kildelektioner: [Regex and digitized books](https://github.com/KUBDatalab/python-toolbox/blob/main/_sources/Regex%20and%20digitized%20books.ipynb) · [Text preprocessing pipeline](https://github.com/KUBDatalab/python-toolbox/blob/main/_sources/Text%20preprocessing%20pipeline.ipynb) · [Tf-idf example](https://github.com/KUBDatalab/python-toolbox/blob/main/_sources/Tf-idf%20example.ipynb).
+
+[Tilbage til kursets øvelser](index.qmd).

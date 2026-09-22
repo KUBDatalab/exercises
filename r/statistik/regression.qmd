@@ -1,0 +1,97 @@
+---
+title: Regression, forudsigelser og residualer
+description: Tilpasse en lineær model, lave en forudsigelse og fortolke en justeret
+  koefficient.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Statistik med R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du tilpasse en lineær model, lave en forudsigelse og fortolke en justeret koefficient.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad betyder `lm(dist ~ speed, data = cars)`?
+
+`r longmcq(c("speed er respons, og dist er forklarende variabel.", answer = "dist er respons, og speed er forklarende variabel.", "Modellen tester kun om begge variable er normalfordelte."))`
+
+:::
+
+## 2. Arbejd selv
+
+Tilpas `dist ~ speed` til cars. Find hældningen, og forudsig dist ved speed = 20. Tegn residualerne mod de forudsagte værdier. Tilpas også `mpg ~ wt + hp` til mtcars og undersøg koefficienterne.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+# Gem cars-modellen som model
+# Gem forudsigelsen som forudsigelse
+# Gem mtcars-modellen som justeret
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Hældning i cars-modellen? Brug to decimaler. `r fitb(3.932409, tol = 0.01, width = 10)`
+
+Forudsagt dist ved speed = 20? Brug to decimaler. `r fitb(61.06908, tol = 0.01, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+`coef()` viser koefficienter. `newdata` skal være en dataframe med samme variabelnavn som i modellen. Et residual er observeret minus forudsagt.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+model <- lm(dist ~ speed, data = cars)
+coef(model)
+forudsigelse <- predict(model, newdata = data.frame(speed = 20))
+forudsigelse
+plot(fitted(model), residuals(model), xlab = "Forudsagt dist", ylab = "Residual")
+abline(h = 0, lty = 2)
+justeret <- lm(mpg ~ wt + hp, data = mtcars)
+coef(justeret)
+```
+<!-- solution:end -->
+
+Hældningen er cirka 3,93 feet pr. mph, og forudsigelsen er cirka 61,07 feet. I den multiple model fortolkes vægtkoefficienten ved fastholdt hp. Modellerne beskriver sammenhænge, som ikke i sig selv dokumenterer årsager.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvorfor bør du være forsigtig med at forudsige cars$dist ved speed = 100?
+
+`r longmcq(c("predict() kan kun bruge tal under 50.", answer = "Det er langt uden for de observerede hastigheder.", "En lineær model giver altid en sandsynlighed."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-statistic/). Relevante kildelektioner: [linear-regression](https://github.com/KUBDatalab/R-statistic/blob/main/episodes/linear-regression.Rmd) · [multiple-linear-regression](https://github.com/KUBDatalab/R-statistic/blob/main/episodes/multiple-linear-regression.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

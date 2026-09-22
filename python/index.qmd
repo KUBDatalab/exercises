@@ -1,0 +1,48 @@
+---
+title: Øvelser i Python
+description: Øvelser til KUB Datalabs kurser.
+toc: false
+---
+
+Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.
+
+::: {.card-grid}
+::: {.course-card}
+
+### Python for Absolute Beginners
+
+Lister, løkker og betingelser.
+
+[Se øvelser →](intro/index.qmd)
+
+:::
+::: {.course-card}
+
+### Python for not quite Absolute Beginners
+
+Funktioner, dictionaries og fejl.
+
+[Se øvelser →](videre/index.qmd)
+
+:::
+::: {.course-card}
+
+### Dataanalyse med pandas
+
+Dataframes, filtrering og gruppevise mål.
+
+[Se øvelser →](pandas/index.qmd)
+
+:::
+::: {.course-card}
+
+### Python-toolbox
+
+Tekstrensning, regex og TF-IDF.
+
+[Se øvelser →](tekst/index.qmd)
+
+:::
+:::
+
+[Se demoen med spørgsmålstyper](../demo-oevelser.qmd).

@@ -1,0 +1,119 @@
+---
+title: Joins, nøgler og tabeldesign
+description: Forbinde tabeller, vælge jointype og forklare primærnøgler.
+engine: knitr
+pyodide:
+  packages:
+  - sqlite3
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Introduktion til SQL · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du forbinde tabeller, vælge jointype og forklare primærnøgler.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på Python, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar. SQL køres i en SQLite-database i hukommelsen via Python. Redigér query-teksten; opstartskoden gendanner øvelsesdatabasen ved hver kørsel.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad kræves af en primærnøgle?
+
+`r longmcq(c("Den skal være en persons navn.", answer = "Den identificerer hver række entydigt og må ikke være NULL.", "Den skal være det største tal i rækken."))`
+
+:::
+
+## 2. Arbejd selv
+
+Kobl articles sammen med journals via journal_id og id. Brug en LEFT JOIN, så artiklen Delta bliver bevaret. Vis titel og tidsskriftnavn, sorteret efter artikel-id. Sammenlign derefter med INNER JOIN.
+
+::: {#exercise-lab}
+```{pyodide}
+#| caption: Din løsning
+import sqlite3
+db = sqlite3.connect(":memory:")
+db.executescript("""
+CREATE TABLE articles (id INTEGER PRIMARY KEY, title TEXT, journal_id INTEGER, citations INTEGER);
+INSERT INTO articles VALUES (1, 'Alpha', 1, 4), (2, 'Beta', 1, 10),
+ (3, 'Gamma', 2, 6), (4, 'Delta', 3, NULL);
+CREATE TABLE journals (id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO journals VALUES (1, 'Data'), (2, 'Methods');
+""")
+query = """
+SELECT * FROM articles;
+"""
+print(db.execute(query).fetchall())
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Rækker efter LEFT JOIN? `r fitb(4, width = 10)`
+
+Rækker efter INNER JOIN? `r fitb(3, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+LEFT JOIN bevarer alle venstre rækker. `a` og `j` er aliaser, så du kan skelne mellem tabellernes kolonner.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```python
+import sqlite3
+db = sqlite3.connect(":memory:")
+db.executescript("""
+CREATE TABLE articles (id INTEGER PRIMARY KEY, title TEXT, journal_id INTEGER, citations INTEGER);
+INSERT INTO articles VALUES (1, 'Alpha', 1, 4), (2, 'Beta', 1, 10),
+ (3, 'Gamma', 2, 6), (4, 'Delta', 3, NULL);
+CREATE TABLE journals (id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO journals VALUES (1, 'Data'), (2, 'Methods');
+""")
+query = """
+SELECT a.title, j.name
+FROM articles AS a LEFT JOIN journals AS j ON a.journal_id = j.id
+ORDER BY a.id;
+"""
+resultat = db.execute(query).fetchall()
+print(resultat)
+inner = db.execute("SELECT a.title, j.name FROM articles AS a INNER JOIN journals AS j ON a.journal_id=j.id;").fetchall()
+print(inner)
+```
+<!-- solution:end -->
+
+LEFT JOIN giver fire rækker, og Delta får NULL som tidsskriftnavn. INNER JOIN giver tre. Øvelsen indeholder bevidst en manglende reference og har ingen foreign key-constraint; en aktiv constraint kunne forhindre denne indsættelse i en rigtig database.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvorfor gemme tidsskriftnavnet i en separat tabel?
+
+`r longmcq(c("Så dubletter af primærnøglen bliver tilladt.", answer = "Så navnet kan opdateres ét sted og genbruges via en nøgle.", "Så joins aldrig er nødvendige."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/sql-intro/). Relevante kildelektioner: [06-joins-aliases](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/06-joins-aliases.md) · [07-saving-queries](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/07-saving-queries.md) · [08-database-design](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/08-database-design.md) · [09-create](https://github.com/KUBDatalab/sql-intro/blob/main/episodes/09-create.md).
+
+[Tilbage til kursets øvelser](index.qmd).

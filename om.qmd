@@ -9,7 +9,7 @@ KUB Datalab er en del af Københavns Universitetsbibliotek. Her finder du øvels
 
 Vælg et kursus og et emne. Prøv at svare selv, brug et hint, hvis du går i stå, og åbn løsningsforslaget, når du vil sammenligne. Du kan forsøge lige så mange gange, du vil.
 
-De korte spørgsmål besvares på siden. Kodeopgaverne har redigerbare R-felter, som kører direkte i browseren med WebAssembly. Du kan også bruge dit eget R-miljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning.
+De korte spørgsmål besvares på siden. Kodeopgaverne har redigerbare R- og Python-felter, som kører direkte i browseren med WebAssembly. Du kan også bruge dit eget programmeringsmiljø. Der er ingen login, og dine svar gemmes ikke efter genindlæsning.
 
 ## Besøgsstatistik
 
@@ -21,6 +21,6 @@ Vi bruger GoatCounter til at se, hvor meget de enkelte sider bliver besøgt. Vi 
 
 [KUB Datalabs hjemmeside](https://kub.kb.dk/datalab) · [Kildekode og fejlrapporter](https://github.com/KUBDatalab/exercises)
 
-R-motoren hentes fra webR ved indlæsning af sider med R-felter. Beregningerne foregår i din browser; kode og resultater gemmes ikke af sitet.
+R-motoren hentes fra webR og Python-motoren fra Pyodide ved indlæsning af relevante sider. SQL-øvelserne bruger SQLite via Python. Beregningerne foregår i din browser; kode og resultater gemmes ikke af sitet.
 
 Sitet er bygget med [Quarto](https://quarto.org/) og [webexercises](https://psyteachr.github.io/webexercises/). Logoet er hentet fra KUB Datalabs eksisterende R-kursusmaterialer. Oplysninger om tredjepartsfiler findes i repoets `assets/ATTRIBUTION.md`.

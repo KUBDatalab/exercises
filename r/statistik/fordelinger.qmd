@@ -1,0 +1,99 @@
+---
+title: Beskriv data og undersøg normalfordelingen
+description: Beregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Statistik med R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du beregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad er medianen af 2, 3, 4, 5 og 26? `r fitb(4, width = 10)`
+
+Hvilket mål påvirkes mest af at ændre 26 til 260 i denne liste?
+
+`r longmcq(c("Medianen.", answer = "Gennemsnittet.", "Antallet af observationer."))`
+
+:::
+
+## 2. Arbejd selv
+
+Beregn gennemsnit og median af målingerne. Beregn dernæst P(-1 < Z < 1), når Z er standardnormalfordelt. Generér 100 normalfordelte tal med seed 42, og lav et QQ-plot med referencelinje.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+maalinger <- c(2, 3, 4, 5, 26)
+# Beregn middel, median og sandsynlighed
+# Brug pnorm(), rnorm(), qqnorm() og qqline()
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Gennemsnittet af målingerne? `r fitb(8, width = 10)`
+
+P(-1 < Z < 1)? Angiv en andel med mindst tre decimaler. `r fitb(0.6826895, tol = 0.001, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+`pnorm(z)` giver sandsynligheden til venstre for z. Træk derfor den venstre grænses sandsynlighed fra den højre.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+maalinger <- c(2, 3, 4, 5, 26)
+middel <- mean(maalinger)
+midte <- median(maalinger)
+sandsynlighed <- pnorm(1) - pnorm(-1)
+c(middel = middel, median = midte, sandsynlighed = sandsynlighed)
+set.seed(42)
+normaldata <- rnorm(100)
+qqnorm(normaldata)
+qqline(normaldata)
+```
+<!-- solution:end -->
+
+Gennemsnittet er 8 og medianen 4. Sandsynligheden er cirka 0,683. Punkter omtrent langs linjen er forenelige med normalfordeling; et QQ-plot beviser ikke en fordeling.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+En Shapiro-Wilk-test giver p = 0.20. Hvad kan du konkludere?
+
+`r longmcq(c("Data er bevist normalfordelte.", answer = "Testen giver ikke grundlag for at forkaste normalfordeling ved 5 %-niveau.", "Der er 20 % sandsynlighed for at nulhypotesen er sand."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-statistic/). Relevante kildelektioner: [descript-stat](https://github.com/KUBDatalab/R-statistic/blob/main/episodes/descript-stat.Rmd) · [normal-distribution](https://github.com/KUBDatalab/R-statistic/blob/main/episodes/normal-distribution.Rmd) · [is-it-normal](https://github.com/KUBDatalab/R-statistic/blob/main/episodes/is-it-normal.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

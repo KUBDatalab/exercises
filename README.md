@@ -1,6 +1,6 @@
 # KUB Datalab · Øvelser
 
-Quarto-site til selvstudium efter KUB Datalabs kurser. R er første spor; strukturen kan udvides med Python.
+Quarto-site til selvstudium efter KUB Datalabs kurser. Samlingen dækker R, Python og SQL med kodefelter i browseren.
 
 - Forside og R-kursusoversigt.
 - Øvelsessæt om objekter, vektorer og indeksering.
@@ -65,3 +65,19 @@ og R-øvelsessiden. CI installerer udvidelsen før rendering; `_extensions/` er
 genereret og ignoreret. Bygningen bruger fortsat knitr og webexercises.
 Browserens R-session bruger base R, gemmer ikke kode og er separat fra build-R.
 Se forfattervejledningen for opsætning, pakker og sessionens levetid.
+
+## Øvelser til undervisningsmaterialet
+
+23 nye øvelsessæt supplerer det oprindelige vektorsæt. Oversigterne ligger i
+`r/index.qmd`, `python/index.qmd` og `sql/index.qmd`. Sammenhængen med konkrete
+lektioner og de gennemgåede kildeversioner er beskrevet i
+`vejledning/kursusoverblik.qmd` og `data/course-sources.json`.
+
+Øvelsesdata er indlejrede, konstruerede eksempler eller datasæt fra R-pakker.
+API- og scrapingøvelser kræver ikke aktive tredjepartstjenester. SQL bruger
+SQLite i hukommelsen via Pyodide. Pakker hentes kun på sider, der bruger dem.
+
+`node tests/courses.test.mjs` kører alle nye løsningsforslag i browserens
+R/Python-motorer og kontrollerer forventede resultater og figurer.
+Testkoden henter løsninger fra QMD-filerne, så dokumentation og test ikke driver
+fra hinanden. Kildekodeændringer foretages i QMD-filerne.

@@ -1,0 +1,41 @@
+---
+title: R-toolbox
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Import, tidy data og reproducerbarhed](import-og-reproducerbarhed.qmd)
+
+25 minutter · Øv dig i at læse semikolonseparerede data, forme dem til langt format og dokumentere en analyse.
+
+## [Lav indholdet til en Table One](tabeller.qmd)
+
+25 minutter · Øv dig i at opsummere grupper, angive nævnere og håndtere manglende værdier i en deskriptiv tabel.
+
+## [ANOVA, logistisk regression og overfitting](modeller.qmd)
+
+25 minutter · Øv dig i at skelne mellem modeltyper og fortolke logistiske forudsigelser og validering.
+
+## [Stikprøvestørrelse, power og CLT](power-og-clt.qmd)
+
+25 minutter · Øv dig i at beregne stikprøvestørrelse og skelne mellem fordelingen af data og af gennemsnit.
+
+## [K-means, skalering og fortolkning](klynger.qmd)
+
+25 minutter · Øv dig i at skalere variable og forstå, hvad et valgt antal klynger betyder.
+
+## [Procentvis enighed og Cohens kappa](enighed.qmd)
+
+25 minutter · Øv dig i at beregne observeret enighed, forventet enighed fra marginalerne og kappa.
+
+## [Beregningsopgaver, parallelisering og miljø](beregning-og-miljoe.qmd)
+
+25 minutter · Øv dig i at genkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R-toolbox/).
+
+Flere toolbox-emner øves på siderne om [visualisering](../visualisering/index.qmd), [statistik](../statistik/index.qmd) og [datahåndtering](../intro/data.qmd).
+
+[Tilbage til oversigten](../index.qmd).

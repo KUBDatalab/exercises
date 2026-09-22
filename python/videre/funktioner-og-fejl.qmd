@@ -1,0 +1,104 @@
+---
+title: Funktioner, dictionaries og fejl
+description: Skrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Python for not quite Absolute Beginners · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du skrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på Python, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvor mange elementer har `set(["R", "R", "Python"])`? `r fitb(2, width = 10)`
+
+Hvad gør `return` i en funktion?
+
+`r longmcq(c("Udskriver altid værdien på skærmen.", answer = "Afslutter funktionskaldet og afleverer en værdi.", "Gentager hele funktionen."))`
+
+:::
+
+## 2. Arbejd selv
+
+Skriv funktionen laes_tal(tekst), som returnerer int(tekst), men returnerer None ved ValueError. Anvend funktionen på inputtene med en list comprehension. Tæl gyldige værdier og fejl i en dictionary. Skriv de gyldige værdier til en tekststreng via StringIO, som et lille eksempel på fil-lignende arbejde.
+
+::: {#exercise-lab}
+```{pyodide}
+#| caption: Din løsning
+inputdata = ["3", "fejl", "7", ""]
+# Definér laes_tal() og gem resultater som vaerdier
+# Gem optællinger i oversigt
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Antal konverteringsfejl? `r fitb(2, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Fang den konkrete fejltype ValueError. Test `is not None`, så tallet 0 stadig er gyldigt.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```python
+from io import StringIO
+def laes_tal(tekst):
+    try:
+        return int(tekst)
+    except ValueError:
+        return None
+
+inputdata = ["3", "fejl", "7", ""]
+vaerdier = [laes_tal(x) for x in inputdata]
+gyldige = [x for x in vaerdier if x is not None]
+oversigt = {"gyldige": len(gyldige), "fejl": len(vaerdier) - len(gyldige)}
+fil = StringIO()
+for tal in gyldige:
+    fil.write(f"{tal}\n")
+print(oversigt)
+print(fil.getvalue())
+```
+<!-- solution:end -->
+
+To strenge kan konverteres og to kan ikke. StringIO er en buffer i hukommelsen; øvelsen skriver ikke til din computers disk. I et lokalt script kan tilsvarende arbejde udføres med `with open(...) as fil:`.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvorfor kan `if x` være forkert til at finde gyldige tal her?
+
+`r longmcq(c("Fordi None altid vurderes som sandt.", answer = "Fordi 0 også vurderes som falsk.", "Fordi if kun virker med tekst."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/python/). Relevante kildelektioner: [08_sets_and_dictionaries](https://github.com/KUBDatalab/python/blob/main/docs/101/08_sets_and_dictionaries.ipynb) · [09_functions](https://github.com/KUBDatalab/python/blob/main/docs/101/09_functions.ipynb) · [11_list_comprehensions](https://github.com/KUBDatalab/python/blob/main/docs/101/11_list_comprehensions.ipynb) · [12_reading_writing](https://github.com/KUBDatalab/python/blob/main/docs/101/12_reading_writing.ipynb) · [13_error_handling](https://github.com/KUBDatalab/python/blob/main/docs/101/13_error_handling.ipynb).
+
+[Tilbage til kursets øvelser](index.qmd).

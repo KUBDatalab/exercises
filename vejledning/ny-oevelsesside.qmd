@@ -176,16 +176,34 @@ Første gang skal GitHub Pages være sat til **Deploy from a branch → gh-pages
 
 Et mislykket build vises under [Actions](https://github.com/KUBDatalab/exercises/actions). Det tidligere publicerede site bevares. Workflowet gemmer også det byggede site og skærmbilleder som artifacts.
 
-## Python senere
+## Python og SQL
 
-Opret eksempelvis `python/intro/` med samme struktur, og føj `python/**/*.qmd` til projektets `render`-liste. Opret en Python-indgang i menuen og på forsiden.
+Der er nu øvelser til [Python](../python/index.qmd) og [SQL](../sql/index.qmd). Begge mapper indgår i projektets render-liste og navigation.
 
-Spørgsmål om Python kan stadig genereres med R/webexercises. Quarto Live understøtter også redigerbare `{pyodide}`-blokke til Python i browseren. Behold knitr-opsætningen til webexercises, og afprøv Python-runtime og pakker særskilt, når det første Python-kursus tilføjes. Almindelige `python`-kodeblokke viser kun koden. Hvis Python-kode også skal **eksekveres under bygningen**, skal Python og de relevante afhængigheder tilføjes særskilt. Det er ikke nødvendigt for tekstspørgsmål om Python.
+En Python-side bruger samme knitr-opsætning som R-siderne: webexercises genererer svarfelterne under bygningen, mens `{pyodide}`-blokke kører den studerendes Python-kode i browseren. Angiv `engine: knitr` i sidens YAML, og inkludér `../../scripts/live-knitr.qmd`, når siden ligger to mapper under roden.
+
+````markdown
+```{{pyodide}}
+#| caption: Prøv Python
+tal = [2, 4, 6]
+print(sum(tal))
+```
+````
+
+Ekstra Python-pakker angives under `pyodide.packages`, eksempelvis `[pandas, matplotlib]`. De to SQL-sider bruger `[sqlite3]` og en database i hukommelsen; den studerende redigerer SQL-teksten i Python-feltet. De kræver ingen databaseserver.
+
+Se [kursusoverblikket](kursusoverblik.qmd) for sammenhængen mellem øvelser og undervisningsmateriale. Når du tilføjer et sæt, skal det også tilføjes til kursets index og sidemenu.
+
+### Kontrol af nye kodeøvelser
+
+`tests/course-cases.json` beskriver de nye øvelsessider og kontrollerer deres forventede resultater. Browserkontrollen læser løsningskoden direkte fra sidens markerede løsningsblok, kører den i det redigerbare felt og afprøver både beregninger og eventuelle figurer. Ved ændringer i data eller facit skal kontroludtrykkene også gennemgås.
+
+Kør `node tests/courses.test.mjs` efter `quarto render`. Testen bruger rigtige webR- og Pyodide-sessioner og kræver internet til motorer og pakker.
 
 ## Hvad siden gør og ikke gør
 
 - Facit er i HTML-filen. Øvelserne er til selvstudium, ikke til en eksamen med skjulte svar.
-- R-felterne kører den studerendes kode lokalt i browseren via WebAssembly. Der er ingen fælles R-server.
+- R- og Python-felterne kører den studerendes kode lokalt i browseren via WebAssembly. SQL kører i SQLite via Python. Der er ingen fælles beregningsserver.
 - Besøg tælles pr. side; svar, fejl og quizresultater sendes ikke til statistiksystemet.
 - Der er ingen brugerprofiler eller lagring af fremgang. Genindlæsning nulstiller øvelserne.
 

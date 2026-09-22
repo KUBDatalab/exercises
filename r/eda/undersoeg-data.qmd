@@ -1,0 +1,107 @@
+---
+title: Fordelinger, manglende værdier og joins
+description: Undersøge manglende værdier, sammenligne grupper og gennemskue en join.
+engine: knitr
+webr:
+  packages:
+  - dplyr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Eksplorativ dataanalyse · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du undersøge manglende værdier, sammenligne grupper og gennemskue en join.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad er medianen af 0, 5, 20 og 40? `r fitb(12.5, width = 10)`
+
+Hvor finder du betydningen af en forsinkelsesvariabel og dens enhed?
+
+`r longmcq(c("I kolonnens gennemsnit.", answer = "I metadata eller variabelbeskrivelsen.", "I rækkefølgen af rækkerne."))`
+
+:::
+
+## 2. Arbejd selv
+
+Optæl både alle flyvninger og de kendte forsinkelser pr. selskab. Beregn gennemsnittet af de kendte forsinkelser. Tilføj selskabsnavn med en left join, og tegn et boxplot over de kendte forsinkelser.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(dplyr)
+fly <- tibble(selskab = c("AA", "AA", "BB", "BB", "CC"),
+              forsinkelse = c(0, 20, 5, NA, 40))
+navne <- tibble(selskab = c("AA", "BB"), navn = c("Alfa", "Beta"))
+# Brug group_by(), summarise() og left_join()
+# Gem resultatet som oversigt
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Hvor mange selskaber er tilbage efter left join? `r fitb(3, width = 10)`
+
+Hvor mange kendte forsinkelser har BB? `r fitb(1, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+`n()` tæller alle rækker. `sum(!is.na(forsinkelse))` tæller kendte værdier. En left join beholder alle rækker fra venstre tabel.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(dplyr)
+fly <- tibble(selskab = c("AA", "AA", "BB", "BB", "CC"),
+              forsinkelse = c(0, 20, 5, NA, 40))
+navne <- tibble(selskab = c("AA", "BB"), navn = c("Alfa", "Beta"))
+oversigt <- fly |>
+  group_by(selskab) |>
+  summarise(antal = n(), kendte = sum(!is.na(forsinkelse)),
+            gennemsnit = mean(forsinkelse, na.rm = TRUE), .groups = "drop") |>
+  left_join(navne, by = "selskab")
+oversigt
+boxplot(fly$forsinkelse, ylab = "Forsinkelse (minutter)")
+```
+<!-- solution:end -->
+
+AA har gennemsnit 10, BB har 5 baseret på kun én kendt observation, og CC har 40. CC bliver i tabellen, men navnet er NA. Et boxplot af fire observationer siger kun lidt; se også på de enkelte værdier.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvad kan der ske, hvis AA forekommer to gange i navnetabellen?
+
+`r longmcq(c("Left join fjerner automatisk dubletter.", answer = "Rækken for AA kan blive duplikeret i join-resultatet.", "Gennemsnittet bliver automatisk genberegnet."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-EDA/). Relevante kildelektioner: [getting-to-know-data](https://github.com/KUBDatalab/R-EDA/blob/main/episodes/getting-to-know-data.Rmd) · [summary-statistics](https://github.com/KUBDatalab/R-EDA/blob/main/episodes/summary-statistics.Rmd) · [joins](https://github.com/KUBDatalab/R-EDA/blob/main/episodes/joins.Rmd) · [boxplots](https://github.com/KUBDatalab/R-EDA/blob/main/episodes/boxplots.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

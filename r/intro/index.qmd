@@ -1,21 +1,19 @@
 ---
 title: Introduktion til R
-description: Gentag grundbegreberne fra introduktionskurset.
+description: Gentag kursets emner med kode, hints og feedback.
 toc: false
 ---
 
-Du har arbejdet med R på kurset. Her kan du prøve grundbegreberne igen i mindre opgaver.
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
 
-::: {.course-card}
-[Øvelsessæt 01 · 10–15 minutter]{.card-label}
+## [Objekter, vektorer og indeksering](vektorer.qmd)
 
-## Objekter, vektorer og indeksering
+10–15 minutter · Begynd med objekter, vektorer og udvælgelse af elementer.
 
-Opret et objekt, forudsig et resultat og vælg elementer fra en vektor.
+## [Fra tabel til opsummering](data.qmd)
 
-[Start øvelsessættet →](vektorer.qmd)
-:::
+25 minutter · Øv dig i at udvælge rækker og kolonner, beregne nye variable og opsummere grupper.
 
-**Forudsætninger:** Du har gennemgået den grundlæggende introduktion til R. Du kan køre koden direkte i øvelsessidens R-felter. Ingen lokal installation er nødvendig.
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R-intro/).
 
-[Åbn kursusmaterialet: Introduction to R](https://kubdatalab.github.io/R-intro/).
+[Tilbage til oversigten](../index.qmd).

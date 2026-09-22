@@ -1,0 +1,104 @@
+---
+title: Stikprøvestørrelse, power og CLT
+description: Beregne stikprøvestørrelse og skelne mellem fordelingen af data og af
+  gennemsnit.
+engine: knitr
+webr:
+  packages:
+  - pwr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[R-toolbox · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du beregne stikprøvestørrelse og skelne mellem fordelingen af data og af gennemsnit.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvis risikoen for type II-fejl er 0.2, hvad er power? `r fitb(0.8, width = 10)`
+
+Hvad beskriver den centrale grænseværdisætning under passende betingelser?
+
+`r longmcq(c("At alle rådata er normalfordelte.", answer = "Fordelingen af standardiserede stikprøvegennemsnit ved voksende n.", "At alle stikprøver har præcis samme gennemsnit."))`
+
+:::
+
+## 2. Arbejd selv
+
+Beregn n pr. gruppe til en tosidet t-test for to uafhængige grupper med d = 0.5, signifikansniveau 0.05 og power 0.80. Rund op. Gentag med power 0.90. Simulér derefter 1000 gennemsnit af hver 30 uniformt fordelte tal, og tegn et histogram.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(pwr)
+# Brug pwr.t.test() og ceiling()
+# Gem beregningerne som plan80 og plan90
+# Brug replicate() og runif() til simulationen
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+n pr. gruppe ved power 0.80, rundet op? `r fitb(64, width = 10)`
+
+Samlet n for to grupper ved power 0.80? `r fitb(128, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Resultatets n gælder hver gruppe. Brug `ceiling()` frem for almindelig afrunding. `replicate()` gentager hele beregningen af et gennemsnit.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(pwr)
+plan80 <- pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.80,
+                    type = "two.sample", alternative = "two.sided")
+plan90 <- pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.90,
+                    type = "two.sample", alternative = "two.sided")
+c(n80 = ceiling(plan80$n), n90 = ceiling(plan90$n))
+set.seed(42)
+gennemsnit <- replicate(1000, mean(runif(30)))
+hist(gennemsnit, breaks = 25, xlab = "Stikprøvegennemsnit", main = "Uniforme rådata, n = 30")
+```
+<!-- solution:end -->
+
+Der kræves 64 pr. gruppe ved power 0,80 og 86 ved 0,90 under modellens antagelser. Power er 1 − beta. Uniforme rådata bliver ikke normalfordelte, men deres gennemsnit kan være omtrent normalfordelte.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvad sker der typisk med det nødvendige n, hvis den ønskede detekterbare effekt halveres?
+
+`r longmcq(c("Det halveres altid.", answer = "Det stiger.", "Det er uændret."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-toolbox/). Relevante kildelektioner: [powerberegninger](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/powerberegninger.Rmd) · [clt](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/clt.Rmd) · [which-distribution](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/which-distribution.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

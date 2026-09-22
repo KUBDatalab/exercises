@@ -1,0 +1,15 @@
+---
+title: Eksplorativ dataanalyse
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Fordelinger, manglende værdier og joins](undersoeg-data.qmd)
+
+25 minutter · Øv dig i at undersøge manglende værdier, sammenligne grupper og gennemskue en join.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/R-EDA/).
+
+[Tilbage til oversigten](../index.qmd).

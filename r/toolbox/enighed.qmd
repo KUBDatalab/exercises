@@ -1,0 +1,95 @@
+---
+title: Procentvis enighed og Cohens kappa
+description: Beregne observeret enighed, forventet enighed fra marginalerne og kappa.
+engine: knitr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[R-toolbox · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du beregne observeret enighed, forventet enighed fra marginalerne og kappa.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad måler Cohens kappa i denne øvelse?
+
+`r longmcq(c("Korrelation mellem to kontinuerte målinger.", answer = "Enighed mellem to bedømmere ud over den forventede enighed fra deres marginalfordelinger.", "Antallet af bedømmere."))`
+
+:::
+
+## 2. Arbejd selv
+
+To bedømmere klassificerer 100 observationer i ja/nej. De er enige om 40 ja og 40 nej; i hver af de to uenighedskategorier er der 10. Beregn observeret enighed po, forventet enighed pe og kappa = (po − pe)/(1 − pe).
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+kryds <- matrix(c(40, 10, 10, 40), nrow = 2, byrow = TRUE,
+  dimnames = list(A = c("ja", "nej"), B = c("ja", "nej")))
+# Beregn po, pe og kappa
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Observeret enighed som andel? `r fitb(0.8, width = 10)`
+
+Cohens kappa? `r fitb(0.6, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Enigheden findes på diagonalen. Gang de to bedømmeres marginalandele for hver kategori, og læg produkterne sammen for at få pe.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+kryds <- matrix(c(40, 10, 10, 40), nrow = 2, byrow = TRUE,
+  dimnames = list(A = c("ja", "nej"), B = c("ja", "nej")))
+n <- sum(kryds)
+po <- sum(diag(kryds)) / n
+pe <- sum((rowSums(kryds) / n) * (colSums(kryds) / n))
+kappa <- (po - pe) / (1 - pe)
+c(po = po, pe = pe, kappa = kappa)
+```
+<!-- solution:end -->
+
+po er 0,8, pe er 0,5, og kappa er 0,6. Kappa afhænger af kategoriernes hyppighed og er ikke det samme som procentvis enighed.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Begge bedømmere svarer ja på samtlige observationer. Hvad sker der med formlen?
+
+`r longmcq(c("Kappa er automatisk 1.", answer = "Nævneren bliver nul, så kappa er ikke defineret.", "Kappa er automatisk minus 1."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-toolbox/). Relevante kildelektioner: [cohens-kappa](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/cohens-kappa.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

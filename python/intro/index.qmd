@@ -1,0 +1,15 @@
+---
+title: Python for Absolute Beginners
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Lister, løkker og betingelser](grundlag.qmd)
+
+25 minutter · Øv dig i at bruge indeks, konvertere tal og filtrere en liste med en løkke.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/python/).
+
+[Tilbage til oversigten](../index.qmd).

@@ -1,0 +1,56 @@
+---
+title: Fra kursusmateriale til øvelser
+description: Sammenhængen mellem KUB Datalabs undervisning og øvelsessamlingen.
+---
+
+Samlingen er gennemgået og udvidet den **22. september 2026** med **23 nye øvelsessæt**. Sammen med det oprindelige vektorsæt er der 24 sæt. Hvert nyt sæt indeholder læringsmål, spørgsmål, en kodeopgave, hint, løsningsforslag og fortolkning.
+
+Øvelserne følger emner i de eksisterende lektioner, men bruger korte, selvstændige opgaver. Et sæt er repetition af udvalgte læringsmål og erstatter ikke hele kurset.
+
+## Find den relevante øvelse
+
+| Undervisningsmateriale | Øvelsessæt | Fokus |
+|---|---|---|
+| [R-intro](https://github.com/KUBDatalab/R-intro) | [Fra tabel til opsummering](../r/intro/data.qmd) | Udvælge rækker og kolonner, beregne nye variable og opsummere grupper. |
+| [R-EDA](https://github.com/KUBDatalab/R-EDA) | [Fordelinger, manglende værdier og joins](../r/eda/undersoeg-data.qmd) | Undersøge manglende værdier, sammenligne grupper og gennemskue en join. |
+| [R-visualisation](https://github.com/KUBDatalab/R-visualisation) | [Byg et plot med ggplot2](../r/visualisering/lag-og-mapping.qmd) | Vælge geometri og skelne mellem mapping og faste farver. |
+| [R-visualisation](https://github.com/KUBDatalab/R-visualisation) | [Facetter, skalaer og tema](../r/visualisering/facetter-og-skalaer.qmd) | Opdele et plot i paneler og skelne mellem zoom og ændring af en skala. |
+| [R-statistic](https://github.com/KUBDatalab/R-statistic) | [Beskriv data og undersøg normalfordelingen](../r/statistik/fordelinger.qmd) | Beregne deskriptive mål, normalfordelte sandsynligheder og læse et QQ-plot. |
+| [R-statistic](https://github.com/KUBDatalab/R-statistic) | [Regression, forudsigelser og residualer](../r/statistik/regression.qmd) | Tilpasse en lineær model, lave en forudsigelse og fortolke en justeret koefficient. |
+| [R-text-analysis](https://github.com/KUBDatalab/R-text-analysis) | [Tokens, frekvenser og sentiment](../r/tekstanalyse/ord-og-sentiment.qmd) | Tokenisere tekst, tælle ord og forklare begrænsninger i en sentimentanalyse. |
+| [R-api](https://github.com/KUBDatalab/R-api) | [API-forespørgsler, JSON og tid](../r/api/forespoergsler-og-json.qmd) | Skelne mellem GET og POST, læse JSON og omforme en dataforespørgsel. |
+| [R_web_scraping](https://github.com/KUBDatalab/R_web_scraping) | [Find tekst og tabeller i HTML](../r/webscraping/html-og-tabeller.qmd) | Bruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er. |
+| [R-programming](https://github.com/KUBDatalab/R-programming) | [Funktioner, løkker og betingelser](../r/programmering/funktioner-og-loekker.qmd) | Skrive en funktion med et argument, bruge if og opsamle resultater fra en løkke. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [Import, tidy data og reproducerbarhed](../r/toolbox/import-og-reproducerbarhed.qmd) | Læse semikolonseparerede data, forme dem til langt format og dokumentere en analyse. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [Lav indholdet til en Table One](../r/toolbox/tabeller.qmd) | Opsummere grupper, angive nævnere og håndtere manglende værdier i en deskriptiv tabel. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [ANOVA, logistisk regression og overfitting](../r/toolbox/modeller.qmd) | Skelne mellem modeltyper og fortolke logistiske forudsigelser og validering. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [Stikprøvestørrelse, power og CLT](../r/toolbox/power-og-clt.qmd) | Beregne stikprøvestørrelse og skelne mellem fordelingen af data og af gennemsnit. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [K-means, skalering og fortolkning](../r/toolbox/klynger.qmd) | Skalere variable og forstå, hvad et valgt antal klynger betyder. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [Procentvis enighed og Cohens kappa](../r/toolbox/enighed.qmd) | Beregne observeret enighed, forventet enighed fra marginalerne og kappa. |
+| [R-toolbox](https://github.com/KUBDatalab/R-toolbox) | [Beregningsopgaver, parallelisering og miljø](../r/toolbox/beregning-og-miljoe.qmd) | Genkende uafhængige delopgaver og planlægge et reproducerbart beregningsmiljø. |
+| [python](https://github.com/KUBDatalab/python) | [Lister, løkker og betingelser](../python/intro/grundlag.qmd) | Bruge indeks, konvertere tal og filtrere en liste med en løkke. |
+| [python](https://github.com/KUBDatalab/python) | [Funktioner, dictionaries og fejl](../python/videre/funktioner-og-fejl.qmd) | Skrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer. |
+| [python](https://github.com/KUBDatalab/python) | [Dataframes, filtrering og gruppevise mål](../python/pandas/tabeller.qmd) | Læse CSV-data, filtrere med loc, opsummere grupper og tegne et plot. |
+| [python-toolbox](https://github.com/KUBDatalab/python-toolbox) | [Tekstrensning, regex og TF-IDF](../python/tekst/regex-og-frekvens.qmd) | Rense tekst, tælle ord og beregne en enkel TF-IDF-vægt. |
+| [sql-intro](https://github.com/KUBDatalab/sql-intro) | [SELECT, filtrering og opsummering](../sql/intro/forespoergsler.qmd) | Filtrere, sortere og beregne gruppevise resultater i SQL. |
+| [sql-intro](https://github.com/KUBDatalab/sql-intro) | [Joins, nøgler og tabeldesign](../sql/intro/joins-og-noegler.qmd) | Forbinde tabeller, vælge jointype og forklare primærnøgler. |
+
+## Afgrænsning og kildeversioner
+
+Kursusforløbene er identificeret gennem deres indholdsfortegnelser og de enkelte lektioner. For R-toolbox er den publicerede episodeoversigt anvendt; `in_progress` er ikke behandlet som færdigt undervisningsmateriale. Øvelserne dækker centrale begreber fra den aktive samling, men ikke alle specialpakker og variationer. Eksempelvis øves Table One-data før formatering, og LASSO øves gennem valg af valideringsstrategi.
+
+R-API-2 havde fortsat introduktionskursets episodeoversigt ved gennemgangen og er derfor ikke præsenteret som et selvstændigt niveau 2-kursus. Netværksmaterialet i R-brief-graphs fremstod som en kladde uden for episodeoversigten; det er heller ikke udgivet som et færdigt øvelsesforløb. Gentagne kursusskabeloner og administrationsrepos er ikke selvstændige kurser her.
+
+[Download oversigten over kildefiler og præcise Git-revisioner](../data/course-sources.json). Hver øvelsesside linker også til de relevante kildelektioner. Nye opgaver, formuleringer og løsningsforslag er skrevet til øvelsessitet; der er ikke kopieret hele kursuskapitler eller eksterne datasamlinger.
+
+## Data og eksekvering
+
+- R-felter bruger webR; Python-felter bruger Pyodide. De nødvendige pakker hentes på den enkelte side.
+- Eksemplerne bruger konstruerede små data eller datasæt, som følger med R-pakker, herunder cars, mtcars, iris, PlantGrowth, diamonds og mpg.
+- API- og scrapingopgaver bruger indlejrede eksempler. De sender ingen eksterne dataforespørgsler og kræver ingen nøgler.
+- SQL køres i SQLite via Python i browseren. Databasen oprettes på ny ved kørsel af kodefeltet.
+- Øvelsen om UCloud og parallelisering bruger browseren til en sekventiel referenceberegning. Den starter ikke UCloud-jobs eller parallelle processer.
+
+## Vedligeholdelse
+
+Ved ændringer i en kildelektion: sammenlign læringsmålene med det tilhørende sæt, gennemgå opgaven og facit, og opdatér kildeversionen. Browserkontrollen kører løsningsforslagene og kontrollerer deres resultater før publicering. En grøn test kontrollerer beregninger og funktionalitet; undervisernes faglige review er stadig en del af vedligeholdelsen.

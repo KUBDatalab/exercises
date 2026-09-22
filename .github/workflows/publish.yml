@@ -43,6 +43,9 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Check links and exercise interactions
         run: node tests/site.test.mjs
+      - name: Check course solutions in WebAssembly
+        timeout-minutes: 25
+        run: node tests/courses.test.mjs
       - name: Save website and screenshots
         if: always()
         uses: actions/upload-artifact@v4

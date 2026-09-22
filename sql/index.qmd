@@ -1,0 +1,21 @@
+---
+title: Øvelser i SQL
+description: Øvelser til KUB Datalabs kurser.
+toc: false
+---
+
+Find det kursus, du har fulgt, og vælg et emne. Kodefelterne kører i browseren; du behøver ikke installere noget for at løse øvelserne.
+
+::: {.card-grid}
+::: {.course-card}
+
+### Introduktion til SQL
+
+SELECT, filtrering og opsummering · Joins, nøgler og tabeldesign.
+
+[Se øvelser →](intro/index.qmd)
+
+:::
+:::
+
+[Se demoen med spørgsmålstyper](../demo-oevelser.qmd).

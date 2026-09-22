@@ -1,0 +1,102 @@
+---
+title: Lav indholdet til en Table One
+description: Opsummere grupper, angive nævnere og håndtere manglende værdier i en
+  deskriptiv tabel.
+engine: knitr
+webr:
+  packages:
+  - dplyr
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[R-toolbox · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du opsummere grupper, angive nævnere og håndtere manglende værdier i en deskriptiv tabel.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvad er formålet med en Table One?
+
+`r longmcq(c("At bevise en årsagssammenhæng.", answer = "At beskrive deltagere eller observationer, ofte opdelt i grupper.", "At vise alle rådata i én celle."))`
+
+:::
+
+## 2. Arbejd selv
+
+Lav en oversigt pr. gruppe med antal deltagere, antal kendte aldre, gennemsnitsalder og antal rygere. Beregn andelen af rygere blandt dem, der har oplyst rygestatus. Brug tydelige kolonnenavne.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(dplyr)
+deltagere <- tibble(gruppe = c("A", "A", "A", "B", "B"),
+  alder = c(20, 30, NA, 40, 50), ryger = c(TRUE, FALSE, NA, FALSE, TRUE))
+# Gem din opsummering som oversigt
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Gennemsnitsalder i gruppe A? `r fitb(25, width = 10)`
+
+Rygerprocent i gruppe A blandt kendte svar? `r fitb(50, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+TRUE tæller som 1 og FALSE som 0 i `mean()`. Den relevante nævner for rygerandelen er antallet med kendt rygestatus.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(dplyr)
+deltagere <- tibble(gruppe = c("A", "A", "A", "B", "B"),
+  alder = c(20, 30, NA, 40, 50), ryger = c(TRUE, FALSE, NA, FALSE, TRUE))
+oversigt <- deltagere |> group_by(gruppe) |>
+  summarise(n = n(), alder_kendt = sum(!is.na(alder)),
+    alder_mean = mean(alder, na.rm = TRUE),
+    rygere = sum(ryger, na.rm = TRUE), rygestatus_kendt = sum(!is.na(ryger)),
+    ryger_pct = 100 * mean(ryger, na.rm = TRUE), .groups = "drop")
+oversigt
+```
+<!-- solution:end -->
+
+Gruppe A har tre deltagere, men kun to kendte aldre og to kendte rygestatusser. Derfor er rygerandelen 1/2 = 50 %. Pakker som table1 og gtsummary kan formatere tabellen, men nævnere, enheder og labels skal stadig være afklaret.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Hvilken fodnote gør tabellen mest entydig?
+
+`r longmcq(c("Alle manglende værdier er nul.", answer = "Rygerprocenter beregnes blandt deltagere med kendt rygestatus; alder er i år.", "En procent kræver ingen nævner."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-toolbox/). Relevante kildelektioner: [table1](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/table1.Rmd) · [table1-gt](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/table1-gt.Rmd) · [descript-stat](https://github.com/KUBDatalab/R-toolbox/blob/main/episodes/descript-stat.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

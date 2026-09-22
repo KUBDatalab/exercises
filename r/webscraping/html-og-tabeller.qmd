@@ -1,0 +1,115 @@
+---
+title: Find tekst og tabeller i HTML
+description: Bruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er.
+engine: knitr
+webr:
+  packages:
+  - rvest
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Web scraping med R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du bruge CSS-selektorer, udtrække tabeller og konstruere forudsigelige URL’er.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvilken CSS-selektor vælger et p-element med class="intro"?
+
+`r longmcq(c("p#intro", answer = "p.intro", "intro.p"))`
+
+Hvad repræsenterer read_html() i denne øvelse?
+
+`r longmcq(c("Et login til en hjemmeside.", answer = "Parsing af en indlejret HTML-tekst.", "En ændring af hjemmesidens data."))`
+
+:::
+
+## 2. Arbejd selv
+
+Udtræk overskriften, introduktionsteksten og tabellen. Beregn det samlede antal pladser. Dan tre URL’er med page_num=1, 2 og 3. URL’erne skal kun konstrueres, ikke besøges.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(rvest)
+side <- '<html><body><h1>Kurser</h1><p class="intro">Tre korte kurser</p>
+<table><tr><th>kursus</th><th>pladser</th></tr>
+<tr><td>R</td><td>12</td></tr><tr><td>Python</td><td>8</td></tr>
+<tr><td>SQL</td><td>10</td></tr></table></body></html>'
+doc <- read_html(side)
+# Gem tabellen som kurser
+# Brug html_element(), html_text2() og html_table()
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Samlet antal pladser? `r fitb(30, width = 10)`
+
+Antal konstruerede URL’er? `r fitb(3, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Vælg først elementet, og udtræk derefter dets tekst eller tabel. Et punktum angiver en klasse i en CSS-selektor.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(rvest)
+side <- '<html><body><h1>Kurser</h1><p class="intro">Tre korte kurser</p>
+<table><tr><th>kursus</th><th>pladser</th></tr>
+<tr><td>R</td><td>12</td></tr><tr><td>Python</td><td>8</td></tr>
+<tr><td>SQL</td><td>10</td></tr></table></body></html>'
+doc <- read_html(side)
+overskrift <- doc |> html_element("h1") |> html_text2()
+intro <- doc |> html_element("p.intro") |> html_text2()
+kurser <- doc |> html_element("table") |> html_table()
+overskrift
+intro
+kurser
+sum(kurser$pladser)
+urls <- paste0("https://example.org/kurser?page_num=", 1:3)
+urls
+```
+<!-- solution:end -->
+
+Tabellen indeholder 30 pladser. Den indlejrede HTML gør øvelsen reproducerbar, også hvis virkelige sider ændres. Browserens CORS-regler og dynamisk indhold kan betyde, at en ekstern side kræver en anden tilgang.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+En side har fem tabeller. Hvad bør du gøre før du binder dem sammen?
+
+`r longmcq(c("Antage at alle fem har samme struktur.", answer = "Undersøge tabellernes indhold, kolonner og datatyper.", "Omdanne alle celler til tal."))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R_web_scraping/). Relevante kildelektioner: [Scraping_tables_on_a_page](https://github.com/KUBDatalab/R_web_scraping/blob/main/episodes/Scraping_tables_on_a_page.Rmd) · [scraping_tables_on_multiple_pages_with_predictable_URLS](https://github.com/KUBDatalab/R_web_scraping/blob/main/episodes/scraping_tables_on_multiple_pages_with_predictable_URLS.Rmd) · [paragraph](https://github.com/KUBDatalab/R_web_scraping/blob/main/episodes/paragraph.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

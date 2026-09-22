@@ -1,0 +1,99 @@
+---
+title: Byg et plot med ggplot2
+description: Vælge geometri og skelne mellem mapping og faste farver.
+engine: knitr
+webr:
+  packages:
+  - ggplot2
+---
+
+{{< include ../../scripts/live-knitr.qmd >}}
+
+```{r}
+#| include: false
+source("scripts/setup.R")
+```
+
+[Visualisering med R · 25 minutter]{.meta-line}
+
+Efter øvelsen kan du vælge geometri og skelne mellem mapping og faste farver.
+
+Dataene er små øvelsesdata eller datasæt, der følger med de anvendte pakker.
+
+Vent på R, redigér feltet, og vælg **Run Code**. Første indlæsning af motor og pakker kan tage lidt tid. **Start Over** gendanner feltets kode; genindlæsning nulstiller hele sidens session. Kode og svar gemmes ikke. Brug punktum i numeriske svar.
+
+## 1. Forudsig og vælg
+
+::: {.exercise .webex-check}
+
+Hvilken geometri passer til sammenhængen mellem to numeriske variable?
+
+`r longmcq(c("geom_bar()", answer = "geom_point()", "geom_histogram()"))`
+
+Hvordan får alle punkter samme blå farve uden en farvelegend?
+
+`r longmcq(c("aes(colour = \"blue\")", answer = "geom_point(colour = \"blue\")", "aes(blue = colour)"))`
+
+:::
+
+## 2. Arbejd selv
+
+Brug `diamonds` fra ggplot2. Vælg de første 200 rækker. Tegn carat på x-aksen og price på y-aksen. Map cut til farve, gør punkterne delvist gennemsigtige, og giv akserne læsbare titler.
+
+::: {#exercise-lab}
+```{webr}
+#| caption: Din løsning
+library(ggplot2)
+sten <- diamonds[1:200, ]
+# Byg plottet, og gem det som figur
+```
+:::
+
+Skriv dine resultater nedenfor. **Tjek svar** kontrollerer svarfelterne, ikke din kode.
+
+::: {.exercise .webex-check #result-check}
+
+Hvor mange punkter tegnes før eventuelt overlap? `r fitb(200, width = 10)`
+
+:::
+
+`r hide("Vis hint")`
+
+Variable, som skal styre farverne, placeres inde i `aes()`. Faste indstillinger som `alpha = 0.6` placeres udenfor.
+
+`r unhide()`
+
+`r hide("Vis løsningsforslag")`
+
+<!-- solution:start -->
+```r
+library(ggplot2)
+sten <- diamonds[1:200, ]
+figur <- ggplot(sten, aes(x = carat, y = price, colour = cut)) +
+  geom_point(alpha = 0.6) +
+  labs(x = "Vægt (carat)", y = "Pris (USD)", colour = "Slibning")
+print(figur)
+```
+<!-- solution:end -->
+
+Der tegnes ét punkt pr. række. Farven viser cut, og alpha hjælper med at se overlap. De første 200 rækker er et udsnit til kodeøvelsen, ikke en tilfældig stikprøve.
+
+Kopiér eventuelt løsningsforslaget til kodefeltet for at afprøve det.
+
+`r unhide()`
+
+## 3. Fortolk og gå videre
+
+::: {.exercise .webex-check}
+
+Du har allerede en tabel med antal pr. kategori. Hvilken geometri bruger selve antallet som søjlehøjde?
+
+`r longmcq(c("geom_bar() med standardindstillinger", answer = "geom_col()", "geom_density()"))`
+
+:::
+
+## Tilbage til undervisningen
+
+[Kursusmaterialet](https://kubdatalab.github.io/R-visualisation/). Relevante kildelektioner: [getting_started](https://github.com/KUBDatalab/R-visualisation/blob/main/episodes/getting_started.Rmd) · [further_mapping](https://github.com/KUBDatalab/R-visualisation/blob/main/episodes/further_mapping.Rmd) · [different_plots](https://github.com/KUBDatalab/R-visualisation/blob/main/episodes/different_plots.Rmd).
+
+[Tilbage til kursets øvelser](index.qmd).

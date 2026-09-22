@@ -1,0 +1,15 @@
+---
+title: Python for not quite Absolute Beginners
+description: Gentag kursets emner med kode, hints og feedback.
+toc: false
+---
+
+Vælg et øvelsessæt. Du kan arbejde direkte i browseren og vende tilbage til kursusmaterialet undervejs.
+
+## [Funktioner, dictionaries og fejl](funktioner-og-fejl.qmd)
+
+25 minutter · Øv dig i at skrive en funktion, håndtere en forventet fejl og sammenligne datastrukturer.
+
+[Åbn kursusmaterialet](https://kubdatalab.github.io/python/).
+
+[Tilbage til oversigten](../index.qmd).
