@@ -100,7 +100,14 @@ try {
     const block = page.locator(id);
     const run = block.locator('.exercise-editor-btn-run-code:not(.disabled)');
     await run.waitFor({state:'visible', timeout:120000});
-    if (code !== null) await block.locator('.cm-content[contenteditable="true"]').fill(code);
+    if (code !== null) {
+      const editor = block.locator('.cm-content[contenteditable="true"]');
+      await editor.click();
+      await editor.press('ControlOrMeta+a');
+      await editor.press('Backspace');
+      await page.keyboard.insertText(code);
+      assert.equal(await editor.innerText(), code);
+    }
     await run.click();
     if (expected) await block.locator('.cell-output-container-webr').getByText(expected, {exact:false}).last().waitFor({timeout:30000});
     return block;

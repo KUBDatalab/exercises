@@ -116,7 +116,7 @@ Brug startkode og kommentarer til opgaver, og læg det færdige løsningsforslag
 
 ### Pakker og data
 
-De nuværende eksempler bruger base R. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:
+De grundlæggende eksempler bruger base R; kursusøvelserne bruger også blandt andet dplyr, ggplot2, tidytext og rvest. Ekstra pakker skal findes som WebAssembly-pakker og angives i sidens YAML, eksempelvis:
 
 ```yaml
 webr:

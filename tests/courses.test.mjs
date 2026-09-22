@@ -45,7 +45,12 @@ try {
       await run.waitFor({state:'visible',timeout:240000});
       const marker = 'COURSE_SOLUTION_OK';
       const code = match[1] + '\n' + test.checks + '\n' + (test.engine==='webr' ? `cat("${marker}\\n")` : `print("${marker}")`);
-      await lab.locator('.cm-content[contenteditable="true"]').fill(code);
+      const editor = lab.locator('.cm-content[contenteditable="true"]');
+      await editor.click();
+      await editor.press('ControlOrMeta+a');
+      await editor.press('Backspace');
+      await page.keyboard.insertText(code);
+      assert.equal(await editor.innerText(), code);
       await run.click();
       await lab.locator('.cell-output-stdout').filter({hasText:marker}).first().waitFor({timeout:60000});
       if (test.plot) await lab.locator('.cell-output-display canvas, .cell-output-display img').first().waitFor({timeout:30000});

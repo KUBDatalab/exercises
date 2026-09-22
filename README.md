@@ -2,7 +2,7 @@
 
 Quarto-site til selvstudium efter KUB Datalabs kurser. Samlingen dækker R, Python og SQL med kodefelter i browseren.
 
-- Forside og R-kursusoversigt.
+- Forside og kursusoversigter for R, Python og SQL.
 - Øvelsessæt om objekter, vektorer og indeksering.
 - `demo-oevelser.qmd`: alle aktive HTML-spørgsmålstyper i webexercises 1.2.0, svarregler, quizzer, hints og forfatterfunktioner.
 - `vejledning/ny-oevelsesside.qmd`: arbejdsproces og genbrugelig skabelon i `templates/oevelse.qmd`.
@@ -63,7 +63,8 @@ Se `assets/ATTRIBUTION.md` for kilder og tredjepartslicens.
 Quarto Live v0.2.0 og webR v0.6.0 giver redigerbare `{webr}`-blokke på demoen
 og R-øvelsessiden. CI installerer udvidelsen før rendering; `_extensions/` er
 genereret og ignoreret. Bygningen bruger fortsat knitr og webexercises.
-Browserens R-session bruger base R, gemmer ikke kode og er separat fra build-R.
+Browserens R-session bruger base R og de pakker, som den enkelte side angiver.
+Den gemmer ikke kode og er separat fra build-R.
 Se forfattervejledningen for opsætning, pakker og sessionens levetid.
 
 ## Øvelser til undervisningsmaterialet
